@@ -1,0 +1,32 @@
+home-component {
+    padding: 10% 25% 0% 40%;
+}
+
+.mascot-image {
+    width: 60%;
+}
+
+.domain {
+    padding-left: 12%;
+    font-size: 24pt;
+    font-weight: lighter;
+}
+
+.mascot-main {
+    color: white !important;
+    background: transparent;
+}
+
+@media screen and (max-width: 600px) {
+    .home-component {
+        padding: 5% 10% 0% 25%;
+    }
+
+    .mascot-image {
+        width: 80%;
+    }
+
+    .App-content {
+        padding-top: 10%;
+    }
+}
