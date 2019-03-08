@@ -25,6 +25,8 @@ const getAllArticles = (state = initialState, action) => {
         payload: action.payload,
         isLoading: false
       };
+    default:
+      return state;
   }
 };
 

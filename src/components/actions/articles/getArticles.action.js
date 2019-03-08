@@ -23,19 +23,17 @@ export const successOnLoad = data => ({
   payload: data
 });
 
-const getArticlesAction = () => async dispatch => {
+const fetchArticles = () => async dispatch => {
   dispatch(loadingResource());
 
-  axios
+  await axios
     .get(`${env.BASE_URL}blogs`)
     .then(response => {
-      console.log(response.data);
-      dispatch(successOnLoad(response.data));
+      dispatch(successOnLoad(response.data.blogs));
     })
     .catch(err => {
-      console.log(err.response.data);
       dispatch(errorOnLoad(err.response.data));
     });
 };
 
-export default getArticlesAction;
+export default fetchArticles;

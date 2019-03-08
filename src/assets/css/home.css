@@ -2,14 +2,13 @@ home-component {
     padding: 10% 25% 0% 40%;
 }
 
-.mascot-image {
-    width: 60%;
-}
-
 .domain {
-    padding-left: 12%;
+    /* padding-left: 12%; */
+    padding-top: 10%;
     font-size: 24pt;
     font-weight: lighter;
+    text-align: center;
+    margin: 0;
 }
 
 .mascot-main {
@@ -24,6 +23,7 @@ home-component {
 
     .mascot-image {
         width: 80%;
+        float: inherit;
     }
 
     .App-content {
