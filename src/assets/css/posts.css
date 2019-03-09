@@ -1,0 +1,154 @@
+:root {
+    --s-loader-wrapper-bg-color: rgb(21, 22, 43);
+    --s-loader-width: 20px;
+    --s-loader-height: var(--s-loader-width);
+    --s-loader-border-color-trans: #6b5622;
+    --s-loader-border-color-full: #efbb35;
+    --font-color: antiquewhite;
+}
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+  color: #efbb35;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300i');
+
+.posts {
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    padding-bottom: 20%;
+}
+
+.top-posts-title {
+    font-size: 24pt;
+    padding-left: 44%;
+}
+
+#card {
+    padding-top: 2%;
+}
+
+.content {
+    width: 300px;
+    background: #35383b;
+    padding: 5%;
+    text-align: center;
+    color: antiquewhite;
+    font-family: "quicksand", sans-serif !important;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 5px solid #dfa612;
+    transition: all .5s;
+}
+
+.header {
+    color: #dfa612;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.description {
+    color: antiquewhite;
+    font-family: 'Laila', serif;
+    font-size: 16pt;
+}
+
+.content:hover {
+    box-shadow: 0 0 11px #dfa612 !important;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  } */
+
+
+.single-article-header {
+    padding-top: 15%;
+    text-align: center;
+    background: #11051b;
+    height: 60vh;
+}
+
+.single-article-body {
+    padding-top: 5%;
+}
+
+hr {
+    width: 10%;
+    height: 25px;
+    border: solid 3px #dfa612 !important;
+}
+
+.single-article-header h1{
+    font-size: 38pt;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.single-article-header p {
+    font-size: 18pt;
+    font-family: "Roboto Condensed", "san-serif";
+}
+
+.share-icons {
+    font-size: 20pt;
+}
+
+.single-article-body .body {
+    font-size: 16pt;
+    line-height: 2.5;
+    padding: 0px 40% 0 5%;
+}
+
+.extra {
+    text-align: center;
+    font-size: 18pt;
+}
+
+.link {
+    text-decoration: none !important;
+    color: #dfa612;
+}
+
+.link:hover {
+    color: #dfa612;
+}
+
+@media (max-width: 360px) {
+    #card {
+        padding-top: 5%;
+        padding-left: 0;
+        padding-right: 30%;
+    }
+
+    .top-posts-title {
+        padding-left: 5% !important;
+    }
+
+    .posts {
+        padding-left: 8%;
+    }
+}
