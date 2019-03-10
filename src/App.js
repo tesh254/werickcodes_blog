@@ -9,6 +9,7 @@ import "./assets/css/home.css";
 import "./assets/css/bootstrap/css/bootstrap.min.css";
 import "./assets/css/posts.css";
 import "./assets/css/loader.css";
+import SingleArticle from "./components/containers/SingleArticle";
 
 class App extends Component {
   render() {
@@ -20,7 +21,8 @@ class App extends Component {
               <Navbar />
               <div className="App-content">
                 <Switch>
-                  <Route exact to="/" component={Home} />
+                  <Route exact path="/" component={Home} />
+                  <Route exact={true} path="/articles/:slug" component={SingleArticle}/>
                 </Switch>
               </div>
             </div>
