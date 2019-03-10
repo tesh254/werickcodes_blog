@@ -89,8 +89,9 @@
 .single-article-header {
     padding-top: 15%;
     text-align: center;
-    background: #11051b;
-    height: 60vh;
+    background: #131101;
+    height: 80%;
+    position: inherit;
 }
 
 .single-article-body {
@@ -99,7 +100,7 @@
 
 hr {
     width: 10%;
-    height: 25px;
+    height: 0;
     border: solid 3px #dfa612 !important;
 }
 
@@ -115,11 +116,12 @@ hr {
 
 .share-icons {
     font-size: 20pt;
+    padding-bottom: 5%;
 }
 
 .single-article-body .body {
     font-size: 16pt;
-    line-height: 2.5;
+    line-height: 2.2;
     padding: 0px 40% 0 5%;
 }
 
@@ -138,6 +140,11 @@ hr {
 }
 
 @media (max-width: 360px) {
+    .single-article-body .body {
+        font-size: 16pt;
+        line-height: 1.4;
+        padding: 15px;
+    }
     #card {
         padding-top: 5%;
         padding-left: 0;

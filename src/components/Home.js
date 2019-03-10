@@ -3,10 +3,10 @@ import mascot from "../assets/svg/mascot.svg";
 import Articles from "./containers/Articles";
 
 const Home = () => (
-    <div>
+  <div>
     <p className="domain">Werick.io</p>
-    <Articles/>
+    <Articles />
   </div>
-)
+);
 
 export default Home;

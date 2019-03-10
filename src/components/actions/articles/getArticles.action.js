@@ -7,33 +7,31 @@ import {
 
 import env from "../../../env.json";
 
-const initialState = {};
-
-export const loadingResource = () => ({
-  type: GET_ARTICLES_REQUEST
+export const loadingResource = type => ({
+  type: type
 });
 
-export const errorOnLoad = data => ({
-  type: GET_ARTICLES_ERROR,
+export const errorOnLoad = (type, data) => ({
+  type: type,
   payload: data
 });
 
-export const successOnLoad = data => ({
-  type: GET_ARTICLES_SUCCESS,
+export const successOnLoad = (type, data) => ({
+  type: type,
   payload: data
 });
 
 const fetchArticles = () => async dispatch => {
-  dispatch(loadingResource());
+  dispatch(loadingResource(GET_ARTICLES_REQUEST));
 
   await axios
     .get(`${env.BASE_URL}blogs`)
     .then(response => {
-      dispatch(successOnLoad(response.data.blogs));
+      dispatch(successOnLoad(GET_ARTICLES_SUCCESS, response.data.blogs));
     })
     .catch(err => {
-      dispatch(errorOnLoad(err.response.data));
-    });
+      dispatch(errorOnLoad(GET_ARTICLES_ERROR, err.response));
+    })
 };
 
 export default fetchArticles;

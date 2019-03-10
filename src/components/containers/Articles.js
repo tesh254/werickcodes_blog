@@ -2,8 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
-import moment from "moment";
-import Loader from "react-loaders";
+// import moment from "moment";
 
 import fetchArticles from "../actions/articles/getArticles.action";
 
@@ -31,23 +30,22 @@ class Articles extends React.Component {
 
   render() {
     const { isLoading, articles } = this.state;
-    console.log(this.state);
     let calc = 0;
     return (
       <div className="posts">
         {isLoading ? (
           <div>
-            <div class="lds-ripple">
+            <div className="lds-ripple">
               <div />
               <div />
             </div>
           </div>
         ) : (
           <div>
-            {this.state.articles.map(article => (
+            {!articles ? <div>Error</div>  : articles.map(article => (
               <div className="col-lg-4 col-md-12" id="card">
                 <Link
-                  to={{ pathname: `/articles/${article.slug}` }}
+                  to={{ pathname: `/articles/${article.slug}`, article: article }}
                   className="link"
                 >
                   <div className="content" key={calc++}>
