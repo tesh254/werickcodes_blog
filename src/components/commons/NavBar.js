@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import myFunction from "../../assets/js/main";
 import mascot from "../../assets/svg/mascot.svg";
-
+// eslint-disable-next-line
 const Navbar = () => (
   <div className="topnav" id="myTopnav">
     <NavLink to="/" id="link" className="active">

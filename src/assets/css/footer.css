@@ -2,7 +2,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 35%;
+    padding-top: 5%;
     padding-bottom: 15%;
 }
 
@@ -35,7 +35,7 @@
     color: #dfa612;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 360px) {
     .footer {
         padding-top: 17.5%;
     }

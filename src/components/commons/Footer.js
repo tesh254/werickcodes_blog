@@ -1,6 +1,6 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import mascot from "../../assets/svg/mascot.svg";
+import { NavLink } from "react-router-dom";
+// import mascot from "../../assets/svg/mascot.svg";
 
 const Footer = () => (
   <div className="footer">
