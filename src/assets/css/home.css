@@ -16,7 +16,7 @@ home-component {
     background: transparent;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 360px) {
     .home-component {
         padding: 5% 10% 0% 25%;
     }
