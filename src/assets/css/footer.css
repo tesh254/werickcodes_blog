@@ -1,0 +1,48 @@
+.footer {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 35%;
+    padding-bottom: 15%;
+}
+
+.l-act, .footer-extra {
+    padding: 25px;
+}
+
+.l-act {
+    float: left;
+    font-size: 38pt;
+}
+
+.footer-extra {
+    float: right;
+    color: #2aa198;
+}
+
+.footer-extra i:hover {
+    color: #dfa612;
+    cursor: pointer;
+}
+
+.l-act .f-link {
+    text-decoration: none;
+    color: #2aa198;
+    float: left;
+}
+
+.l-act .f-link:hover {
+    color: #dfa612;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding-top: 17.5%;
+    }
+
+    .footer-extra {
+        float: none;
+        padding-top: 95%;
+        padding-bottom: 5px;
+    }
+}

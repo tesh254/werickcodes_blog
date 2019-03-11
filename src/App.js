@@ -9,7 +9,9 @@ import "./assets/css/home.css";
 import "./assets/css/bootstrap/css/bootstrap.min.css";
 import "./assets/css/posts.css";
 import "./assets/css/loader.css";
+import "./assets/css/footer.css";
 import SingleArticle from "./components/containers/SingleArticle";
+import Footer from "./components/commons/Footer";
 
 class App extends Component {
   render() {
@@ -25,6 +27,7 @@ class App extends Component {
                   <Route exact={true} path="/articles/:slug" component={SingleArticle}/>
                 </Switch>
               </div>
+              <Footer />
             </div>
           </BrowserRouter>
         </div>
