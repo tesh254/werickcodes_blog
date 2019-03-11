@@ -4,7 +4,7 @@ import Articles from "./containers/Articles";
 
 const Home = () => (
   <div>
-    <p className="domain">Werick.io</p>
+    <p className="domain">Werick Blog</p>
     <Articles />
   </div>
 );
