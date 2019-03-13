@@ -10,6 +10,10 @@ font-family: 'Raleway', sans-serif;
 
 */
 
+.s-link {
+    color: #2aa198 !important;
+}
+
 body {
     background: #011c23 !important;
     color: antiquewhite !important;
