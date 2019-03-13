@@ -58,7 +58,7 @@ class SingleArticle extends React.Component {
                 <i class="fab fa-facebook" /> &nbsp;
                 <i class="fab fa-slack" /> &nbsp;
                 <i class="fab fa-twitter-square" /> &nbsp;
-                <i class="fab fa-instagram" />
+                {/* <i class="fab fa-instagram" /> */}
               </div>
             </div>
             <div className="single-article-body">

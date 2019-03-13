@@ -44,6 +44,18 @@
     font-family: 'Raleway', sans-serif !important;
 }
 
+.p-content {
+    padding-top: 8%;
+}
+
+.c-info {
+    text-align: center;
+}
+
+.c-info .lte {
+    font-weight: 100 !important;
+}
+
 @media (max-width: 360px) {
     .intro-paragraph {
         line-height: 1.5;

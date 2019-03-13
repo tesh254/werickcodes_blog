@@ -14,6 +14,7 @@ import "./assets/css/about.css";
 import SingleArticle from "./components/containers/SingleArticle";
 import Footer from "./components/commons/Footer";
 import About from "./components/About";
+import Privacy from './components/Privacy';
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
                   <Route exact path="/" component={Home} />
                   <Route exact={true} path="/articles/:slug" component={SingleArticle}/>
                   <Route exact={true} path="/about" component={About} />
+                  <Route exact={true} path="/privacy" component={Privacy}/>
                 </Switch>
               </div>
               <Footer />
