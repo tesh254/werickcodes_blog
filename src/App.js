@@ -11,10 +11,12 @@ import "./assets/css/posts.css";
 import "./assets/css/loader.css";
 import "./assets/css/footer.css";
 import "./assets/css/about.css";
+import "./assets/css/form.css";
 import SingleArticle from "./components/containers/SingleArticle";
 import Footer from "./components/commons/Footer";
 import About from "./components/About";
 import Privacy from './components/Privacy';
+import ContactForm from "./components/commons/Contact";
 
 class App extends Component {
   render() {
@@ -30,6 +32,7 @@ class App extends Component {
                   <Route exact={true} path="/articles/:slug" component={SingleArticle}/>
                   <Route exact={true} path="/about" component={About} />
                   <Route exact={true} path="/privacy" component={Privacy}/>
+                  <Route exact={true} path="/contact" component={ContactForm}/>
                 </Switch>
               </div>
               <Footer />
