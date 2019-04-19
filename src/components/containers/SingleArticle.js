@@ -4,6 +4,8 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 // import { metaTag } from "../../helpers/metaTags";
 import moment from "moment";
+import Markdown from "react-markdown";
+import CodeBlock from "../commons/code";
 
 class SingleArticle extends React.Component {
   constructor() {
@@ -64,7 +66,12 @@ class SingleArticle extends React.Component {
             <div className="single-article-body">
               <hr />
               <div className="body">
-                <p>{article.blogs.body}</p>
+                <div>
+                  <Markdown
+                    source={article.blogs.body}
+                    renderers={{ code: CodeBlock }}
+                  />
+                </div>
               </div>
             </div>
             <hr />

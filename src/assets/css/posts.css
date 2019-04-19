@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300');
+
 :root {
     --s-loader-wrapper-bg-color: rgb(21, 22, 43);
     --s-loader-width: 20px;
@@ -8,11 +10,12 @@
 }
 
 .loader-hidden {
-  display: none;
+    display: none;
 }
+
 .loader-active {
-  display: block;
-  color: #efbb35;
+    display: block;
+    color: #efbb35;
 }
 
 
@@ -104,7 +107,7 @@ hr {
     border: solid 3px #dfa612 !important;
 }
 
-.single-article-header h1{
+.single-article-header h1 {
     font-size: 38pt;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -139,12 +142,25 @@ hr {
     color: #dfa612;
 }
 
+.body div pre {
+    background: #000 !important;
+    color: white !important;
+    border: none !important ;
+}
+
+.body div pre code {
+    
+    background: #000 !important;
+    color: white !important;
+}
+
 @media (max-width: 360px) {
     .single-article-body .body {
         font-size: 16pt;
         line-height: 1.4;
         padding: 15px;
     }
+
     #card {
         padding-top: 5%;
         padding-left: 0;

@@ -12,6 +12,7 @@ import "./assets/css/loader.css";
 import "./assets/css/footer.css";
 import "./assets/css/about.css";
 import "./assets/css/form.css";
+import "./assets/css/prism.css";
 import SingleArticle from "./components/containers/SingleArticle";
 import Footer from "./components/commons/Footer";
 import About from "./components/About";
