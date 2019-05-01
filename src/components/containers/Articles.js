@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
-// import moment from "moment";
+import moment from "moment";
 
 import fetchArticles from "../actions/articles/getArticles.action";
+import stack from "../../constants/stacks";
 
 class Articles extends React.Component {
   constructor() {
@@ -14,6 +15,10 @@ class Articles extends React.Component {
       isLoading: true
     };
   }
+
+  shuffle = array => {
+    return array.sort(() => Math.random() - 0.5);
+  };
 
   componentDidMount() {
     this.props.fetchArticles();
@@ -42,21 +47,36 @@ class Articles extends React.Component {
           </div>
         ) : (
           <div>
-            {!articles ? <div>Error</div>  : articles.map(article => (
-              <div className="col-lg-4 col-md-12" id="card">
-                <Link
-                  to={{ pathname: `/articles/${article.slug}`, article: article }}
-                  className="link"
-                >
-                  <div className="content" key={calc++}>
-                    <div className="post-title">
-                      <h1 className="header">{article.title}</h1>
-                      <p className="description">{article.description}</p>
+            {!articles ? (
+              <div>Error</div>
+            ) : (
+              this.shuffle(articles).map(article => (
+                <div className="col-lg-6 col-md-12" id="card">
+                  <Link
+                    to={{
+                      pathname: `/articles/${article.slug}`,
+                      article: article
+                    }}
+                    className="link"
+                  >
+                    <div className="content" key={calc++}>
+                      <div className="stack">
+                        <img
+                          src={stack[`${article.stack}`]}
+                          alt={article.stack}
+                        />
+                      </div>
+                      <div className="post-title">
+                        <h1 className="header">{article.title}</h1>
+                        <p className="description">{article.description}</p>
+                        <p>{moment(article.createdAt, "YYYYMMDD").fromNow()}</p>
+                        <hr />
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
+                  </Link>
+                </div>
+              ))
+            )}
           </div>
         )}
       </div>

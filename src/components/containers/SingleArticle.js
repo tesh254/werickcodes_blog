@@ -2,7 +2,6 @@ import React from "react";
 import fetchOneArticle from "../actions/articles/getOneArticle.action";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
-// import { metaTag } from "../../helpers/metaTags";
 import moment from "moment";
 import Markdown from "react-markdown";
 import CodeBlock from "../commons/code";
