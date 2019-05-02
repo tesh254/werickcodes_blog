@@ -1,10 +1,11 @@
 import React from "react";
-import fetchOneArticle from "../actions/articles/getOneArticle.action";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import moment from "moment";
 import Markdown from "react-markdown";
 import CodeBlock from "../commons/code";
+import fetchOneArticle from "../actions/articles/getOneArticle.action";
+import stack from "../../constants/stacks";
 
 class SingleArticle extends React.Component {
   constructor() {
@@ -34,11 +35,6 @@ class SingleArticle extends React.Component {
     const { article, isLoading } = this.state;
     const TITLE = document.getElementById("t");
     TITLE.innerHTML = "Werick- Single Article";
-    // metaTag(
-    //     this.state.article.blogs.title,
-    //     this.state.article.blogs.description,
-    //     this.state.article.blogs.title
-    //   );
     return (
       <div>
         {isLoading ? (
@@ -51,6 +47,12 @@ class SingleArticle extends React.Component {
         ) : (
           <div>
             <div className="single-article-header">
+              <div className="stack-highlight">
+                <img
+                  src={stack[`${article.blogs.stack}`]}
+                  alt={article.stack}
+                />
+              </div>
               <h1>{article.blogs.title}</h1>
               <p>{article.blogs.description}</p>
               <hr />
@@ -59,7 +61,6 @@ class SingleArticle extends React.Component {
                 <i class="fab fa-facebook" /> &nbsp;
                 <i class="fab fa-slack" /> &nbsp;
                 <i class="fab fa-twitter-square" /> &nbsp;
-                {/* <i class="fab fa-instagram" /> */}
               </div>
             </div>
             <div className="single-article-body">
@@ -74,13 +75,15 @@ class SingleArticle extends React.Component {
               </div>
             </div>
             <hr />
-            <div className="extra">
-              <i class="fas fa-eye" /> {article.blogs.views} views
-              <div className="published">
-                <pre>
-                  Published:{" "}
-                  {moment(article.blogs.createdAt, "YYYYMMDD").format("LL")}
-                </pre>
+            <div className="extra-content">
+              <div className="extra">
+                <i class="fas fa-eye" /> {article.blogs.views} views
+                <div className="published">
+                  <pre>
+                    Published:{" "}
+                    {moment(article.blogs.createdAt, "YYYYMMDD").fromNow()}
+                  </pre>
+                </div>
               </div>
             </div>
           </div>

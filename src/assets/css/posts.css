@@ -128,9 +128,17 @@ hr {
     border: solid 3px #dfa612 !important;
 }
 
-.single-article-header h1 {
+.single-article-header h1{
     font-size: 38pt;
     font-family: 'Roboto Condensed', sans-serif;
+}
+
+.single-article-header .stack-highlight {
+    padding-left: 0.8%;
+}
+
+.single-article-header .stack-highlight img {
+    width: 10%;
 }
 
 .single-article-header p {
@@ -143,15 +151,30 @@ hr {
     padding-bottom: 5%;
 }
 
-.single-article-body .body {
-    font-size: 16pt;
-    line-height: 2.2;
-    padding: 0px 40% 0 5%;
+.single-article-body {
+    width: 100%;
+    padding: 3%;
 }
 
-.extra {
+.single-article-body .body {
+    font-size: 16pt;
+    line-height: 1.4;
+    background: #131101;
+    padding: 3%;
+    border-radius: 5px;
+}
+
+.extra-content {
+    width: 100%;
+    padding: 3%;
+}
+
+.extra-content .extra {
     text-align: center;
     font-size: 18pt;
+    background: #131101;
+    border-radius: 5px;
+    padding: 3%;
 }
 
 .link {
@@ -167,6 +190,7 @@ hr {
     background: #000 !important;
     color: white !important;
     border: none !important ;
+    font-size: 13pt !important;
 }
 
 .body div pre code {

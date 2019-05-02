@@ -27,7 +27,7 @@ class App extends Component {
           <BrowserRouter>
             <div className="App">
               <Navbar />
-              <div className="App-content">
+              <div className="App-content" id="results">
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact={true} path="/articles/:slug" component={SingleArticle}/>
