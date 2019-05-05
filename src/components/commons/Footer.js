@@ -36,7 +36,7 @@ const Footer = () => (
         className="s-link"
         rel="noopener noreferrer"
       >
-        <i class="fab fa-facebook fa-3x" />
+        <i className="fab fa-facebook fa-3x" />
       </a>{" "}
       &nbsp;
       <a
@@ -45,7 +45,7 @@ const Footer = () => (
         className="s-link"
         rel="noopener noreferrer"
       >
-        <i class="fab fa-slack fa-3x" />
+        <i className="fab fa-slack fa-3x" />
       </a>{" "}
       &nbsp;
       <a
@@ -54,7 +54,7 @@ const Footer = () => (
         className="s-link"
         rel="noopener noreferrer"
       >
-        <i class="fab fa-twitter-square fa-3x" />
+        <i className="fab fa-twitter-square fa-3x" />
       </a>{" "}
       &nbsp;
       {/* <i class="fab fa-instagram fa-3x" /> */}

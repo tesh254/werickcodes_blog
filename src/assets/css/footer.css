@@ -2,8 +2,10 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 5%;
+    /* padding-top: 5%; */
     padding-bottom: 15%;
+    width: 100%;
+    font-weight: 100;
 }
 
 .l-act, .footer-extra {
@@ -35,14 +37,21 @@
     color: #dfa612;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 500px) {
     .footer {
         padding-top: 20%;
     }
 
     .footer-extra {
-        float: none;
-        padding-top: 95%;
+        padding-top: 5%;
         padding-bottom: 5px;
+        padding-right: 35% !important;
+        
+    }
+
+    .l-act {
+        float: none;
+        text-align: center;
+        padding-right: 15% !important;
     }
 }

@@ -1,5 +1,6 @@
+/* eslint-disable */
+
 import React from "react";
-// import mascot from "../assets/svg/mascot.svg";
 import me from "../assets/img/me.jpg";
 
 const About = () => (

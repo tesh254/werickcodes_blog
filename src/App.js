@@ -12,6 +12,7 @@ import "./assets/css/loader.css";
 import "./assets/css/footer.css";
 import "./assets/css/about.css";
 import "./assets/css/form.css";
+import "./assets/css/prism.css";
 import SingleArticle from "./components/containers/SingleArticle";
 import Footer from "./components/commons/Footer";
 import About from "./components/About";
@@ -26,7 +27,7 @@ class App extends Component {
           <BrowserRouter>
             <div className="App">
               <Navbar />
-              <div className="App-content">
+              <div className="App-content" id="results">
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact={true} path="/articles/:slug" component={SingleArticle}/>

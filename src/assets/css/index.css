@@ -18,10 +18,13 @@ body {
     background: #011c23 !important;
     color: antiquewhite !important;
     font-family: "Raleway", serif;
-    font-weight: 100;
     padding: 0;
     margin: 0;
-}  
+}
+
+.App-content {
+    min-height: 100%;
+}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -34,8 +37,30 @@ body {
     height: auto;
 }
 
+.topnav .search {
+    float: right;
+    padding-left: 68%;
+    margin: 15px;
+}
+
+.topnav .search input {
+    outline: none;
+    background: #35383b;
+    border: none;
+    padding: 5px;
+    width: 200px;
+    border-radius: 15px;
+    color: #dfa612;
+}
+
+.topnav .search i {
+    margin: 5px;
+    color: #dfa612;
+}
+
 /* Style the links inside the navigation bar */
-.topnav #link, .topnav a {
+.topnav #link,
+.topnav a {
     float: left;
     display: block;
     color: white;
@@ -47,7 +72,8 @@ body {
 }
 
 /* Change the color of links on hover */
-.topnav #link:hover, .topnav a:hover {
+.topnav #link:hover,
+.topnav a:hover {
     background-color: #011c23;
     color: #faebd7;
 }
@@ -78,12 +104,15 @@ body {
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 360px) {
-    .topnav a:not(:first-child), .topnav #link:not(:first-child) {
+@media screen and (max-width: 500px) {
+
+    .topnav a:not(:first-child),
+    .topnav #link:not(:first-child) {
         display: none;
     }
 
-    .topnav a.icon, .topnav #link.icon {
+    .topnav a.icon,
+    .topnav #link.icon {
         float: right;
         display: block;
         color: antiquewhite;
@@ -93,6 +122,21 @@ body {
     .topnav a.icon {
         padding-right: 15px;
         margin: auto;
+    }
+
+    .topnav .search {
+        float: left;
+        margin: 15px;
+    }
+
+    .topnav .search input {
+        outline: none;
+        background: #35383b;
+        border: none;
+        padding: 5px;
+        width: 92%;
+        border-radius: 15px;
+        color: #dfa612;
     }
 }
 
