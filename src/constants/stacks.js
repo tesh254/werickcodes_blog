@@ -14,7 +14,8 @@ const stack = {
     "flutter": Flutter,
     "angular": Angular,
     "js": Javascript,
-    "css": Css
+    "css": Css,
+    "mongo": Mongo
 }
 
 export default stack;

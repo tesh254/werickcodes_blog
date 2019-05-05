@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import moment from "moment";
 import Markdown from "react-markdown";
+import { Twitter, Facebook, Reddit } from "react-social-sharing";
 import CodeBlock from "../commons/code";
 import fetchOneArticle from "../actions/articles/getOneArticle.action";
 import stack from "../../constants/stacks";
@@ -58,9 +59,9 @@ class SingleArticle extends React.Component {
               <hr />
               <br />
               <div className="share-icons">
-                <i class="fab fa-facebook" /> &nbsp;
-                <i class="fab fa-slack" /> &nbsp;
-                <i class="fab fa-twitter-square" /> &nbsp;
+                <Reddit link={`https://werick.tk/articles/${article.blogs.slug}`} />
+                <Facebook link={`https://werick.tk/articles/${article.blogs.slug}`} />
+                <Twitter link={`https://werick.tk/articles/${article.blogs.slug}`} /> &nbsp;
               </div>
             </div>
             <div className="single-article-body">

@@ -39,7 +39,7 @@ class Articles extends React.Component {
     return (
       <div className="posts">
         {isLoading ? (
-          <div>
+          <div className="loaders">
             <div className="lds-ripple">
               <div />
               <div />
@@ -50,8 +50,8 @@ class Articles extends React.Component {
             {!articles ? (
               <div>Error</div>
             ) : (
-              this.shuffle(articles).map(article => (
-                <div className="col-lg-6 col-md-12" id="card">
+              articles.map(article => (
+                <div className="col-lg-4 col-md-12" id="card" key={article._id}>
                   <Link
                     to={{
                       pathname: `/articles/${article.slug}`,
@@ -86,8 +86,8 @@ class Articles extends React.Component {
 
 Articles.propTypes = {
   fetchArticles: PropTypes.func.isRequired,
-  articles: PropTypes.array,
-  isLoading: true
+  articles: PropTypes.object,
+  isLoading: PropTypes.bool
 };
 
 Articles.defaultProps = {
