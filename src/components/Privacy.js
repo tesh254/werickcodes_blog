@@ -1,7 +1,14 @@
 import React from "react";
+import Metas from "../components/commons/MetaTags";
+import mascot from "../assets/img/img.png";
 
 const Privacy = () => (
   <div className="p-content">
+    <Metas 
+      title="Werick Privacy"
+      description="Werick Codes Privacy Policy"
+      image={mascot}
+    />
     <div className="your-host">
       <h2 className="the-title">Privacy and Policy</h2>
       <p>This Application collect some Personal Data from its users.</p>

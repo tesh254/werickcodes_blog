@@ -7,6 +7,7 @@ import { Twitter, Facebook, Reddit } from "react-social-sharing";
 import CodeBlock from "../commons/code";
 import fetchOneArticle from "../actions/articles/getOneArticle.action";
 import stack from "../../constants/stacks";
+import Metas from "../commons/MetaTags";
 
 class SingleArticle extends React.Component {
   constructor() {
@@ -34,8 +35,6 @@ class SingleArticle extends React.Component {
 
   render() {
     const { article, isLoading } = this.state;
-    const TITLE = document.getElementById("t");
-    TITLE.innerHTML = "Werick- Single Article";
     return (
       <div>
         {isLoading ? (
@@ -47,6 +46,11 @@ class SingleArticle extends React.Component {
           </div>
         ) : (
           <div>
+            <Metas 
+              title={article.blogs.title}
+              description={article.blogs.title}
+              image={stack[`${article.blogs.stack}`]}
+            />
             <div className="single-article-header">
               <div className="stack-highlight">
                 <img

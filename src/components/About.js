@@ -1,10 +1,17 @@
 /* eslint-disable */
 
 import React from "react";
+import Metas from "../components/commons/MetaTags";
 import me from "../assets/img/me.jpg";
+import mascot from "../assets/img/img.png";
 
 const About = () => (
   <div>
+    <Metas
+      title="About Werick"
+      description="All about Werick Codes"
+      image={mascot}
+    />
     <div className="ab-comp">
       <p className="domain ab-dm">About Werick</p>
     </div>
