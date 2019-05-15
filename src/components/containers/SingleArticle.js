@@ -8,6 +8,7 @@ import CodeBlock from "../commons/code";
 import fetchOneArticle from "../actions/articles/getOneArticle.action";
 import stack from "../../constants/stacks";
 import Metas from "../commons/MetaTags";
+import addView from "../actions/articles/addView.action";
 
 class SingleArticle extends React.Component {
   constructor() {
@@ -21,6 +22,7 @@ class SingleArticle extends React.Component {
 
   componentDidMount() {
     const slug = this.props.match.params.slug;
+    this.props.addView(slug);
     this.props.fetchOneArticle(slug);
   }
 
@@ -46,7 +48,7 @@ class SingleArticle extends React.Component {
           </div>
         ) : (
           <div>
-            <Metas 
+            <Metas
               title={article.blogs.title}
               description={article.blogs.title}
               image={stack[`${article.blogs.stack}`]}
@@ -63,9 +65,16 @@ class SingleArticle extends React.Component {
               <hr />
               <br />
               <div className="share-icons">
-                <Reddit link={`https://werick.tk/articles/${article.blogs.slug}`} />
-                <Facebook link={`https://werick.tk/articles/${article.blogs.slug}`} />
-                <Twitter link={`https://werick.tk/articles/${article.blogs.slug}`} /> &nbsp;
+                <Reddit
+                  link={`https://werick.tk/articles/${article.blogs.slug}`}
+                />
+                <Facebook
+                  link={`https://werick.tk/articles/${article.blogs.slug}`}
+                />
+                <Twitter
+                  link={`https://werick.tk/articles/${article.blogs.slug}`}
+                />{" "}
+                &nbsp;
               </div>
             </div>
             <div className="single-article-body">
@@ -101,7 +110,8 @@ class SingleArticle extends React.Component {
 SingleArticle.propTypes = {
   fetchOneArticle: PropTypes.func.isRequired,
   article: PropTypes.object,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  addView: PropTypes.func.isRequired
 };
 
 SingleArticle.defaultProps = {
@@ -117,6 +127,7 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    fetchOneArticle
+    fetchOneArticle,
+    addView
   }
 )(SingleArticle);
