@@ -7,3 +7,5 @@ export const GET_ONE_ARTICLE_ERROR = "GET_ONE_ARTICLE_ERROR"
 export const SEARCH_SUCCESS = "SEARCH_SUCCESS";
 export const LOADING = "LOADING";
 export const ERRORS = "ERRORS";
+export const ADD_VIEW = "ADD_VIEW";
+export const VIEWED = "VIEWED"
