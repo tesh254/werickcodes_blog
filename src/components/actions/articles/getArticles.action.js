@@ -25,7 +25,7 @@ const fetchArticles = () => async dispatch => {
   dispatch(loadingResource(GET_ARTICLES_REQUEST));
 
   await axios
-    .get(`${env.BASE_URL}blogs`)
+    .get(`${env.BASE_URL}blogs-active`)
     .then(response => {
       dispatch(successOnLoad(GET_ARTICLES_SUCCESS, response.data.blogs));
     })
