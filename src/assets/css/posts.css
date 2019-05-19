@@ -255,7 +255,83 @@ hr {
     }
 
     .posts {
-        padding-left: 8%;
+        padding-left: 10%;
+    }
+
+    .domain {
+        padding-top: 25%;
+    }
+
+
+    .posts .loaders {
+        padding-left: 40%;
+    }
+}
+
+@media (max-width: 700px) {
+    .single-article-header {
+        padding-top: 25%;
+    }
+
+    .single-article-header .stack-highlight img {
+        width: 10%;
+    }
+
+    .single-article-body .body {
+        font-size: 16pt;
+        line-height: 1.4;
+        padding: 15px;
+    }
+
+    #card {
+        padding-top: 5%;
+        padding-left: 0;
+    }
+
+    .top-posts-title {
+        padding-left: 5% !important;
+    }
+
+    .posts {
+        padding-left: 20%;
+    }
+
+    .domain {
+        padding-top: 10%;
+    }
+
+
+    .posts .loaders {
+        padding-left: 35%;
+    }
+}
+
+@media (max-width: 400px) {
+    .single-article-header {
+        padding-top: 25%;
+    }
+
+    .single-article-header .stack-highlight img {
+        width: 10%;
+    }
+
+    .single-article-body .body {
+        font-size: 16pt;
+        line-height: 1.4;
+        padding: 15px;
+    }
+
+    #card {
+        padding-top: 5%;
+        padding-left: 0;
+    }
+
+    .top-posts-title {
+        padding-left: 5% !important;
+    }
+
+    .posts {
+        padding-left: 10%;
     }
 
     .domain {
