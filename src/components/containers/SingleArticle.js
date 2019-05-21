@@ -9,8 +9,10 @@ import fetchOneArticle from "../actions/articles/getOneArticle.action";
 import stack from "../../constants/stacks";
 import Metas from "../commons/MetaTags";
 import addView from "../actions/articles/addView.action";
+import Comments from "../commons/Comments";
 
 class SingleArticle extends React.Component {
+  // Define the constructor
   constructor() {
     super();
     this.state = {
@@ -21,13 +23,17 @@ class SingleArticle extends React.Component {
   }
 
   componentDidMount() {
+    // Get the slud from the params of the url
     const slug = this.props.match.params.slug;
+    // Dispatch the view count action
     this.props.addView(slug);
+    // Dispatch the fetch one article by slug action
     this.props.fetchOneArticle(slug);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps) {
+      // If nextProps the update local state
       this.setState({
         article: nextProps.article.payload,
         isLoading: nextProps.article.isLoading
@@ -35,7 +41,12 @@ class SingleArticle extends React.Component {
     }
   }
 
+  handleComment = comment => {
+    console.log(comment.text);
+  };
+
   render() {
+    // Destructure state values
     const { article, isLoading } = this.state;
     return (
       <div>
@@ -48,31 +59,25 @@ class SingleArticle extends React.Component {
           </div>
         ) : (
           <div>
+            {/* Set the meta tags according to article */}
             <Metas
-              title={article.blogs.title}
-              description={article.blogs.title}
-              image={stack[`${article.blogs.stack}`]}
+              title={article.title}
+              description={article.title}
+              image={stack[`${article.stack}`]}
             />
             <div className="single-article-header">
               <div className="stack-highlight">
-                <img
-                  src={stack[`${article.blogs.stack}`]}
-                  alt={article.stack}
-                />
+                <img src={stack[`${article.stack}`]} alt={article.stack} />
               </div>
-              <h1>{article.blogs.title}</h1>
-              <p>{article.blogs.description}</p>
+              <h1>{article.title}</h1>
+              <p>{article.description}</p>
               <hr />
               <br />
               <div className="share-icons">
-                <Reddit
-                  link={`https://werick.tk/articles/${article.blogs.slug}`}
-                />
-                <Facebook
-                  link={`https://werick.tk/articles/${article.blogs.slug}`}
-                />
+                <Reddit link={`https://werick.tk/articles/${article.slug}`} />
+                <Facebook link={`https://werick.tk/articles/${article.slug}`} />
                 <Twitter
-                  link={`https://werick.tk/articles/${article.blogs.slug}`}
+                  link={`https://werick.tk/articles/${article.slug}`}
                 />{" "}
                 &nbsp;
               </div>
@@ -82,7 +87,7 @@ class SingleArticle extends React.Component {
               <div className="body">
                 <div>
                   <Markdown
-                    source={article.blogs.body}
+                    source={article.body}
                     renderers={{ code: CodeBlock }}
                   />
                 </div>
@@ -91,14 +96,20 @@ class SingleArticle extends React.Component {
             <hr />
             <div className="extra-content">
               <div className="extra">
-                <i class="fas fa-eye" /> {article.blogs.views} views
+                <i className="fas fa-eye" /> {article.views} views
                 <div className="published">
                   <pre>
-                    Published:{" "}
-                    {moment(article.blogs.createdAt, "YYYYMMDD").fromNow()}
+                    Published: {moment(article.createdAt, "YYYYMMDD").fromNow()}
                   </pre>
                 </div>
               </div>
+            </div>
+            <div className="comments">
+              <Comments
+                id={article._id}
+                title={article.title}
+                path={`/articles/${article.slug}`}
+              />
             </div>
           </div>
         )}

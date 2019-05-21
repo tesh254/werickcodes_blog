@@ -4,9 +4,9 @@ import MetaTags from "react-meta-tags";
 const Metas = ({ title, description, image, link }) => (
   <MetaTags>
     <title>{title}</title>
-    <meta itemprop="name" id="g-name" content={title} />
-    <meta itemprop="description" id="g-desc" content={description} />
-    <meta itemprop="image" id="g-img" content={image} />
+    <meta itemProp="name" id="g-name" content={title} />
+    <meta itemProp="description" id="g-desc" content={description} />
+    <meta itemProp="image" id="g-img" content={image} />
     <meta property="og:url" id="fb-url" content={link} />
     <meta property="og:type" id="fb-type" content="website" />
     <meta property="og:title" id="fb-title" content={title} />
