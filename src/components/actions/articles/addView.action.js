@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { ADD_VIEW, VIEWED } from "../types";
-import env from "../../../env.json";
+import env from "../../../env";
 import { findArticle, addArticleToSS } from "../../../helpers/file-checker";
 
 const addView = slug => async dispatch => {

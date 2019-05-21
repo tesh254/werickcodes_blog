@@ -4,8 +4,8 @@ import {
   GET_ARTICLES_REQUEST,
   GET_ARTICLES_SUCCESS
 } from "../types";
+import env from "../../../env";
 
-import env from "../../../env.json";
 
 export const loadingResource = type => ({
   type: type

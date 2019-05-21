@@ -18,6 +18,7 @@ import "./assets/css/footer.css";
 import "./assets/css/about.css";
 import "./assets/css/form.css";
 import "./assets/css/prism.css";
+import "./assets/css/comments.css";
 
 class App extends Component {
   render() {
