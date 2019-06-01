@@ -15,7 +15,7 @@ const fetchOneArticle = slug => async dispatch => {
   dispatch(loadingResource(GET_ONE_ARTICLE_REQUEST));
 
   await axios
-    .get(`${env.BASE_URL}blogs/${slug}`)
+    .get(`${env.BASE_URL}/blogs/${slug}`)
     .then(response => {
       dispatch(successOnLoad(GET_ONE_ARTICLE_SUCCESS, response.data.blogs));
     })

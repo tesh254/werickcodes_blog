@@ -13,6 +13,9 @@ const Navbar = () => (
     <NavLink to="/about" id="link" className="right-link">
       About
     </NavLink>
+    <NavLink to="/search" id="link" className="right-link">
+      <i className="fas fa-search" />
+    </NavLink>
     <a
       href="javascript:void(0);"
       className="icon right-link"

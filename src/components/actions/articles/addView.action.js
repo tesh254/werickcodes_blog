@@ -8,7 +8,7 @@ const addView = slug => async dispatch => {
   const result = findArticle(slug);
 
   if (!result) {
-    await axios.put(`${env.BASE_URL}blog/${slug}/add-view`).then(response => {
+    await axios.put(`${env.BASE_URL}/blog/${slug}/add-view`).then(response => {
       addArticleToSS(slug);
       dispatch({
         type: ADD_VIEW

@@ -1,6 +1,6 @@
 import axios from "axios";
-import env from "../../../env.json";
-import { LOADING, SEARCH_SUCCESS, ERRORS } from "../types.js";
+import env from "../../../env";
+import { LOADING, SEARCH_SUCCESS, ERRORS, CLEAR_SEARCH } from "../types.js";
 
 const searchQuery = query => dispatch => {
     dispatch({
@@ -20,6 +20,12 @@ const searchQuery = query => dispatch => {
             payload: err.response.data
         })
     ))
+}
+
+export const clearSearch = () => dispatch => {
+    dispatch({
+        type: CLEAR_SEARCH
+    })
 }
 
 export default searchQuery;

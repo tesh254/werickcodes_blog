@@ -1,4 +1,4 @@
-import { SEARCH_SUCCESS, LOADING, ERRORS } from "../../../actions/types";
+import { SEARCH_SUCCESS, LOADING, ERRORS, CLEAR_SEARCH } from "../../../actions/types";
 
 const initialState = {
     results: [],
@@ -11,7 +11,7 @@ const searchReducer = (state = initialState, action) => {
         case SEARCH_SUCCESS:
             return {
                 ...state,
-                results: action.payload.results,
+                results: action.payload.results || [],
                 error: "",
                 isLoading: false
             }
@@ -27,6 +27,13 @@ const searchReducer = (state = initialState, action) => {
                 ...state,
                 results: [],
                 error: action.payload.message,
+                isLoading: false
+            }
+        case CLEAR_SEARCH:
+            return {
+                ...state,
+                results: [],
+                error: "",
                 isLoading: false
             }
         default: 
