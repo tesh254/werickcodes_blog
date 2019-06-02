@@ -9,6 +9,7 @@ import SingleArticle from "./components/containers/SingleArticle";
 import About from "./components/About";
 import Privacy from "./components/Privacy";
 import ContactForm from "./components/commons/Contact";
+import Search from './components/commons/Search';
 import "./assets/css/index.css";
 import "./assets/css/home.css";
 import "./assets/css/bootstrap/css/bootstrap.min.css";
@@ -19,6 +20,7 @@ import "./assets/css/about.css";
 import "./assets/css/form.css";
 import "./assets/css/prism.css";
 import "./assets/css/comments.css";
+import "./assets/css/search.css";
 
 class App extends Component {
   render() {
@@ -39,6 +41,7 @@ class App extends Component {
                   <Route exact={true} path="/about" component={About} />
                   <Route exact={true} path="/privacy" component={Privacy} />
                   <Route exact={true} path="/contact" component={ContactForm} />
+                  <Route exact={true} path="/search" component={Search} />
                 </Switch>
               </div>
               <Footer />
