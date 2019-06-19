@@ -9,6 +9,7 @@ import SingleArticle from "./components/containers/SingleArticle";
 import About from "./components/About";
 import Privacy from "./components/Privacy";
 import ContactForm from "./components/commons/Contact";
+import NotFoundPage from './components/commons/NotFoundPage';
 import Search from './components/commons/Search';
 import "./assets/css/index.css";
 import "./assets/css/home.css";
@@ -21,6 +22,8 @@ import "./assets/css/form.css";
 import "./assets/css/prism.css";
 import "./assets/css/comments.css";
 import "./assets/css/search.css";
+import "./assets/css/scroll.css";
+import "./assets/css/markdown.css";
 
 class App extends Component {
   render() {
@@ -42,6 +45,7 @@ class App extends Component {
                   <Route exact={true} path="/privacy" component={Privacy} />
                   <Route exact={true} path="/contact" component={ContactForm} />
                   <Route exact={true} path="/search" component={Search} />
+                  <Route path="*" component={NotFoundPage} />
                 </Switch>
               </div>
               <Footer />

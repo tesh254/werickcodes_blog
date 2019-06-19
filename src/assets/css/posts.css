@@ -55,6 +55,7 @@
     height: auto;
     border-radius: 5px;
     flex-grow: 1;
+    height: 378px;
 }
 
 .header {
@@ -66,6 +67,8 @@
     color: antiquewhite;
     font-family: 'Laila', serif;
     font-size: 16pt;
+    text-overflow: ellipsis !important;
+    height: 60;
 }
 
 .content:hover {
@@ -91,6 +94,35 @@
     padding-right: 5%;
     z-index: 25;
 }
+
+
+.scroll {
+    opacity: 0.3;
+    background-color: #35383b;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    border: 2px solid #efbb35;
+}
+
+.scroll:hover {
+    opacity: 1;
+}
+
+.arrow-up {
+    color: antiquewhite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -9px;
+    margin-left: -5px;
+}
+
 
 @keyframes shake {
 
@@ -255,16 +287,20 @@ hr {
     }
 
     .posts {
-        padding-left: 10%;
+        padding-left: 8% !important;
     }
 
     .domain {
-        padding-top: 25%;
+        padding-top: 25% !important;
     }
 
 
     .posts .loaders {
         padding-left: 40%;
+    }
+
+    .scroll {
+        z-index: 15;
     }
 }
 
@@ -293,16 +329,20 @@ hr {
     }
 
     .posts {
-        padding-left: 20%;
+        padding-left: 8%;
     }
 
     .domain {
-        padding-top: 10%;
+        padding-top: 15% !important;
     }
 
 
     .posts .loaders {
         padding-left: 35%;
+    }
+
+    .scroll {
+        z-index: 15;
     }
 }
 
@@ -335,11 +375,15 @@ hr {
     }
 
     .domain {
-        padding-top: 25%;
+        padding-top: 25% !important;
     }
 
 
     .posts .loaders {
         padding-left: 40%;
+    }
+
+    .scroll {
+        z-index: 15;
     }
 }

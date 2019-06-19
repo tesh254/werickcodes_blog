@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import React from "react";
+import { NavLink } from 'react-router-dom';
 import Metas from "../components/commons/MetaTags";
 import me from "../assets/img/me.jpg";
 import mascot from "../assets/img/img.png";
@@ -56,16 +57,19 @@ const About = () => (
             Andela
           </a>{" "}
           as a Software Developer. I am definetly passionate about software
-          development. I have been a web developer
+          development. I have been a full stack web developer
           <span role="img" aria-labelledby>
             💻
           </span>{" "}
-          for the last two years. Apart from programming I am a love playing FPS
-          games{" "}
-          <span role="img" aria-labelledby>
-            🎮
-          </span>
-          .
+          for the last two years. React out to me on Twitter
+          {"      "}
+          <a
+            href="https://twitter.com/wachira_dev?ref_src=twsrc%5Etfw"
+            class="twitter-follow-button"
+            data-show-count="false"
+          >
+            Follow @wachira_dev
+          </a>
         </p>
       </div>
     </div>
