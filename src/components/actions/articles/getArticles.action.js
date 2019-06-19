@@ -21,13 +21,13 @@ export const successOnLoad = (type, data) => ({
   payload: data
 });
 
-const fetchArticles = () => async dispatch => {
+const fetchArticles = page => async dispatch => {
   dispatch(loadingResource(GET_ARTICLES_REQUEST));
 
   await axios
-    .get(`${env.BASE_URL}/blogs-active`)
+    .get(`${env.BASE_URL}/blogs-active?page=${page || 1} `)
     .then(response => {
-      dispatch(successOnLoad(GET_ARTICLES_SUCCESS, response.data.blogs));
+      dispatch(successOnLoad(GET_ARTICLES_SUCCESS, response.data));
     })
     .catch(err => {
       dispatch(errorOnLoad(GET_ARTICLES_ERROR, err.response));

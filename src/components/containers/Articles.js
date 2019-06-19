@@ -6,6 +6,7 @@ import moment from "moment";
 
 import fetchArticles from "../actions/articles/getArticles.action";
 import stack from "../../constants/stacks";
+import Pagination from "../commons/Pagination";
 
 class Articles extends React.Component {
   constructor() {
@@ -33,8 +34,33 @@ class Articles extends React.Component {
     }
   }
 
+  loadMore = () => {
+    const { fetchArticles } = this.props;
+    const { current_page, pages } = this.props.articles;
+    console.log(this.props.articles)
+    if (current_page === pages) {
+      fetchArticles(current_page);
+    }
+    else {
+      fetchArticles(current_page + 1);
+    }
+  };
+
+  prevBlogs = () => {
+    const { fetchArticles } = this.props;
+    const { current_page, pages } = this.props.articles;
+    console.log(this.props.articles)
+    if (pages - current_page >= 1) {
+      fetchArticles(current_page);
+    }
+    else {
+      fetchArticles(current_page - 1);
+    }
+  }
+
   render() {
     const { isLoading, articles } = this.state;
+    const { pages, blog_count, current_page } = this.props.articles;
     let calc = 0;
     return (
       <div className="posts">
@@ -50,32 +76,12 @@ class Articles extends React.Component {
             {!articles ? (
               <div>Error</div>
             ) : (
-              articles.map(article => (
-                <div className="col-lg-4 col-md-12" id="card" key={article._id}>
-                  <Link
-                    to={{
-                      pathname: `/articles/${article.slug}`,
-                      article: article
-                    }}
-                    className="link"
-                  >
-                    <div className="content" key={calc++}>
-                      <div className="stack">
-                        <img
-                          src={stack[`${article.stack}`]}
-                          alt={article.stack}
-                        />
-                      </div>
-                      <div className="post-title">
-                        <h1 className="header">{article.title}</h1>
-                        <p className="description">{article.description}</p>
-                        <p>{moment(article.createdAt, "YYYYMMDD").fromNow()}</p>
-                        <hr />
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ))
+              <Pagination
+                props={{ articles, pages, blog_count, current_page }}
+                nextFunc={this.loadMore}
+                calc={calc}
+                prevFunc={this.prevBlogs}
+              />
             )}
           </div>
         )}

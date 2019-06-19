@@ -11,8 +11,11 @@ const getAllArticles = (state = initialState, action) => {
     case GET_ARTICLES_SUCCESS:
       return {
         ...state,
-        payload: action.payload,
-        isLoading: false
+        payload: action.payload.blogs,
+        isLoading: false,
+        blog_count: action.payload.blog_count,
+        current_page: action.payload.current_page,
+        pages: action.payload.pages
       };
     case GET_ARTICLES_REQUEST:
       return {
