@@ -37,6 +37,9 @@
     color: #dfa612;
 }
 
+.s-link:hover {
+    cursor: pointer;
+}
 @media (max-width: 500px) {
     .footer {
         padding-top: 20%;
@@ -53,5 +56,62 @@
         float: none;
         text-align: center;
         padding-right: 15% !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer {
+        padding-top: 20%;
+    }
+
+    .footer-extra {
+        padding-top: 5%;
+        padding-bottom: 5px;
+        padding-right: 30% !important;
+        
+    }
+
+    .l-act {
+        float: none;
+        text-align: center;
+        padding-right: 15% !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer {
+        padding-top: 20%;
+    }
+
+    .footer-extra {
+        padding-top: 5%;
+        padding-bottom: 5px;
+        padding-right: 35% !important;
+        
+    }
+
+    .l-act {
+        float: none;
+        text-align: center;
+        /* padding-right: 15% !important; */
+    }
+}
+
+@media (max-width: 320px) {
+    .footer {
+        padding-top: 20%;
+    }
+
+    .footer-extra {
+        padding-top: 5%;
+        padding-bottom: 5px;
+        padding-right: 35% !important;
+        
+    }
+
+    .l-act {
+        float: none;
+        text-align: center;
+        padding-right: 10% !important;
     }
 }

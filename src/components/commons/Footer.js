@@ -40,16 +40,16 @@ const Footer = () => (
       </a>{" "}
       &nbsp;
       <a
-        href="https://werickdevs.slack.com/"
+        href="https://discord.gg/pXjDHEK"
         target="_blank"
         className="s-link"
         rel="noopener noreferrer"
       >
-        <i className="fab fa-slack fa-3x" />
+        <i className="fab fa-discord fa-3x" />
       </a>{" "}
       &nbsp;
       <a
-        href="https://twitter.com/werickdev"
+        href="https://twitter.com/werickdev?ref_src=twsrc%5Etfw"
         target="_blank"
         className="s-link"
         rel="noopener noreferrer"
@@ -57,7 +57,6 @@ const Footer = () => (
         <i className="fab fa-twitter-square fa-3x" />
       </a>{" "}
       &nbsp;
-      {/* <i class="fab fa-instagram fa-3x" /> */}
     </div>
   </div>
 );
