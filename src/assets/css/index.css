@@ -31,7 +31,7 @@ body {
     background-color: #011c23 !important;
     overflow: hidden;
     font-family: "Arial", cursive;
-    z-index: 10;
+    z-index: 10 !important;
     position: fixed;
     width: 100%;
     height: auto;
@@ -144,7 +144,7 @@ body {
 @media screen and (max-width: 700px) {
     .topnav.responsive {
         position: relative;
-        z-index: 10;
+        z-index: 10 !important;
     }
 
     .topnav.responsive a.icon {

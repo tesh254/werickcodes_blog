@@ -6,6 +6,7 @@ import Css from "../assets/logos/css-5.svg";
 import Mongo from "../assets/logos/mongodb.svg";
 import Node from "../assets/logos/nodejs-icon.svg";
 import React from "../assets/logos/react.svg";
+import Docker from "../assets/logos/docker.svg";
 
 const stack = {
     "python": Python,
@@ -15,7 +16,8 @@ const stack = {
     "angular": Angular,
     "js": Javascript,
     "css": Css,
-    "mongo": Mongo
+    "mongo": Mongo,
+    "docker": Docker
 }
 
 export default stack;

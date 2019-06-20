@@ -6,6 +6,7 @@ import moment from "moment";
 
 import fetchArticles from "../actions/articles/getArticles.action";
 import stack from "../../constants/stacks";
+import ScrollButton from "../commons/ScrollButton";
 
 class Articles extends React.Component {
   constructor() {
@@ -79,6 +80,7 @@ class Articles extends React.Component {
             )}
           </div>
         )}
+        <ScrollButton />
       </div>
     );
   }
