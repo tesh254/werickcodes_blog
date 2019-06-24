@@ -80,6 +80,10 @@
     border-radius: 10px;
 }
 
+.single-article-body .body img {
+    width: 80%;
+}
+
 .stack {
     background: #35383b !important;
     width: 75px;
@@ -267,6 +271,21 @@ hr {
         padding-top: 25%;
     }
 
+    .content {
+        width: 110%;
+        padding-left: 0;
+        height: auto;
+    }
+
+    .header {
+        font-size: 16pt;
+        padding-left:20px;
+    }
+
+    .description {
+        font-size: 12pt;
+    }
+
     .single-article-header .stack-highlight img {
         width: 10%;
     }
@@ -276,10 +295,17 @@ hr {
         line-height: 1.4;
         padding: 15px;
     }
+    .single-article-body .body img {
+        width: 100%;
+    }
+    .single-article-header h1 {
+        font-size: 20pt;
+        padding: 5px;
+    }
 
     #card {
         padding-top: 5%;
-        padding-left: 0;
+        padding-left: 0 !important;
     }
 
     .top-posts-title {
@@ -287,7 +313,7 @@ hr {
     }
 
     .posts {
-        padding-left: 8% !important;
+        padding-left: 2% !important;
     }
 
     .domain {
@@ -318,6 +344,24 @@ hr {
         line-height: 1.4;
         padding: 15px;
     }
+    .single-article-header h1 {
+        font-size: 20pt;
+        padding: 5px;
+    }
+
+    .content {
+        width: 110%;
+        padding-left: 0;
+        height: auto;
+    }
+
+    .header {
+        font-size: 16pt;
+    }
+
+    .description {
+        font-size: 12pt;
+    }
 
     #card {
         padding-top: 5%;
@@ -329,7 +373,7 @@ hr {
     }
 
     .posts {
-        padding-left: 8%;
+        padding-left: 1%;
     }
 
     .domain {
@@ -349,6 +393,10 @@ hr {
 @media (max-width: 400px) {
     .single-article-header {
         padding-top: 25%;
+        width: 100%;
+    }
+    .single-article-header h1 {
+        font-size: 20pt;
     }
 
     .single-article-header .stack-highlight img {
@@ -356,9 +404,37 @@ hr {
     }
 
     .single-article-body .body {
-        font-size: 16pt;
+        font-size: 12pt;
         line-height: 1.4;
         padding: 15px;
+        width: 100%;
+    }
+
+    .single-article-body .body div ul li p {
+        overflow: hidden;
+    }
+
+    .single-article-body .body img {
+        width: 100%;
+    }
+
+    .content {
+        width: 110%;
+        padding-left: 0;
+        height: auto;
+    }
+    
+    .single-article-header h1 {
+        font-size: 20pt;
+        padding: 5px;
+    }
+
+    .header {
+        font-size: 16pt;
+    }
+
+    .description {
+        font-size: 12pt;
     }
 
     #card {
