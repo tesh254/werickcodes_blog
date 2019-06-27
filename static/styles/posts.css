@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+    --s-loader-wrapper-bg-color: rgb(21, 22, 43);
+    --s-loader-width: 20px;
+    --s-loader-height: var(--s-loader-width);
+    --s-loader-border-color-trans: #6b5622;
+    --s-loader-border-color-full: #efbb35;
+    --font-color: antiquewhite;
+}
+
+.loader-hidden {
+    display: none;
+}
+
+.loader-active {
+    display: block;
+    color: #efbb35;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300i');
+
+.posts {
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.posts .loaders {
+    padding-left: 48%;
+}
+
+.top-posts-title {
+    font-size: 24pt;
+    padding-left: 44%;
+}
+
+#card {
+    padding-top: 2%;
+}
+
+.content {
+    width: 350px;
+    background: #35383b;
+    padding: 5%;
+    text-align: center;
+    color: antiquewhite;
+    font-family: "quicksand", sans-serif !important;
+    border-left: 5px solid #dfa612;
+    transition: all .5s;
+    height: auto;
+    border-radius: 5px;
+    flex-grow: 1;
+    height: 410px;
+}
+
+.header {
+    color: #dfa612;
+    font-family: 'IBM Plex Mono', serif;
+}
+
+.description {
+    color: antiquewhite;
+    font-family: 'Laila', serif;
+    font-size: 16pt;
+    text-overflow: ellipsis !important;
+    height: 60;
+}
+
+.content:hover {
+    box-shadow: 0 0 5px #dfa612 !important;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    border-radius: 10px;
+}
+
+.single-article-body .body img {
+    width: 80%;
+}
+
+.stack {
+    background: #35383b !important;
+    width: 75px;
+    height: 75px;
+    margin-left: 40%;
+}
+
+.stack img {
+    width: 75px;
+    background: #35383b !important;
+    height: 75px;
+    padding-right: 5%;
+    z-index: 25;
+}
+
+
+.scroll {
+    opacity: 0.3;
+    background-color: #35383b;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    border: 2px solid #efbb35;
+}
+
+.scroll:hover {
+    opacity: 1;
+}
+
+.arrow-up {
+    color: antiquewhite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -9px;
+    margin-left: -5px;
+}
+
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-0.1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(0.1px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-0.1px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(0.1px, 0, 0);
+    }
+}
+
+
+.single-article-header {
+    padding-top: 15%;
+    text-align: center;
+    background: #131101;
+    height: 80%;
+    position: inherit;
+}
+
+.single-article-body {
+    padding-top: 5%;
+}
+
+hr {
+    width: 10%;
+    height: 0;
+    border: solid 3px #dfa612 !important;
+}
+
+.single-article-header .blog-header {
+    font-size: 38pt;
+    font-family: 'Roboto', sans-serif;
+}
+
+.single-article-header .stack-highlight {
+    margin-left: 46%;
+}
+
+.single-article-header .stack-highlight img {
+    width: 10%;
+}
+
+.single-article-header p {
+    font-size: 18pt;
+    font-family: 'Roboto', sans-serif;
+}
+
+.share-icons {
+    font-size: 20pt;
+    padding-bottom: 5%;
+}
+
+.share-icons a div {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.share-icons a div:hover {
+    background: none;
+}
+
+.share-icons a div div span {
+    display: none;
+}
+
+.share-icons a div div {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.share-icons a div div {
+    color: #dfa612;
+}
+
+.single-article-body {
+    width: 100%;
+    padding: 3%;
+}
+
+.single-article-body .body {
+    font-size: 16pt;
+    line-height: 1.4;
+    background: #131101;
+    padding: 3%;
+    border-radius: 5px;
+}
+
+.extra-content {
+    width: 100%;
+    padding: 3%;
+}
+
+.extra-content .extra {
+    text-align: center;
+    font-size: 18pt;
+    background: #131101;
+    border-radius: 5px;
+    padding: 3%;
+}
+
+.link {
+    text-decoration: none !important;
+    color: #dfa612;
+}
+
+.link:hover {
+    color: #dfa612;
+}
+
+.body {
+    line-height: 2.0 !important;
+}
+
+.body p {
+    margin: 10px;
+}
+
+h2 {
+    color: #dfa612;
+    font-size: 18pt;
+}
+
+h2::before {
+    content: "## ";
+}
+
+h1 {
+    color: #dfa612;
+    font-size: 20pt;
+}
+
+h1::before {
+    content: "# ";
+}
+
+h3 {
+    color: #dfa612;
+    font-size: 16pt;
+}
+
+h3::before {
+    content: "### "
+}
+
+code {
+    color: pink;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 25px;
+}
+
+.body div pre {
+    background: #000 !important;
+    color: white !important;
+    border: 1px solid #504f4d !important;
+    font-size: 13pt !important;
+}
+
+.body div pre code {
+
+    background: #000 !important;
+    color: white !important;
+}
+
+@media (max-width: 500px) {
+    .single-article-header {
+        padding-top: 25%;
+    }
+
+    .content {
+        width: 110%;
+        padding-left: 0;
+        height: auto;
+    }
+
+    .header {
+        font-size: 16pt;
+        padding-left: 20px;
+    }
+
+    .description {
+        font-size: 12pt;
+    }
+
+    .single-article-header .stack-highlight img {
+        width: 10%;
+    }
+
+    .single-article-body .body {
+        font-size: 16pt;
+        line-height: 1.4;
+        padding: 15px;
+    }
+
+    .single-article-body .body img {
+        width: 100%;
+    }
+
+    .single-article-header .blog-header {
+        font-size: 20pt;
+        padding: 5px;
+    }
+
+    #card {
+        padding-top: 5%;
+        padding-left: 0 !important;
+    }
+
+    .top-posts-title {
+        padding-left: 5% !important;
+    }
+
+    .posts {
+        padding-left: 2% !important;
+    }
+
+    .domain {
+        padding-top: 10% !important;
+    }
+
+
+    .posts .loaders {
+        padding-left: 40%;
+    }
+
+    .scroll {
+        z-index: 15;
+    }
+}
+
+@media (max-width: 700px) {
+    .single-article-header {
+        padding-top: 25%;
+    }
+
+    .single-article-header .stack-highlight img {
+        width: 10%;
+    }
+
+    .single-article-body .body {
+        font-size: 16pt;
+        line-height: 1.4;
+        padding: 15px;
+    }
+
+    .single-article-header .blog-header {
+        font-size: 20pt;
+        padding: 5px;
+    }
+
+    .content {
+        width: 110%;
+        padding-left: 0;
+        height: auto;
+    }
+
+    .header {
+        font-size: 16pt;
+    }
+
+    .description {
+        font-size: 12pt;
+    }
+
+    #card {
+        padding-top: 5%;
+        padding-left: 0;
+    }
+
+    .top-posts-title {
+        padding-left: 5% !important;
+    }
+
+    .posts {
+        padding-left: 1%;
+    }
+
+    .domain {
+        padding-top: 10% !important;
+    }
+
+
+    .posts .loaders {
+        padding-left: 35%;
+    }
+
+    .scroll {
+        z-index: 15;
+    }
+}
+
+@media (max-width: 400px) {
+    .single-article-header {
+        padding-top: 25%;
+        width: 100%;
+    }
+
+    .single-article-header .blog-header {
+        font-size: 20pt;
+    }
+
+    .single-article-header .stack-highlight img {
+        width: 10%;
+    }
+
+    .single-article-body .body {
+        font-size: 12pt;
+        line-height: 1.4;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .single-article-body .body div ul li p {
+        overflow: hidden;
+    }
+
+    .single-article-body .body img {
+        width: 100%;
+    }
+
+    .content {
+        width: 110%;
+        padding-left: 0;
+        height: auto;
+    }
+
+    .single-article-header h1 {
+        font-size: 20pt;
+        padding: 5px;
+    }
+
+    .header {
+        font-size: 16pt;
+    }
+
+    .description {
+        font-size: 12pt;
+    }
+
+    #card {
+        padding-top: 5%;
+        padding-left: 0;
+    }
+
+    .top-posts-title {
+        padding-left: 5% !important;
+    }
+
+    .posts {
+        padding-left: 10%;
+    }
+
+    .domain {
+        padding-top: 15% !important;
+    }
+
+
+    .posts .loaders {
+        padding-left: 40%;
+    }
+
+    .scroll {
+        z-index: 15;
+    }
+}

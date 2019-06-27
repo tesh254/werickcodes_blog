@@ -1,0 +1,95 @@
+.ab-comp {
+    text-align: center;
+    font-size: 18pt;
+}
+
+.intro-paragraph {
+    text-align: justify;
+    line-height: 2.0;
+    padding: 0 30% 0 30%;
+    font-size: 18pt;
+}
+
+.intro-paragraph p {
+    border-left: 4px solid #dfa612;
+    padding-left: 15px;
+}
+
+.your-host {
+    text-align: center;
+    font-size: 18pt;
+}
+
+.your-host .the-title {
+    color: #dfa612;
+    font-weight: 100;
+}
+
+.your-host .me-image {
+    width: 35%;
+    height: 20%;
+    margin-left: 32%;
+}
+
+.your-host p {
+    font-size: 18pt;
+    text-align: justify;
+    padding: 0 30% 0 30%;
+}
+
+.mascot-img {
+    width: 30%;
+    height: 30%;
+    margin: 0;
+    z-index: 4;
+    float: right;
+    overflow: auto;
+    padding-bottom: 10%;
+}
+
+.ab-dm {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+.c-info {
+    text-align: center;
+}
+
+.c-info .lte {
+    font-weight: 100 !important;
+}
+
+@media (max-width: 500px) {
+    .ab-comp {
+        padding-top: 30%;
+        text-align: center;
+        font-size: 18pt;
+    }
+
+    .your-host p {
+        font-size: 18pt;
+        text-align: justify;
+        padding: 0 0 0 0;
+    }
+
+    .the-content {
+        width: 100%;
+    }
+
+    .intro-paragraph {
+        line-height: 1.5;
+        padding: 0 5% 0 5%;
+        font-size: 12pt;
+    }
+
+    .your-host .me-image {
+        width: 90%;
+        height: 50%;
+        margin-left: 5%;
+    }
+
+    .your-host p {
+        font-size: 12pt;
+        padding: 0 5% 0 5%;
+    }
+}
