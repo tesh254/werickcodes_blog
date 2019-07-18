@@ -4,6 +4,7 @@
 }
 
 .search-view-holder {
+    padding-top: 20%;
     padding-left: 28%;
 }
 
@@ -14,10 +15,13 @@
     outline: none;
     border-bottom: 2px solid antiquewhite;
     text-align: center;
+    color: antiquewhite;
 }
 
 .search-results {
     padding-top: 5%;
+    padding-left: 25px;
+    color: antiquewhite;
 }
 
 .search-results .loaders {
@@ -69,6 +73,7 @@
 
     .search-view-holder {
         padding-left: 13%;
+        padding-top: 30%;
     }
 
     .search-view-holder input {
@@ -77,6 +82,7 @@
         border: none;
         outline: none;
         border-bottom: 2px solid antiquewhite;
+        margin-left: 5% !important;
     }
 
     .search-results {
@@ -109,5 +115,35 @@
 
     .search-all-results .blog {
         grid-area: 1 / 2 / 2 / 3;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .search-view-holder {
+        padding-top: 40%;
+    }
+
+    .search-view-holder input {
+        margin-left: -5% !important;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .search-view-holder {
+        padding-top: 40%;
+    }
+
+    .search-view-holder input {
+        margin-left: -10% !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .search-view-holder {
+        padding-top: 40%;
+    }
+
+    .search-view-holder input {
+        margin-left: 5% !important;
     }
 }

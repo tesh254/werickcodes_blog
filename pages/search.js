@@ -10,9 +10,11 @@ import searchQuery, { clearSearch } from "../redux/actions/search/search";
 import stack from "../utils/stacks";
 import "../static/styles/search.css";
 import "../static/styles/posts.css";
+import "../static/styles/article.css";
 import "../static/styles/loader.css";
-import "../static/styles/bootstrap/css/bootstrap.css";
 import "../static/styles/home.css";
+import "../static/styles/root.css";
+import "../static/styles/index.css";
 
 class SearchForm extends React.Component {
   state = {
@@ -68,9 +70,9 @@ class SearchForm extends React.Component {
               </div>
             </div>
           ) : (
-            <div>
+            <div className="posts">
               {results.length > 0 ? (
-                <div className="posts">
+                <div className="container">
                   {results.map(blog => (
                     <div
                       className="col-lg-4 col-md-12"
@@ -87,9 +89,8 @@ class SearchForm extends React.Component {
                               />
                             </div>
                             <div className="post-title">
-                              <h1 className="header">{blog.title}</h1>
-                              <p className="description">{blog.description}</p>
-                              <p>
+                              <p className="header">{blog.title}</p>
+                              <p className="date">
                                 {moment(blog.createdAt, "YYYYMMDD").fromNow()}
                               </p>
                               <hr />

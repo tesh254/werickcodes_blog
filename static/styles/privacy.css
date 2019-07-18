@@ -3,3 +3,156 @@
     margin-bottom: 0;
     text-decoration: burlywood underline;
 }
+
+.privacy {
+    padding-top: 10%;
+}
+
+.p-content {
+    color: antiquewhite;
+    font-weight: 200;
+    background: rgb(53, 56, 59);
+    background: linear-gradient(90deg, rgba(53, 56, 59, 1) 21%, rgba(107, 86, 34, 1) 100%);
+    width: 800px;
+    border-radius: 55px;
+    margin-left: 20%;
+    text-align: left;
+    padding: 25px;
+}
+
+.the-title {
+    font-size: 20pt;
+    text-align: center;
+    color: #efbb35;
+}
+
+.about-your-host .the-title {
+    font-size: 20pt;
+    text-align: center;
+    color: #efbb35;
+}
+
+.about-your-host p {
+    font-size: 16pt;
+}
+
+.about-intro-paragraph {
+    font-size: 14pt;
+}
+
+.about-intro-paragraph p {
+    padding: 5px;
+}
+
+.emoji {
+    font-size: 18pt;
+}
+
+.about-intro-paragraph p ul li h1 {
+    color: #efbb35;
+    font-size: 18pt;
+}
+
+.p-desc {
+    font-size:14pt;
+    margin-left: 35px;
+    /* margin-bottom: 50%; */
+}
+
+.p-desc::before {
+    content: "✅ "
+}
+
+@media screen and (max-width: 500px) {
+    .privacy {
+        padding-top: 20%;
+    }
+
+    .p-content {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .the-title {
+        font-size: 18pt;
+    }
+
+    .about-your-host .the-title {
+        font-size: 18pt;
+        text-align: center;
+        color: #efbb35;
+    }
+
+    .about-your-host p {
+        font-size: 14pt;
+    }
+
+    .about-intro-paragraph {
+        font-size: 12pt;
+    }
+
+    .about-intro-paragraph p {
+        padding: 2px;
+    }
+
+    .emoji {
+        font-size: 16pt;
+    }
+
+    .about-intro-paragraph p ul li h1 {
+        color: #efbb35;
+        font-size: 16pt;
+    }
+
+    .p-desc {
+        font-size: 12pt;
+        margin-left: 7.5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .privacy {
+        padding-top: 30%;
+    }
+
+    .p-content {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .the-title {
+        font-size: 16pt;
+    }
+
+    .about-your-host .the-title {
+        font-size: 16pt;
+        text-align: center;
+        color: #efbb35;
+    }
+
+    .about-your-host p {
+        font-size: 12pt;
+    }
+
+    .about-intro-paragraph {
+        font-size: 10pt;
+    }
+
+    .about-intro-paragraph p {
+        padding: 2px;
+    }
+
+    .emoji {
+        font-size: 14pt;
+    }
+
+    .about-intro-paragraph p ul li h1 {
+        color: #efbb35;
+        font-size: 14pt;
+    }
+
+    .p-desc {
+        font-size: 10pt;
+        margin-left: 7.5px;
+    }
+}
