@@ -6,7 +6,7 @@ import ScrollButton from "../scrollbtn";
 import stack from "../../utils/stacks";
 import "../../static/styles/posts.css";
 import "../../static/styles/loader.css";
-import "../../static/styles/bootstrap/css/bootstrap.css";
+import "../../static/styles/article.css";
 import "../../static/styles/home.css";
 
 const Articles = ({ articles, isLoading }) => {
@@ -21,12 +21,16 @@ const Articles = ({ articles, isLoading }) => {
           </div>
         </div>
       ) : (
-        <div>
+        <div className="container">
           {!articles ? (
             <div>Error</div>
           ) : (
             articles.map(article => (
-              <div className="col-lg-4 col-md-12 col-xl-2" id="card" key={article._id}>
+              <div
+                className="col-lg-4 col-md-12 col-xl-2"
+                id="card"
+                key={article._id}
+              >
                 <Link href={`/articles/${article.slug}`} className="link">
                   <a className="link">
                     <div className="content" key={calc++}>
@@ -37,10 +41,12 @@ const Articles = ({ articles, isLoading }) => {
                         />
                       </div>
                       <div className="post-title">
-                        <h1 className="header">{article.title}</h1>
-                        <p className="description">{article.description}</p>
-                        <p>{moment(article.createdAt, "YYYYMMDD").fromNow()}</p>
+                        <p className="header">{article.title}</p>
+                        <p className="date">{moment(article.createdAt, "YYYYMMDD").fromNow()}</p>
                         <hr />
+                        {/* <p className="tags">
+                          {article.stack}
+                        </p> */}
                       </div>
                     </div>
                   </a>

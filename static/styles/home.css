@@ -6,7 +6,8 @@
     font-size: 24pt;
     font-weight: lighter;
     text-align: center;
-    margin: 0;
+    padding-top: 85px;
+    color: #efbb35;
 }
 
 .mascot-main {
@@ -26,5 +27,29 @@
 
     .App-content {
         padding-top: 10%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .domain {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .domain {
+        padding-top: 20% !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .domain {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .domain {
+        padding-top: 20% !important;
     }
 }

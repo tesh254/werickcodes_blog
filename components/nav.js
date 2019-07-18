@@ -1,58 +1,49 @@
 import React from "react";
 import Link from "next/link";
-import styled from "styled-components";
-import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faSearch,
-  faInfoCircle,
-  faEnvelope
-} from "@fortawesome/fontawesome-free-solid";
-import fontawesome from "@fortawesome/fontawesome";
-import navFunction from "../static/js/main";
-import "../static/styles/index.css";
-import "../static/styles/nav.css";
+import "../static/styles/header.css";
 
-fontawesome.library.add(faBars, faSearch, faInfoCircle, faEnvelope);
-
-const Nav = () => (
-  <div>
-    <div className="topnav" id="myTopnav">
-      <Link href="/" id="link" className="active">
-        <a>
-          <img
-            src="/static/svg/mascot.svg"
-            alt="mascot-logo"
-            className="logo"
-          />
-        </a>
-      </Link>
-      <Link href="/about" id="link">
-        <a className="right-link">
-          <div className="nav-icon">
-            <Icon icon="info-circle" size="2x" />
-          </div>
-          <div className="nav-label">About</div>
-        </a>
-      </Link>
-      <Link href="/search" id="link">
-        <a className="right-link">
-          <div className="nav-icon">
-            <Icon icon="search" size="2x" />
-          </div>
-          <div className="nav-label">Search</div>
-        </a>
-      </Link>
-      <Link href="/contact" id="link">
-        <a className="right-link">
-          <div className="nav-icon">
-            <Icon icon="envelope" size="2x" />
-          </div>
-          <div className="nav-label">Contact</div>
-        </a>
-      </Link>
+const Nav = () => {
+  return (
+    <div>
+      <header>
+        <div class="logo-holder">
+          <Link href="/" id="link" className="active">
+            <a>
+              <img
+                src="/static/svg/mascot.svg"
+                alt="mascot-logo"
+                className="logo"
+                style={{width: 55 + "px", marginLeft: "45%"}}
+              />
+            </a>
+          </Link>
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <nav>
+          <ul>
+            <li>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/search">
+                <a>Search</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">
+                <a>Contact</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span />
+        </label>
+      </header>
     </div>
-  </div>
-);
+  );
+};
 
 export default Nav;

@@ -9,6 +9,7 @@ import getSingleArticle from "../redux/actions/articles/getSingleArticle";
 import OneArticle from "../components/articles/singleArticle";
 import SubscriptionForm from "../components/subscribtionForm";
 import "../static/styles/index.css";
+import "../static/styles/root.css";
 
 class SingleArticle extends React.Component {
     static async getInitialProps(props) {

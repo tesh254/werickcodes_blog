@@ -6,6 +6,7 @@ import SubscriptionForm from "../components/subscribtionForm";
 import "../static/styles/about.css";
 import "../static/styles/index.css";
 import "../static/styles/privacy.css";
+import "../static/styles/root.css";
 
 class Privacy extends React.Component {
   static async getInitialProps(props) {
@@ -16,50 +17,75 @@ class Privacy extends React.Component {
 
   render() {
     return (
-      <div className="p-content">
+      <div>
         <Head
           title="Werick Privacy"
           description="Werick Codes Privacy Policy"
           image="/static/img/mascot.png"
         />
         <Nav />
-        <div className="your-host">
-          <h2 className="the-title">Privacy and Policy</h2>
-          <p>This Application collect some Personal Data from its users.</p>
-        </div>
-        <div className="intro-paragraph">
-          <p>
-            Personal Data collected for the following purposes and used in the
-            following services
-            <ul>
-              <li>
-                <i class="fab fa-adversal" /> <h1>Advertisements</h1>
-                <br />
-                Personal Data: Cookies and Usage Data
-              </li>
-              <li>
-                <i class="fas fa-chart-line" /> <h1>Analytics</h1>
-                <br />
-                Fathom Analytics
-              </li>
-              <li>
-                <i class="far fa-envelope-open" /> <h1>Contact the User</h1>
-                <br />
-                Contact form. Personal Data: email address, first name and last
-                name
-              </li>
-            </ul>
-            <hr />
-            <div className="c-info">
-              <h3 className="lte">Contact Information</h3>
-              <section>
-                Owner and Data controller is Werick Blog, Westlands, Nairobi
-                Kenya,
-                <br />
-                Owner contact email: werickblog@gmail.com
-              </section>
+        <div className="privacy">
+          <div className="p-content">
+            <div className="about-your-host">
+              <h2 className="the-title">Privacy and Policy</h2>
+              <p>
+                This Application collect some of your personal data which we use
+                for the following purposes and used in the following services:{" "}
+              </p>
             </div>
-          </p>
+            <div className="about-intro-paragraph">
+              <p>
+                <ul>
+                  <li>
+                    <h1>
+                      <span className="emoji">💲</span> Advertisements
+                    </h1>
+                    <br />
+                    <span className="p-desc">
+                      Personal Data: Cookies and Usage Data
+                    </span>
+                  </li>
+                  <li>
+                    <h1>
+                      <span className="emoji">📈</span> Analytics
+                    </h1>
+                    <br />
+                    <span className="p-desc">Fathom Analytics</span>
+                  </li>
+                  <li>
+                    <h1>
+                      ️<span className="emoji">📰</span> Newsletter
+                    </h1>
+                    <br />
+                    <span className="p-desc">
+                      If you opt in to my newsletter, we will use your email and
+                      name to share latest news in the software development
+                      through email
+                    </span>
+                  </li>
+                  <li>
+                    <h1>
+                      ️<span className="emoji">☎️</span> Contact the User
+                    </h1>
+                    <br />
+                    <span className="p-desc">
+                      Contact form. Personal Data: email address, first name and
+                      last name
+                    </span>
+                  </li>
+                </ul>
+                <hr />
+                <div className="c-info">
+                  <h3 className="the-title">Contact Information</h3>
+                  <section>
+                    Owner and Data controller is Erick Wachira (Werick Codes)
+                    <br />
+                    Owner contact email: erick@werick.codes
+                  </section>
+                </div>
+              </p>
+            </div>
+          </div>
         </div>
         <SubscriptionForm />
         <Footer />

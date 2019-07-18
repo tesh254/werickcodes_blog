@@ -1,3 +1,22 @@
+.the-content {
+    color: antiquewhite;
+    background: rgb(53, 56, 59);
+    background: linear-gradient(90deg, rgba(53, 56, 59, 1) 21%, rgba(107, 86, 34, 1) 100%);
+    width: 800px;
+    border-radius: 95px;
+    margin-left: 20%;
+    font-weight: 200;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .ab-comp {
     text-align: center;
     font-size: 18pt;
@@ -5,13 +24,12 @@
 
 .intro-paragraph {
     text-align: justify;
-    line-height: 2.0;
-    padding: 0 30% 0 30%;
+    line-height: 1.7;
+    padding: 10% 10% 0 10%;
     font-size: 18pt;
 }
 
 .intro-paragraph p {
-    border-left: 4px solid #dfa612;
     padding-left: 15px;
 }
 
@@ -25,16 +43,25 @@
     font-weight: 100;
 }
 
+.ab-dm {
+    font-size: 24pt;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 85px;
+    color: #efbb35;
+}
+
 .your-host .me-image {
     width: 35%;
     height: 20%;
     margin-left: 32%;
+    border-radius: 50px;
 }
 
 .your-host p {
     font-size: 18pt;
     text-align: justify;
-    padding: 0 30% 0 30%;
+    padding: 0 10% 10% 10%;
 }
 
 .mascot-img {
@@ -59,11 +86,16 @@
     font-weight: 100 !important;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+    .the-content {
+        width: 90% !important;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
     .ab-comp {
-        padding-top: 30%;
         text-align: center;
         font-size: 18pt;
+        margin-left: 4%;
     }
 
     .your-host p {
@@ -78,18 +110,60 @@
 
     .intro-paragraph {
         line-height: 1.5;
-        padding: 0 5% 0 5%;
+        padding: 8% 6% 0 6%;
         font-size: 12pt;
     }
 
     .your-host .me-image {
-        width: 90%;
-        height: 50%;
-        margin-left: 5%;
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
     }
 
     .your-host p {
         font-size: 12pt;
-        padding: 0 5% 0 5%;
+        padding: 0 5% 10% 5%;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .the-content {
+        width: 90% !important;
+        margin-left: 5%;
+        margin-right: 5%;
+        border-radius: 50px;
+    }
+    .ab-comp {
+        text-align: center;
+        font-size: 16pt;
+        margin-left: 2%;
+    }
+
+    .your-host p {
+        font-size: 18pt;
+        text-align: justify;
+        padding: 0 0 0 0;
+    }
+
+    .the-content {
+        width: 100%;
+    }
+
+    .intro-paragraph {
+        line-height: 1.5;
+        padding: 15% 5% 0 1%;
+        font-size: 11pt;
+    }
+
+    .your-host .me-image {
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
+    }
+
+    .your-host p {
+        font-size: 11pt;
+        padding: 0 5% 10% 5%;
     }
 }

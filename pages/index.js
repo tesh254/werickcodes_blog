@@ -28,7 +28,7 @@ class Home extends React.Component {
           url="https://werick.codes"
         />
         <Nav />
-        <h1 className="domain">Werick Codes</h1>
+        <h1 className="domain">Werick Codes 💻</h1>
         <Articles articles={articles} isLoading={isLoading} />
         <SubscriptionForm />
         <Footer />

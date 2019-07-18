@@ -4,7 +4,8 @@ import Nav from "../components/nav";
 import Footer from "../components/footer";
 import SubscriptionForm from "../components/subscribtionForm";
 import "../static/styles/about.css";
-import "../static/styles/home.css";
+import "../static/styles/root.css";
+import "../static/styles/index.css";
 
 class About extends React.Component {
   static async getInitialProps(props) {
@@ -15,7 +16,7 @@ class About extends React.Component {
 
   render() {
     return (
-      <div style={{ padding: 0, margin: 0 }}>
+      <div>
         <Head
           ogImage="/static/img/img.png"
           title="About Werick Codes"
@@ -23,10 +24,10 @@ class About extends React.Component {
         />
         <Nav />
         <hr />
+        <div className="ab-comp">
+          <p className="ab-dm">About Werick</p>
+        </div>
         <div className="the-content">
-          <div className="ab-comp">
-            <p className="domain ab-dm">About Werick</p>
-          </div>
           <div className="intro-paragraph">
             <p>
               Werick is born out of a love for the web and sharing knowledge. Be
@@ -34,16 +35,6 @@ class About extends React.Component {
               content even when you are in a toilet seat, wait that just went
               weird.
               <br />
-              The Werick User Interface might look familiar, I got inspiration
-              from{" "}
-              <a
-                href="https://alligator.io"
-                rel="noopener noreferrer"
-                className="link"
-                target="_blank"
-              >
-                alligator.io
-              </a>
             </p>
           </div>
           <br />
@@ -67,12 +58,12 @@ class About extends React.Component {
               >
                 Andela
               </a>{" "}
-              as a Software Developer. I am definetly passionate about software
-              development. I have been a full stack web developer
+              as a Software Developer. I have been a full stack web developer
               <span role="img" aria-labelledby>
                 💻
               </span>{" "}
-              for the last two years. React out to me on Twitter
+              for the last two years. Apart from coding I blog ✍️, play soccer ⚽️ and
+              video games 🎮. Reach out to me on Twitter
               {"      "}
               <a
                 href="https://twitter.com/wachira_dev?ref_src=twsrc%5Etfw"
