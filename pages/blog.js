@@ -24,7 +24,7 @@ class SingleArticle extends React.Component {
         return (
             <div>
                 <Head
-                    title={article.title}
+                    title={article.title || "Werick Codes Article"}
                     description={article.description}
                     url={`https://werick.codes/articles/${article.slug}`}
                     ogImage="/static/img/twitter.png"

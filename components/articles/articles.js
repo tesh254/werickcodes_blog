@@ -27,7 +27,6 @@ const Articles = ({ articles, isLoading }) => {
           ) : (
             articles.map(article => (
               <div
-                className="col-lg-4 col-md-12 col-xl-2"
                 id="card"
                 key={article._id}
               >

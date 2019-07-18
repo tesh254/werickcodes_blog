@@ -40,7 +40,9 @@
     "react-syntax-highlighter": "^11.0.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
+    "redux-immutable-state-invariant": "^2.1.0",
     "redux-thunk": "^2.3.0",
+    "serverless-http": "^2.0.2",
     "styled-components": "^4.3.2",
     "tailwindcss": "^1.0.4",
     "utf8": "^3.0.0"

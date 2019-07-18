@@ -10,7 +10,6 @@ import Comments from "./comments";
 import stack from "../../utils/stacks";
 import "../../static/styles/posts.css";
 import "../../static/styles/loader.css";
-import "../../static/styles/bootstrap/css/bootstrap.css";
 import "../../static/styles/home.css";
 import "../../static/styles/comment.css";
 
@@ -30,7 +29,7 @@ const SingleArticle = ({ article, isLoading }) => {
               <div className="stack-highlight">
                 <img src={stack[`${article.stack}`]} alt={article.stack} />
               </div>
-              <div className="blog-header">{article.title}</div>
+              <div className="blog-header">{article.title || ""}</div>
               <p>{article.description}</p>
               <hr />
               <br />
