@@ -18,7 +18,7 @@ class About extends React.Component {
     return (
       <div>
         <Head
-          ogImage="/static/img/img.png"
+          ogImage="https://res.cloudinary.com/duoxba7n1/image/upload/v1562759356/Twitter_preview.png"
           title="About Werick Codes"
           description="All about Werick Codes"
         />

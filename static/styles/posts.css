@@ -22,7 +22,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300i');
 
 
-.posts .loaders {
+.loaders {
     padding-left: 48%;
 }
 
@@ -98,6 +98,23 @@
 
 .single-article-body {
     padding-top: 5%;
+    line-height: 1.8;
+}
+
+.body div {
+    line-height: 1.8;
+}
+
+.body div ul, .body div p ul {
+    list-style-type: disc;
+}
+
+.body div p a, .body div ul li a {
+    color: rgb(0, 119, 255);
+}
+
+.body div ul li, .body div ul li {
+    margin-left: 50px;
 }
 
 hr {
@@ -190,10 +207,6 @@ hr {
     color: #dfa612;
 }
 
-.body {
-    line-height: 2.0 !important;
-}
-
 .body p {
     margin: 10px;
 }
@@ -232,7 +245,6 @@ code {
 
 div.body div ul li code, div.body div p code {
     padding: 5px;
-    border: 1px solid pink;
     border-radius: 15px;
     background: #ffeaed18;
 }
@@ -253,30 +265,24 @@ ul {
     font-size: 13pt !important;
 }
 
+blockquote {
+    border-left: 5px solid #dfa612;
+    padding-left: 25px;
+    font-weight: 100;
+    font-style: oblique;
+    margin: 80px;
+}
+
 .body div pre code {
 
     background: #000 !important;
     color: white !important;
+    border: none;
 }
 
 @media (max-width: 500px) {
     .single-article-header {
         padding-top: 25%;
-    }
-
-    .content {
-        width: 110%;
-        padding-left: 0;
-        height: auto;
-    }
-
-    .header {
-        font-size: 16pt;
-        padding-left: 20px;
-    }
-
-    .description {
-        font-size: 12pt;
     }
 
     .single-article-header .stack-highlight img {
@@ -298,17 +304,8 @@ ul {
         padding: 5px;
     }
 
-    #card {
-        padding-top: 5%;
-        padding-left: 0 !important;
-    }
-
     .top-posts-title {
         padding-left: 5% !important;
-    }
-
-    .posts {
-        padding-left: 2% !important;
     }
 
     .domain {
@@ -345,31 +342,8 @@ ul {
         padding: 5px;
     }
 
-    .content {
-        width: 110%;
-        padding-left: 0;
-        height: auto;
-    }
-
-    .header {
-        font-size: 16pt;
-    }
-
-    .description {
-        font-size: 12pt;
-    }
-
-    #card {
-        padding-top: 5%;
-        padding-left: 0;
-    }
-
     .top-posts-title {
         padding-left: 5% !important;
-    }
-
-    .posts {
-        padding-left: 1%;
     }
 
     .domain {
@@ -377,7 +351,7 @@ ul {
     }
 
 
-    .posts .loaders {
+    .loaders {
         padding-left: 35%;
     }
 
@@ -426,25 +400,8 @@ ul {
         padding: 5px;
     }
 
-    .header {
-        font-size: 16pt;
-    }
-
-    .description {
-        font-size: 12pt;
-    }
-
-    #card {
-        padding-top: 5%;
-        padding-left: 0;
-    }
-
     .top-posts-title {
         padding-left: 5% !important;
-    }
-
-    .posts {
-        padding-left: 10%;
     }
 
     .domain {
@@ -452,7 +409,7 @@ ul {
     }
 
 
-    .posts .loaders {
+    .loaders {
         padding-left: 40%;
     }
 

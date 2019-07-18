@@ -4,11 +4,11 @@
 
 .container {
     display: grid;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     /* grid-gap: 10px; */
-    margin-left: 50px;
+    margin-left: 75px;
     /* margin: 0 !important; */
 }
 
@@ -22,6 +22,7 @@
     z-index: 5;
     transition: .3s all;
     margin: 0;
+    line-height: 1.6;
 }
 
 .content:hover {
@@ -75,17 +76,23 @@
 
 @media screen and (max-width: 500px) {
     .posts {
-        margin-left: 10%;
+        margin-top: 5%;
+        margin-left: 2%;
+        padding: 0;
     }
 }
 
 @media screen and (max-width: 400px) {
     .posts {
+        margin-top: 5%;
         margin-left: 2% !important;
+        padding: 0;
     }
 }
 @media screen and (max-width: 350px) {
     .container {
+        margin-top: 5%;
         margin-left: 14%;
+        padding: 0;
     }
 }

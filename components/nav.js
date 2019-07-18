@@ -20,18 +20,18 @@ const Nav = () => {
         </div>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />
         <nav>
-          <ul>
-            <li>
+          <ul className="menu-list">
+            <li className="menu-list-item">
               <Link href="/about">
                 <a>About</a>
               </Link>
             </li>
-            <li>
+            <li className="menu-list-item">
               <Link href="/search">
                 <a>Search</a>
               </Link>
             </li>
-            <li>
+            <li className="menu-list-item">
               <Link href="/contact">
                 <a>Contact</a>
               </Link>

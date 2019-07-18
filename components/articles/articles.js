@@ -27,7 +27,6 @@ const Articles = ({ articles, isLoading }) => {
           ) : (
             articles.map(article => (
               <div
-                className="col-lg-4 col-md-12 col-xl-2"
                 id="card"
                 key={article._id}
               >
@@ -43,7 +42,6 @@ const Articles = ({ articles, isLoading }) => {
                       <div className="post-title">
                         <p className="header">{article.title}</p>
                         <p className="date">{moment(article.createdAt, "YYYYMMDD").fromNow()}</p>
-                        <hr />
                         {/* <p className="tags">
                           {article.stack}
                         </p> */}

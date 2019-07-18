@@ -29,6 +29,10 @@ app.prepare().then(() => {
     SITEMAP = await createSitemap();
     res.status(200).send(SITEMAP)
   })
+  
+  server.get('/article/:slug', async (req, res, next) => {
+    return app.render(req, res, '/articles', { name: req.params.slug })
+  })
 
   server.get('*', (req, res) => handler(req, res, req.url));
 
@@ -36,19 +40,4 @@ app.prepare().then(() => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${port}`)
   });
-  // createServer((req, res) => {
-  //   const parsedUrl = parse(req.url, true)
-  //   const { pathname } = parsedUrl
-
-  //   if (pathname === '/sw.js' || pathname.startsWith('/precache-manifest.')){
-  //     const filePath = join(__dirname, '.next', pathname)
-  //     app.serveStatic(req, res, filePath)
-  //   }
-  //   else {
-  //     handler(req, res, parsedUrl)
-  //   }
-  // }).listen(port, err => {
-  //   if (err) throw err;
-  //   console.log(`> Ready on http://localhost:${port}`);
-  // });
 });

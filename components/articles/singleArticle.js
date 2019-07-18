@@ -10,7 +10,6 @@ import Comments from "./comments";
 import stack from "../../utils/stacks";
 import "../../static/styles/posts.css";
 import "../../static/styles/loader.css";
-import "../../static/styles/bootstrap/css/bootstrap.css";
 import "../../static/styles/home.css";
 import "../../static/styles/comment.css";
 
@@ -30,9 +29,8 @@ const SingleArticle = ({ article, isLoading }) => {
               <div className="stack-highlight">
                 <img src={stack[`${article.stack}`]} alt={article.stack} />
               </div>
-              <div className="blog-header">{article.title}</div>
+              <div className="blog-header">{article.title || ""}</div>
               <p>{article.description}</p>
-              <hr />
               <br />
               <div className="share-icons">
                 <Reddit link={`https://werick.codes/articles/${article.slug}`} />
@@ -44,7 +42,6 @@ const SingleArticle = ({ article, isLoading }) => {
               </div>
             </div>
             <div className="single-article-body">
-              <hr />
               <div className="body">
                 <div>
                   <Markdown
@@ -54,7 +51,6 @@ const SingleArticle = ({ article, isLoading }) => {
                 </div>
               </div>
             </div>
-            <hr />
             <div className="extra-content">
               <div className="extra">
                 <i className="fas fa-eye" /> {article.views} views

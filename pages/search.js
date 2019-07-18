@@ -93,7 +93,6 @@ class SearchForm extends React.Component {
                               <p className="date">
                                 {moment(blog.createdAt, "YYYYMMDD").fromNow()}
                               </p>
-                              <hr />
                             </div>
                           </div>
                         </a>

@@ -24,7 +24,7 @@ class Home extends React.Component {
         <Head
           title="Werick Codes"
           description="Get started with coding the easy way"
-          ogImage="/static/img/twitter.png"
+          ogImage="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg"
           url="https://werick.codes"
         />
         <Nav />

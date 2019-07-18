@@ -21,7 +21,7 @@ class Privacy extends React.Component {
         <Head
           title="Werick Privacy"
           description="Werick Codes Privacy Policy"
-          image="/static/img/mascot.png"
+          image="https://res.cloudinary.com/duoxba7n1/image/upload/v1562759356/Twitter_preview.png"
         />
         <Nav />
         <div className="privacy">

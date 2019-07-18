@@ -19,19 +19,19 @@ const createSitemap = async () => {
   xml += "</url>";
   // Add pages/about.js file to sitemap
   xml += "<url>";
-  xml += `<loc>${BASE_URL}/</loc>`;
+  xml += `<loc>${BASE_URL}/about</loc>`;
   xml += "</url>";
   // Add pages/contact.js file to sitemap
   xml += "<url>";
-  xml += `<loc>${BASE_URL}/</loc>`;
+  xml += `<loc>${BASE_URL}/contact</loc>`;
   xml += "</url>";
   // Add pages/privacy.js file to sitemap
   xml += "<url>";
-  xml += `<loc>${BASE_URL}/</loc>`;
+  xml += `<loc>${BASE_URL}/privacy</loc>`;
   xml += "</url>";
   // Add pages/search.js file to sitemap
   xml += "<url>";
-  xml += `<loc>${BASE_URL}/</loc>`;
+  xml += `<loc>${BASE_URL}/search</loc>`;
   xml += "</url>";
 
   await getPosts().then(_newData => {
