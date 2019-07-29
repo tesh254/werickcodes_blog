@@ -7,6 +7,10 @@
             "dest": "/blog?slug=$1"
         },
         {
+            "src": "/stack/([^/]+)",
+            "dest": "/stack?stack=$1"
+        },
+        {
             "src": "/sitemap.xml",
             "dest": "sitemap.xml"
         }

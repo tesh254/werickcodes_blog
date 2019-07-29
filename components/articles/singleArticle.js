@@ -14,76 +14,80 @@ import "../../static/styles/home.css";
 import "../../static/styles/comment.css";
 
 const SingleArticle = ({ article, isLoading }) => {
-    return (
+  return (
+    <div>
+      {isLoading ? (
+        <div className="posts">
+          <div className="lds-ripple" style={{ paddingTop: 100 + "%" }}>
+            <div />
+            <div />
+          </div>
+        </div>
+      ) : (
         <div>
-        {isLoading ? (
-          <div className="posts">
-            <div className="lds-ripple" style={{ paddingTop: 100 + "%" }}>
-              <div />
-              <div />
+          <div className="single-article-header">
+            <div className="stack-highlight">
+              <Link href={`/stack/${article.stack}`}>
+                <a>
+                  <img src={stack[`${article.stack}`]} alt={article.stack} />
+                </a>
+              </Link>
             </div>
-          </div>
-        ) : (
-          <div>
-            <div className="single-article-header">
-              <div className="stack-highlight">
-                <img src={stack[`${article.stack}`]} alt={article.stack} />
-              </div>
-              <div className="blog-header">{article.title || ""}</div>
-              <p>{article.description}</p>
-              <hr />
-              <br />
-              <div className="share-icons">
-                <Reddit link={`https://werick.codes/articles/${article.slug}`} />
-                <Facebook link={`https://werick.codes/articles/${article.slug}`} />
-                <Twitter
-                  link={`https://werick.codes/articles/${article.slug}`}
-                />{" "}
-                &nbsp;
-              </div>
-            </div>
-            <div className="single-article-body">
-              <hr />
-              <div className="body">
-                <div>
-                  <Markdown
-                    source={article.body}
-                    renderers={{ code: CodeBlock }}
-                  />
-                </div>
-              </div>
-            </div>
+            <div className="blog-header">{article.title || ""}</div>
+            <p>{article.description}</p>
             <hr />
-            <div className="extra-content">
-              <div className="extra">
-                <i className="fas fa-eye" /> {article.views} views
-                <div className="published">
-                  <pre>
-                    Published: {moment(article.createdAt, "YYYYMMDD").fromNow()}
-                  </pre>
-                </div>
-              </div>
-            </div>
-            <div className="comments">
-              <Comments
-                id={article._id}
-                title={article.title}
-                path={`/articles/${article.slug}`}
+            <br />
+            <div className="share-icons">
+              <Reddit link={`https://werick.codes/articles/${article.slug}`} />
+              <Facebook
+                link={`https://werick.codes/articles/${article.slug}`}
               />
+              <Twitter link={`https://werick.codes/articles/${article.slug}`} />{" "}
+              &nbsp;
             </div>
           </div>
-        )}
-        <ScrollButton />
-      </div>
-    )
-}
+          <div className="single-article-body">
+            <hr />
+            <div className="body">
+              <div>
+                <Markdown
+                  source={article.body}
+                  renderers={{ code: CodeBlock }}
+                />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div className="extra-content">
+            <div className="extra">
+              <i className="fas fa-eye" /> {article.views} views
+              <div className="published">
+                <pre>
+                  Published: {moment(article.createdAt, "YYYYMMDD").fromNow()}
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div className="comments">
+            <Comments
+              id={article._id}
+              title={article.title}
+              path={`/articles/${article.slug}`}
+            />
+          </div>
+        </div>
+      )}
+      <ScrollButton />
+    </div>
+  );
+};
 
 const mapStateToProps = state => ({
-    article: state.article.payload,
-    isLoading: state.article.isLoading
-})
+  article: state.article.payload,
+  isLoading: state.article.isLoading
+});
 
 export default connect(
-    mapStateToProps,
-    null
+  mapStateToProps,
+  null
 )(SingleArticle);

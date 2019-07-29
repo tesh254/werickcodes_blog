@@ -2,6 +2,12 @@
     padding: 40px;
 }
 
+.nothing {
+    font-size: 2rem;
+    color: #efbb35;
+    text-align: center;
+}
+
 .container {
     display: grid;
     grid-column-gap: 20px;
@@ -80,6 +86,16 @@
         margin-left: 2%;
         padding: 0;
     }
+
+    .nothing {
+        font-size: 1.5rem;
+        margin-left: -25%;
+    }
+
+    .stack-logo-holder,
+    .stack-logo {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -88,11 +104,56 @@
         margin-left: 2% !important;
         padding: 0;
     }
+
+    .nothing {
+        font-size: 1.5rem;
+        margin-left: -25%;
+    }
+
+    .stack-logo-holder,
+    .stack-logo {
+        display: none;
+    } 
 }
+
+@media screen and (max-width: 600px) {
+    .stack-logo-holder,
+    .stack-logo {
+        display: none;
+    }
+
+    .nothing {
+        font-size: 1.5rem;
+        margin-left: -15%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .stack-logo-holder,
+    .stack-logo {
+        display: none;
+    }
+
+    .nothing {
+        font-size: 1.5rem;
+        margin-left: -15%;
+    }
+}
+
 @media screen and (max-width: 350px) {
     .container {
         margin-top: 5%;
         margin-left: 14%;
         padding: 0;
+    }
+
+    .nothing {
+        font-size: 1.5rem;
+        margin-left: -20%;
+    }
+
+    .stack-logo-holder,
+    .stack-logo {
+        display: none;
     }
 }

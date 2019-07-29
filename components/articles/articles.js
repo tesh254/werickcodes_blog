@@ -24,7 +24,9 @@ const Articles = ({ articles, isLoading }) => {
         <div className="container">
           {!articles ? (
             <div>Error</div>
-          ) : (
+          ) : articles.length === 0 ? <div className="nothing">
+            Articles Coming soon signup to our newsletter for updates
+          </div> : (
             articles.map(article => (
               <div
                 id="card"

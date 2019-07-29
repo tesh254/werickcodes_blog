@@ -4,16 +4,16 @@ import { connect } from "react-redux";
 import Head from "../components/head";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
-import getArticles from "../redux/actions/articles/getArticles";
+import getPostByStack from "../redux/actions/articles/getPostByStack";
 import Articles from "../components/articles/articles";
 import SubscriptionForm from "../components/subscribtionForm";
 import StackPosts from "../components/articles/stacks";
 import "../static/styles/index.css";
 
-class Home extends React.Component {
+class PostsByStack extends React.Component {
   static async getInitialProps(props) {
-    const { store, isServer } = props;
-    await store.dispatch(getArticles());
+    const { store, isServer, query } = props;
+    await store.dispatch(getPostByStack(query.stack));
 
     return { isServer };
   }
@@ -41,7 +41,7 @@ class Home extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getArticles: bindActionCreators(getArticles, dispatch)
+    getPostByStack: bindActionCreators(getPostByStack, dispatch)
   };
 };
 
@@ -53,4 +53,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(PostsByStack);
