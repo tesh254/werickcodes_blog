@@ -42,17 +42,23 @@ export default class CustomDocument extends Document {
           <link rel="stylesheet" href="/static/styles/prism.css" />
           <link rel="stylesheet" href="/static/styles/scroll.css" />
           <script
+            rel="preload"
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-136029758-1"
           />
           <script
+            rel="preload"
             async
             src="https://platform.twitter.com/widgets.js"
             charset="utf-8"
           />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.js" />
-          <script src="/static/js/prism.js" />
           <script
+            rel="preload"
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.js"
+          />
+          <script rel="preload" src="/static/js/prism.js" />
+          <script
+            rel="preload"
             dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -63,6 +69,7 @@ export default class CustomDocument extends Document {
             }}
           />
           <script
+            rel="preload"
             dangerouslySetInnerHTML={{
               __html: `(function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
                 var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}

@@ -13,7 +13,7 @@ const Nav = () => {
                 src="/static/svg/mascot.svg"
                 alt="mascot-logo"
                 className="logo"
-                style={{width: 55 + "px", marginLeft: "45%"}}
+                style={{ width: 55 + "px", marginLeft: "45%" }}
               />
             </a>
           </Link>
@@ -32,9 +32,9 @@ const Nav = () => {
               </Link>
             </li>
             <li className="menu-list-item">
-              <Link href="/contact">
-                <a>Contact</a>
-              </Link>
+              <a target="_blank" href="https://me.werick.codes">
+                Portfolio
+              </a>
             </li>
           </ul>
         </nav>
