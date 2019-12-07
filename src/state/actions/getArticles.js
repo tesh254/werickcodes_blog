@@ -1,4 +1,3 @@
-import Router from "next/router";
 import axios from "axios";
 import env from "../../env";
 import {
@@ -21,10 +20,10 @@ export const successOnLoad = (type, data) => ({
   payload: data
 });
 
-const fetchArticles = () => async dispatch => {
+const fetchArticles = () => dispatch => {
   dispatch(loadingResource(GET_ARTICLES_REQUEST));
 
-  await axios
+  axios
     .get(`${env.base_url}/blogs-active`)
     .then(response => {
       dispatch(successOnLoad(GET_ARTICLES_SUCCESS, response.data.blogs));

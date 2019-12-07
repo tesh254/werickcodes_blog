@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-left: -35px;
+}
+
+nav ul li {
+  padding: 5px;
+  background: rgb(53, 56, 59);
+  background: linear-gradient(
+    90deg,
+    rgba(53, 56, 59, 1) 21%,
+    rgba(107, 86, 34, 1) 100%
+  );
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+}
+
+nav ul li a {
+  color: #efbb35;
+}
