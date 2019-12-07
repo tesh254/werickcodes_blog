@@ -1,0 +1,149 @@
+.search-view {
+  padding-top: 15%;
+  padding-bottom: 20%;
+}
+
+.search-view-holder {
+  padding-top: 20%;
+  padding-left: 28%;
+}
+
+.search-view-holder input {
+  background: #011c23;
+  font-size: 38pt;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid antiquewhite;
+  text-align: center;
+  color: antiquewhite;
+}
+
+.search-results {
+  padding-top: 5%;
+  padding-left: 25px;
+  color: antiquewhite;
+}
+
+.search-results .loaders {
+  padding-left: 46%;
+}
+
+.search-no-result {
+  padding-left: 43%;
+}
+
+.search-type {
+  padding-left: 43%;
+  font-size: 18pt;
+}
+
+.search-no-result {
+  font-size: 18pt;
+}
+
+.search-all-results {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  grid-template-rows: 1fr 1fr 1fr;
+
+  grid-column-gap: 10px;
+
+  grid-row-gap: 10px;
+}
+
+.search-all-results .blog {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.posts #card h2 {
+  visibility: hidden;
+}
+
+.posts #card:first-child h2 {
+  visibility: visible;
+}
+
+@media (max-width: 500px) {
+  .search-view {
+    padding-top: 35%;
+    padding-bottom: 20%;
+  }
+
+  .search-view-holder {
+    padding-left: 5%;
+    padding-top: 30%;
+  }
+
+  .search-view-holder input {
+    background: #011c23;
+    font-size: 20pt;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid antiquewhite;
+    margin-left: 2% !important;
+  }
+
+  .search-results {
+    padding-top: 5%;
+  }
+
+  .search-results .loaders {
+    padding-left: 48%;
+  }
+
+  .search-no-result {
+    padding-left: 25%;
+  }
+
+  .search-type {
+    padding-left: 35%;
+  }
+
+  .search-all-results {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-column-gap: 10px;
+
+    grid-row-gap: 10px;
+  }
+
+  .search-all-results .blog {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search-view-holder {
+    padding-top: 40%;
+  }
+
+  .search-view-holder input {
+    margin-left: -5% !important;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .search-view-holder {
+    padding-top: 40%;
+  }
+
+  .search-view-holder input {
+    margin-left: -10% !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .search-view-holder {
+    padding-top: 40%;
+  }
+
+  .search-view-holder input {
+    margin-left: 5% !important;
+  }
+}

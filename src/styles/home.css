@@ -1,0 +1,55 @@
+.home-component {
+    padding: 10% 25% 0% 40%;
+}
+
+.domain {
+    font-size: 24pt;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 85px;
+    color: #efbb35;
+}
+
+.mascot-main {
+    color: white !important;
+    background: transparent;
+}
+
+@media screen and (max-width: 360px) {
+    .home-component {
+        padding: 5% 10% 0% 25%;
+    }
+
+    .mascot-image {
+        width: 80%;
+        float: inherit;
+    }
+
+    .App-content {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .domain {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .domain {
+        padding-top: 20% !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .domain {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .domain {
+        padding-top: 20% !important;
+    }
+}

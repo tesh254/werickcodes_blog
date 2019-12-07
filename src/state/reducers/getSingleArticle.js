@@ -11,7 +11,7 @@ const fetchSingleArticle = (state = initialState, action) => {
         case GET_ONE_ARTICLE_SUCCESS:
             return {
                 ...state,
-                payload: action.payload,
+                article: action.payload.blogs,
                 isLoading: false
             }
         case GET_ONE_ARTICLE_REQUEST:
@@ -22,7 +22,7 @@ const fetchSingleArticle = (state = initialState, action) => {
         case GET_ONE_ARTICLE_ERROR:
             return {
                 ...state,
-                error: action.payload,
+                error: action.payload.message,
                 isLoading: false
             }
         default:
