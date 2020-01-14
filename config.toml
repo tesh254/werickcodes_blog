@@ -1,0 +1,54 @@
+author = "Erick Wachira"
+baseurl = "/"
+languageCode = "en-us"
+title = "Werick Codes"
+copyright = "Copyright © 1960-2095, Erick Wachira; all rights reserved."
+theme = "alageek"
+paginate = 10
+canonifyurls = true
+
+[params]
+copyright = "© 2095 by Erick Wachira"
+copyrightUrl = "https://werick.codes"
+description = ""
+faviconfile = "https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg"
+latestpostcount = 10
+logofile = "https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg"
+highlightjs = true
+highlightjslanguages = [ "bash", "css", "diff", "django", "javascript", "python", "yaml", "go", "react", "json" ]
+toc = true
+posts_navigation = true
+progressively = true
+github = "tesh254"
+linkedin = "erick-wachira-09a635154"
+twitter = "wachira_dev"
+email = "ewachira254@gmail.com"
+twitterShare = true
+
+[[params.best_posts]]
+title = "How to Build Electron Apps With React"
+url = "/blog/how-to-build-electron-apps-with-react"
+
+[[menu.primary]]
+identifier = "blog"
+name = "Blog"
+url = "/"
+weight = 20
+
+[[menu.primary]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 20
+
+[[menu.secondary]]
+identifier = "patreon"
+name = "Become a patron"
+url = "https://www.patreon.com/werickcodes"
+weight = 110
+
+[[menu.footer]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 50

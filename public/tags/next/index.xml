@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>next on Werick Codes</title>
+    <link>/tags/next/</link>
+    <description>Recent content in next on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 31 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/next/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Environment Variables From Env File in Nextjs</title>
+      <link>/blog/environment-variables-from-env-file-in-nextjs/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/environment-variables-from-env-file-in-nextjs/</guid>
+      <description>If you started building your application with next and you want it to access environment variables in your .env file here is away.
+Why you need a .env file There are a number of reasons why you should have a .env file when working on an application, they are: * Security: A .env file can be used to store critical and sensitive credentials such as access_tokens, secret_keys or api_keys thus ensuring they are not exploited by a hacker prying on your repo.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started With Nextjs Part 1</title>
+      <link>/blog/getting-started-with-nextjs-part-1/</link>
+      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/getting-started-with-nextjs-part-1/</guid>
+      <description>Hey Coder, I blogged about why you should learn Next in this blog. For this part of the series, I will guide through the features that next brings to the table.
+ Note: You should have NodeJS, npm, and npx installed. You should be proficient in Javascript and React.
+ Setting up our project. You can create your own repo or clone my repo.
+$ git clone https://github.com/werickblog/react_next_app.git  Change directory to where your repo is housed locally</description>
+    </item>
+    
+    <item>
+      <title>Why You Should Learn Nextjs</title>
+      <link>/blog/why-you-should-learn-nextjs/</link>
+      <pubDate>Tue, 02 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/why-you-should-learn-nextjs/</guid>
+      <description>Next.JS is a javascript framework that allows developers to create server-rendered react web apps also comes with other perks that make frontend development swift.
+How I encountered Next.JS? I am currently reworking on my own personal blog with React and Next.JS on the frontend and Express powering the backend.
+So why am I redoing my blog from scratch? Before I could launch an MVP of the blog, I had to work on the SEO and also make it easier for web crawlers, which in turn helps with a great search engine score and indexing.</description>
+    </item>
+    
+  </channel>
+</rss>

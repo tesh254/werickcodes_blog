@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>documentation on Werick Codes</title>
+    <link>/tags/documentation/</link>
+    <description>Recent content in documentation on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 23 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/documentation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why You Should Document Your Code</title>
+      <link>/blog/why-you-should-document-your-code/</link>
+      <pubDate>Sun, 23 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/why-you-should-document-your-code/</guid>
+      <description>Brief History A year ago I built an e-commerce API with Flask and consumed it with React on the frontend. It was the first time I built a web app like that where the frontend and backend were very separate because before I would use templating engines like Jinja for Flask and Handlebars for Express. Those were the times when I just started programming, I was so full of energy and very ignorant sometimes.</description>
+    </item>
+    
+  </channel>
+</rss>

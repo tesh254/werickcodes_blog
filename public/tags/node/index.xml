@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>node on Werick Codes</title>
+    <link>/tags/node/</link>
+    <description>Recent content in node on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/node/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Build Electron Apps With React</title>
+      <link>/blog/how-to-build-electron-apps-with-react/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-build-electron-apps-with-react/</guid>
+      <description>Introduction I have always had a deep interest in writing Desktop applications. What was holding me off throughout the years was, I wasn&amp;rsquo;t interested in learning C++ or Java to make them. I wanted to build Desktop apps with Javascript, so I landed on Electron, a Javascript Desktop application framework, developed and maintained by Github.
+Electron is such a big deal that it will allow you to create Desktop apps for all the major OS with a single codebase.</description>
+    </item>
+    
+    <item>
+      <title>How to Write Javascript in Es6 With Nodejs</title>
+      <link>/blog/how-to-write-javascript-in-es6-with-nodejs/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-write-javascript-in-es6-with-nodejs/</guid>
+      <description>You building an application with React and Node. You write your React code in ES6 but when you visit your Node backend code you happen to write in ES5. I found this quite annoying due to the change and also the require method. If you feel you are comfortable writing ES5 Node, you can skip this blog but if you might like making your frontend and backend switch quite seamless as we wait to figure out deno, you are in luck, because I will guide you in all the steps you will have to undertake and I have an existing NodeJS ES6 template setup already on Github.</description>
+    </item>
+    
+    <item>
+      <title>Environment Variables From Env File in Nextjs</title>
+      <link>/blog/environment-variables-from-env-file-in-nextjs/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/environment-variables-from-env-file-in-nextjs/</guid>
+      <description>If you started building your application with next and you want it to access environment variables in your .env file here is away.
+Why you need a .env file There are a number of reasons why you should have a .env file when working on an application, they are: * Security: A .env file can be used to store critical and sensitive credentials such as access_tokens, secret_keys or api_keys thus ensuring they are not exploited by a hacker prying on your repo.</description>
+    </item>
+    
+    <item>
+      <title>How to Create and Run Cron Jobs in Node</title>
+      <link>/blog/how-to-create-and-run-cron-jobs-in-node/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-create-and-run-cron-jobs-in-node/</guid>
+      <description>You ever want to automate certain tasks on your app, saving you the hustle of doing them manually such as deletion of log files, automated emails or maybe doing a backup of your database data into a MongoDB/SQL dump file, well say no more cron jobs are here to help.
+What is a cronjob? A cron job is a task that automatically runs on a set schedule, example at 0000h you might have a cron job clear site cache on your CDN(Content Delivery Network).</description>
+    </item>
+    
+    <item>
+      <title>How to Host Your Node App in a Docker Container on Heroku</title>
+      <link>/blog/how-to-host-your-node-app-in-a-docker-container-on-heroku/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-host-your-node-app-in-a-docker-container-on-heroku/</guid>
+      <description>Introduction This is the third part of the series for Docker meets NodeJS.
+We got to add a mongo database as a service and maybe you added a couple of endpoints to test it out, but the whole app is in runs locally and you might want to let the whole world have the opportunity to test out your Node app well not to worry, Werick is here.
+In this part, we are going to host our application on Heroku.</description>
+    </item>
+    
+    <item>
+      <title>How to Create a Node App Within a Docker Container With Mongo</title>
+      <link>/blog/how-to-create-a-node-app-within-a-docker-container-with-mongo/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-create-a-node-app-within-a-docker-container-with-mongo/</guid>
+      <description>Introduction This is the second part of the series for Docker meets NodeJS where we are going to introduce a database service, MongoDB, which we will connect to it with our Node app through a network.
+ Note: Since we are introducing a new database service, by doing so this also makes our Node app also a service
+Note: Ensure you go through the first part of this series since it contains a huge part of how we created our Node app within a Docker container.</description>
+    </item>
+    
+    <item>
+      <title>How to Create a Node App Within a Docker Container</title>
+      <link>/blog/how-to-create-a-node-app-within-a-docker-container/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>/blog/how-to-create-a-node-app-within-a-docker-container/</guid>
+      <description>Setup Requirements Before you go through this fun tutorial ensure: * You at least have an understanding of javascript and terminal commands. * You should know what Docker is and in theory how it works. * You have should node and npm installed on your computer. You can do this by typing this in your terminal.
+$ node --version &amp;amp;&amp;amp; node --version   Also, since we talking containers well you need docker installed.</description>
+    </item>
+    
+  </channel>
+</rss>

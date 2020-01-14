@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jobs on Werick Codes</title>
+    <link>/tags/jobs/</link>
+    <description>Recent content in jobs on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 31 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/jobs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Create and Run Cron Jobs in Node</title>
+      <link>/blog/how-to-create-and-run-cron-jobs-in-node/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-create-and-run-cron-jobs-in-node/</guid>
+      <description>You ever want to automate certain tasks on your app, saving you the hustle of doing them manually such as deletion of log files, automated emails or maybe doing a backup of your database data into a MongoDB/SQL dump file, well say no more cron jobs are here to help.
+What is a cronjob? A cron job is a task that automatically runs on a set schedule, example at 0000h you might have a cron job clear site cache on your CDN(Content Delivery Network).</description>
+    </item>
+    
+  </channel>
+</rss>

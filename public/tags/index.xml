@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Werick Codes</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>babel</title>
+      <link>/tags/babel/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/babel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>electron</title>
+      <link>/tags/electron/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/electron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>/tags/node/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npm</title>
+      <link>/tags/npm/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>/tags/react/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
+      <link>/tags/api/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>express</title>
+      <link>/tags/express/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/express/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rate-limit</title>
+      <link>/tags/rate-limit/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rate-limit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>es6</title>
+      <link>/tags/es6/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/es6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crons</title>
+      <link>/tags/crons/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/crons/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>env</title>
+      <link>/tags/env/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/env/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jobs</title>
+      <link>/tags/jobs/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/jobs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>next</title>
+      <link>/tags/next/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/next/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>schedule</title>
+      <link>/tags/schedule/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/schedule/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css-in-js</title>
+      <link>/tags/css-in-js/</link>
+      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/css-in-js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssr</title>
+      <link>/tags/ssr/</link>
+      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ssr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>documentation</title>
+      <link>/tags/documentation/</link>
+      <pubDate>Sun, 23 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/documentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>heroku</title>
+      <link>/tags/heroku/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/heroku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>paas</title>
+      <link>/tags/paas/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/paas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongo</title>
+      <link>/tags/mongo/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mongo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>/tags/mongodb/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

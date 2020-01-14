@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>env on Werick Codes</title>
+    <link>/tags/env/</link>
+    <description>Recent content in env on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 31 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/env/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Environment Variables From Env File in Nextjs</title>
+      <link>/blog/environment-variables-from-env-file-in-nextjs/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/environment-variables-from-env-file-in-nextjs/</guid>
+      <description>If you started building your application with next and you want it to access environment variables in your .env file here is away.
+Why you need a .env file There are a number of reasons why you should have a .env file when working on an application, they are: * Security: A .env file can be used to store critical and sensitive credentials such as access_tokens, secret_keys or api_keys thus ensuring they are not exploited by a hacker prying on your repo.</description>
+    </item>
+    
+  </channel>
+</rss>

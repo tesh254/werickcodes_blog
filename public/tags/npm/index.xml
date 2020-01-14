@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>npm on Werick Codes</title>
+    <link>/tags/npm/</link>
+    <description>Recent content in npm on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Build Electron Apps With React</title>
+      <link>/blog/how-to-build-electron-apps-with-react/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-build-electron-apps-with-react/</guid>
+      <description>Introduction I have always had a deep interest in writing Desktop applications. What was holding me off throughout the years was, I wasn&amp;rsquo;t interested in learning C++ or Java to make them. I wanted to build Desktop apps with Javascript, so I landed on Electron, a Javascript Desktop application framework, developed and maintained by Github.
+Electron is such a big deal that it will allow you to create Desktop apps for all the major OS with a single codebase.</description>
+    </item>
+    
+  </channel>
+</rss>

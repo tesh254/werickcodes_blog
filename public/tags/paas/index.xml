@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>paas on Werick Codes</title>
+    <link>/tags/paas/</link>
+    <description>Recent content in paas on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 16 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/paas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Host Your Node App in a Docker Container on Heroku</title>
+      <link>/blog/how-to-host-your-node-app-in-a-docker-container-on-heroku/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-host-your-node-app-in-a-docker-container-on-heroku/</guid>
+      <description>Introduction This is the third part of the series for Docker meets NodeJS.
+We got to add a mongo database as a service and maybe you added a couple of endpoints to test it out, but the whole app is in runs locally and you might want to let the whole world have the opportunity to test out your Node app well not to worry, Werick is here.
+In this part, we are going to host our application on Heroku.</description>
+    </item>
+    
+  </channel>
+</rss>

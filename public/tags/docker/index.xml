@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Werick Codes</title>
+    <link>/tags/docker/</link>
+    <description>Recent content in docker on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 16 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Host Your Node App in a Docker Container on Heroku</title>
+      <link>/blog/how-to-host-your-node-app-in-a-docker-container-on-heroku/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-host-your-node-app-in-a-docker-container-on-heroku/</guid>
+      <description>Introduction This is the third part of the series for Docker meets NodeJS.
+We got to add a mongo database as a service and maybe you added a couple of endpoints to test it out, but the whole app is in runs locally and you might want to let the whole world have the opportunity to test out your Node app well not to worry, Werick is here.
+In this part, we are going to host our application on Heroku.</description>
+    </item>
+    
+    <item>
+      <title>How to Create a Node App Within a Docker Container With Mongo</title>
+      <link>/blog/how-to-create-a-node-app-within-a-docker-container-with-mongo/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-create-a-node-app-within-a-docker-container-with-mongo/</guid>
+      <description>Introduction This is the second part of the series for Docker meets NodeJS where we are going to introduce a database service, MongoDB, which we will connect to it with our Node app through a network.
+ Note: Since we are introducing a new database service, by doing so this also makes our Node app also a service
+Note: Ensure you go through the first part of this series since it contains a huge part of how we created our Node app within a Docker container.</description>
+    </item>
+    
+    <item>
+      <title>How to Create a Node App Within a Docker Container</title>
+      <link>/blog/how-to-create-a-node-app-within-a-docker-container/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>/blog/how-to-create-a-node-app-within-a-docker-container/</guid>
+      <description>Setup Requirements Before you go through this fun tutorial ensure: * You at least have an understanding of javascript and terminal commands. * You should know what Docker is and in theory how it works. * You have should node and npm installed on your computer. You can do this by typing this in your terminal.
+$ node --version &amp;amp;&amp;amp; node --version   Also, since we talking containers well you need docker installed.</description>
+    </item>
+    
+  </channel>
+</rss>

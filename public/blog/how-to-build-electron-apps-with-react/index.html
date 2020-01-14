@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>How to Build Electron Apps With React - Werick Codes</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="google-site-verification" content="E3BDyZa2q0nLY9qlxwaBkds4B6RjPysW-8_oBHf2I1I" />
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="">
+    <meta property="og:site_name" content="Werick Codes" />
+    <meta property="og:locale" content="nn_NO" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/blog/how-to-build-electron-apps-with-react/" />
+    <meta property="og:title" content="How to Build Electron Apps With React" />
+    <meta property="og:image" content="/https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" />
+    <meta property="og:description" content="" />
+
+    
+    <meta property="twitter:site" content="@wachira_dev">
+    
+
+    <meta property="twitter:title" content="How to Build Electron Apps With React" />
+    <meta property="twitter:image"
+        content="/https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:description" content="" />
+
+    
+
+    <link rel="canonical" href="/blog/how-to-build-electron-apps-with-react/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/main.css" />
+
+    
+    <link rel="stylesheet" href="/css/highlight.css" />
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/progressively/1.2.5/progressively.min.css"
+        integrity="sha256-xbqLYBMsjpuCihs+3Fgp/MFMtPdo2SWKoOjEWOqR4X0=" crossorigin="anonymous" />
+    
+
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg">
+
+
+    <link href='' rel="alternate"
+        type="application/rss+xml" title="Werick Codes" />
+
+    <noscript>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i" rel="stylesheet">
+    </noscript>
+</head>
+
+<body>
+    
+    
+
+    
+
+    
+
+<div class="my-4 my-md-5 header">
+    <div class="container">
+        <div class="row">
+            <div class="col-auto d-none d-md-block">
+                
+                    <a href="/">
+                        <img class="logo" src="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" alt="logo">
+                    </a>
+                
+            </div>
+            <div class="col-auto align-self-center mr-auto">
+                <a href="/">
+                    <h1 class="font-weight-bold name">
+                        Werick Codes
+                    </h1>
+                </a>
+
+                <ul class="nav nav-primary">
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase nav-link text-about" href="/about/">
+                                
+                                About
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase nav-link text-blog" href="/">
+                                
+                                Blog
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+
+                <ul class="nav nav-secondary">
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase font-weight-bold nav-link text-patreon" href="https://www.patreon.com/werickcodes">
+                                
+                                Become a patron
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div
+                    
+                    class="col-sm-12 col-md-9"
+                    
+                >
+                    <h1 class="mx-0 mx-md-4">
+                        How to Build Electron Apps With React
+                    </h1>
+
+                    <div class="mb-4 mb-md-5 meta">
+                        <span class="date" title='Sat Dec 28 2019 00:00:00 UTC'>
+                            December 28, 2019
+                        </span>
+
+                        
+                            
+                                <span class="author middot" title="Erick Wachira">
+                                    Erick Wachira
+                                </span>
+                            
+                        
+
+                        <span class="reading-time middot">
+                            7 minutes
+                        </span>
+
+                        <div class="d-none d-md-inline tags">
+                            <ul class="list-unstyled d-inline">
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/react">react</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/electron">electron</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/javascript">javascript</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/npm">npm</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/babel">babel</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/node">node</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="d-none d-md-inline tags">
+                            <ul class="list-unstyled d-inline">
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="markdown">
+                        
+    
+    
+
+<h1 id="introduction">Introduction</h1>
+
+<p>I have always had a deep interest in writing Desktop applications. What was holding me off throughout the years was, I wasn&rsquo;t interested in learning C++ or Java to make them. I wanted to build Desktop apps with Javascript, so I landed on Electron, a Javascript Desktop application framework, developed and maintained by Github.</p>
+
+<p>Electron is such a big deal that it will allow you to create Desktop apps for all the major OS with a single codebase.  That impressed me but not so much as you can write Desktop applications with React, Angular, Vue or any javascript framework out there. They sold me on that.</p>
+
+<p>In this tutorial, I will outline the initial setup to get you started.</p>
+
+<h1 id="prerequisites">Prerequisites</h1>
+
+<p>To understand the syntax and concept of this tutorial you should have:
+* Basic concepts of Javascript and React
+* Written Javascript in ES5 and ES6 standard
+* Used Node Package Manager(npm)
+* Installed Nodejs and npm/yarn</p>
+
+<h1 id="get-started">Get started</h1>
+
+<p>Let&rsquo;s create the folder to house the electron app and change the directory to it.</p>
+
+<pre><code class="language-bash">$ mkdir electron_react_app &amp;&amp; cd $_
+</code></pre>
+
+<p>Use CRA(create-react-app) cli to generate a react codebase for us</p>
+
+<pre><code class="language-bash">$ npx create-react-app .
+</code></pre>
+
+<p>Since we working with electron then we will add relevant dependencies throughout the tutorial.</p>
+
+<pre><code class="language-bash">$ yarn add electron electron-builder wait-on concurrently -D
+</code></pre>
+
+<ul>
+<li><code>electron</code> - allows us to use the electron framework.</li>
+<li><code>electron-builder</code> - allows us to build the electron app to executable.</li>
+<li><code>wait-on</code> - lets u wait on react to compile during development so as to render it with electron.</li>
+
+<li><p><code>concurrently</code> - allows us to run both react and electron concurrently.</p>
+
+<pre><code class="language-bash">$ yarn add electron-is-dev
+</code></pre></li>
+
+<li><p><code>electron-is-dev</code> - tells electron the current environment we are working to decide either serve the build or render the react app running on <code>dev</code> environment.</p></li>
+</ul>
+
+<p>Create an <code>electron.js</code> file in the public folder to house our electron logic.</p>
+
+<pre><code class="language-javascript">// public/electron.js
+const electron = require(&quot;electron&quot;);
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+
+const path = require(&quot;path&quot;);
+const isDev = require(&quot;electron-is-dev&quot;);
+
+let mainWindow;
+
+function createWindow() {
+  // Define the applications dimension
+  mainWindow = new BrowserWindow({ width: 900, height: 680 });
+  // Determine what to render based on environment
+  mainWindow.loadURL(
+    isDev
+      ? &quot;http://localhost:3000&quot;
+      : `file://${path.join(__dirname, &quot;../build/index.html&quot;)}`
+  );
+  
+  // Show chrome developer tools when in dev environment
+  if (isDev) {
+    mainWindow.webContents.openDevTools();
+  }
+  // Create event to close window on close
+  mainWindow.on(&quot;closed&quot;, () =&gt; (mainWindow = null));
+}
+
+// On launch create app window
+app.on(&quot;ready&quot;, createWindow);
+app.on(&quot;window-all-closed&quot;, () =&gt; {
+    // Based on which operating system you are using
+  if (process.platform !== &quot;linux&quot;) {
+      // If os not linux, close the app
+      // you can add darwin(mac os), win64 and so many more
+    app.quit();
+  }
+});
+
+app.on(&quot;activate&quot;, () =&gt; {
+  if (mainWindow !== null) {
+    createWindow();
+  }
+});
+</code></pre>
+
+<p>Next, we will add a command to the <code>package.json</code> script tag to run both react and electron concurrently.</p>
+
+<pre><code class="language-json">&quot;electron-dev&quot;: &quot;concurrently \&quot;BROWSER=none yarn start\&quot; \&quot;wait-on http://localhost:3000 &amp;&amp; electron .\&quot;&quot;
+</code></pre>
+
+<p>The script will wait until CRA compiles the react app then starts the electron app.</p>
+
+<p>Also for you to start the electron app you will have to point where the electron logic code lies. We will do so inside the <code>package.json</code> by adding the <code>main</code> value.</p>
+
+<pre><code class="language-json">&quot;main&quot;: &quot;public/electron.js&quot;
+</code></pre>
+
+<p>Let&rsquo;s run our app.</p>
+
+<pre><code class="language-bash">$ yarn electron-dev
+</code></pre>
+
+<p>You should see this.</p>
+
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1577516828425/q7o4qv42l.png" alt="Screenshot at 2019-12-28 10-04-16.png" /></p>
+
+<p>For a person who has used react before, you should be wondering why a new tab on your browser wasn&rsquo;t opened, this is because of the environment we defined while running <code>electron-dev</code>, <code>BROWSER=none</code>.</p>
+
+<p>Now, if you need to access the fs module as I did, you&rsquo;ll quickly hit the Module not found error. More info <a href="https://stackoverflow.com/questions/35428639/how-can-i-use-fs-in-react-with-electron">here</a>.</p>
+
+<p>Fortunately, it can be solved with the use of <code>electron-renderer</code> as the Webpack target. You will not have to change anything else in your React code rather we will use a third-party library called <a href="https://github.com/harrysolovay/rescripts"><code>Rescripts</code></a></p>
+
+<p>Let&rsquo;s install the library</p>
+
+<pre><code class="language-bash">$ yarn add @rescripts/cli  @rescripts/rescript-env -D
+</code></pre>
+
+<p>We will also have to change the script tags in the <code>package.json</code> file</p>
+
+<p><strong>From</strong></p>
+
+<pre><code class="language-json">&quot;start&quot;: &quot;react-scripts start&quot;,
+&quot;build&quot;: &quot;react-scripts build&quot;,
+&quot;test&quot;: &quot;react-scripts test&quot;,
+</code></pre>
+
+<p><strong>To</strong></p>
+
+<pre><code class="language-json">&quot;start&quot;: &quot;rescripts start&quot;,
+&quot;build&quot;: &quot;rescripts build&quot;,
+&quot;test&quot;: &quot;rescripts test&quot;,
+</code></pre>
+
+<p>Next, add the <code>.rescriptsrc.js</code> file in your root folder, and add the line below</p>
+
+<pre><code class="language-javascript">module.exports = [require.resolve('./.webpack.config.js')]
+</code></pre>
+
+<p>We definitely need to create the <code>.webpack.config.js</code> file to avoid import errors.</p>
+
+<pre><code class="language-javascript">module.exports = config =&gt; {
+  config.target = 'electron-renderer';
+  return config;
+}
+</code></pre>
+
+<p>Now your <code>fs</code> worries are over.</p>
+
+<h1 id="packaging-the-app">Packaging the app</h1>
+
+<p>To package our app, we will need a couple of dependencies.</p>
+
+<pre><code class="language-bash">yarn add electron-builder typescript -D
+</code></pre>
+
+<ul>
+<li><code>electron-builder</code> - to package the app with all of its dependencies.</li>
+<li><code>typescript</code> - <code>electron-builder</code> is dependent on typescript
+&gt; <strong>Note</strong>: You will not write any typescript, and I won&rsquo;t pressure you to use it.</li>
+</ul>
+
+<p>We need to define the homepage route because when react builds it uses absolute paths, and electron doesn&rsquo;t do absolute path. You can change this inside the <code>package.json</code> file by adding a <code>homepage</code> property.</p>
+
+<pre><code class="language-json">&quot;homepage&quot;: &quot;./&quot;,
+</code></pre>
+
+<p>Next, add an <code>electron-pack</code> command, which will package our builds.</p>
+
+<p>Add the following to your <code>scripts</code> tag in <code>package.json</code></p>
+
+<pre><code class="language-json">&quot;postinstall&quot;: &quot;electron-builder&quot;,
+&quot;preelectron-pack&quot;: &quot;yarn build&quot;,
+&quot;electron-pack&quot;: &quot;build -mw&quot;
+</code></pre>
+
+<ul>
+<li><code>postinstall</code> - will ensure that your dependencies always match the electron version</li>
+<li><code>preelectron-pack</code> - will build the react app</li>
+<li><code>electron-pack</code> - package the app for your operating system of choice.</li>
+</ul>
+
+<p>Before we can do run anything we will have to configure Electron builder.</p>
+
+<p>Add the following to your <code>package.json</code> file.</p>
+
+<pre><code class="language-json">&quot;author&quot;: {
+  &quot;name&quot;: &quot;Your Name&quot;,
+  &quot;email&quot;: &quot;your.email@domain.com&quot;,
+  &quot;url&quot;: &quot;https://your-website.com&quot;
+},
+&quot;build&quot;: {
+  &quot;appId&quot;: &quot;com.my-website.my-app&quot;,
+  &quot;productName&quot;: &quot;MyApp&quot;,
+  &quot;copyright&quot;: &quot;Copyright © 2019 ${author}&quot;,
+  &quot;mac&quot;: {
+    &quot;category&quot;: &quot;public.app-category.utilities&quot;
+  },
+  &quot;files&quot;: [
+    &quot;build/**/*&quot;,
+    &quot;node_modules/**/*&quot;
+  ],
+  &quot;directories&quot;: {
+    &quot;buildResources&quot;: &quot;assets&quot;
+  }
+}
+</code></pre>
+
+<p>Your <code>package.json</code> file should look like this.</p>
+
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;my-app&quot;,
+  &quot;description&quot;: &quot;Electron + Create React App + Electron Builder&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;private&quot;: true,
+  &quot;author&quot;: {
+    &quot;name&quot;: &quot;Your Name&quot;,
+    &quot;email&quot;: &quot;your.email@domain.com&quot;,
+    &quot;url&quot;: &quot;https://your-website.com&quot;
+  },
+  &quot;build&quot;: {
+    &quot;appId&quot;: &quot;com.my-website.my-app&quot;,
+    &quot;productName&quot;: &quot;MyApp&quot;,
+    &quot;copyright&quot;: &quot;Copyright © 2019 ${author}&quot;,
+    &quot;mac&quot;: {
+      &quot;category&quot;: &quot;public.app-category.utilities&quot;
+    },
+    &quot;files&quot;: [
+      &quot;build/**/*&quot;,
+      &quot;node_modules/**/*&quot;
+    ],
+    &quot;directories&quot;: {
+      &quot;buildResources&quot;: &quot;assets&quot;
+    }
+  },
+  &quot;dependencies&quot;: {
+    &quot;electron-is-dev&quot;: &quot;^1.0.1&quot;,
+    &quot;react&quot;: &quot;^16.8.3&quot;,
+    &quot;react-dom&quot;: &quot;^16.8.3&quot;,
+    &quot;react-scripts&quot;: &quot;2.1.5&quot;
+  },
+  &quot;homepage&quot;: &quot;./&quot;,
+  &quot;main&quot;: &quot;public/electron.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;rescripts start&quot;,
+    &quot;build&quot;: &quot;rescripts build&quot;,
+    &quot;test&quot;: &quot;rescripts test&quot;,
+    &quot;eject&quot;: &quot;react-scripts eject&quot;,
+    &quot;electron-dev&quot;: &quot;concurrently \&quot;BROWSER=none yarn start\&quot; \&quot;wait-on http://localhost:3000 &amp;&amp; electron .\&quot;&quot;,
+    &quot;postinstall&quot;: &quot;electron-builder&quot;,
+    &quot;preelectron-pack&quot;: &quot;yarn build&quot;,
+    &quot;electron-pack&quot;: &quot;build -mw&quot;
+  },
+  &quot;eslintConfig&quot;: {
+    &quot;extends&quot;: &quot;react-app&quot;
+  },
+  &quot;browserslist&quot;: [
+    &quot;&gt;0.2%&quot;,
+    &quot;not dead&quot;,
+    &quot;not ie &lt;= 11&quot;,
+    &quot;not op_mini all&quot;
+  ],
+  &quot;devDependencies&quot;: {
+    &quot;@rescripts/cli&quot;: &quot;^0.0.10&quot;,
+    &quot;@rescripts/rescript-env&quot;: &quot;^0.0.5&quot;,
+    &quot;concurrently&quot;: &quot;^4.1.0&quot;,
+    &quot;electron&quot;: &quot;^4.0.6&quot;,
+    &quot;electron-builder&quot;: &quot;^20.38.5&quot;,
+    &quot;typescript&quot;: &quot;^3.3.3333&quot;,
+    &quot;wait-on&quot;: &quot;^3.2.0&quot;
+  }
+}
+</code></pre>
+
+<p>You will also want to create a directory called <code>assets</code> where you will add your app icons. Check <a href="https://www.electron.build/icons">here</a> to see the formats for these icons.</p>
+
+<p>Now you can package your app</p>
+
+<pre><code class="language-bash">$ yarn electron-pack
+</code></pre>
+
+<h1 id="background-context">Background context</h1>
+
+<p>If you happen to encounter an error like this on linux.</p>
+
+<pre><code class="language-bash">[2720:0425/142001.775056:FATAL:setuid_sandbox_host.cc(157)] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /home/&lt;name&gt;/src/ssbc/patchwork/node_modules/electron/dist/chrome-sandbox is owned by root and has mode 4755.
+</code></pre>
+
+<p>You can fix that like that by adding with this command.</p>
+
+<blockquote>
+<p>Ensure you are in the project directory</p>
+</blockquote>
+
+<pre><code class="language-bash">$ sudo chown root node_modules/electron/dist/chrome-sandbox
+</code></pre>
+
+<p>Then</p>
+
+<pre><code class="language-bash">$ sudo chmod 4755 node_modules/electron/dist/chrome-sandbox
+</code></pre>
+
+<p>Your Linux package app won&rsquo;t work automatically because it has the <code>.Appimage</code> extension by default. You will have to make it executable.</p>
+
+<blockquote>
+<p>Ensure you are in the dist folder</p>
+</blockquote>
+
+<p>You can do so by:</p>
+
+<pre><code class="language-bash">$ chmod a+x '&lt;You app&gt;.AppImage'
+</code></pre>
+
+<p>Then run it</p>
+
+<pre><code class="language-bash">$ ./&lt;You app&gt;.AppImage
+</code></pre>
+
+<p>If experience the 4755 error again then use this command:</p>
+
+<pre><code class="language-bash">$ sudo chown root '&lt;Your appname&gt;.AppImage' 
+</code></pre>
+
+<p>Then</p>
+
+<pre><code class="language-bash">$ sudo chmod 4755 '&lt;Your appname&gt;.AppImage'   
+</code></pre>
+
+<p>Then try running it again.</p>
+
+<p>You can also build a Linux app to your preferred type e.g. Debian.
+* Debian <a href="https://github.com/electron-userland/electron-installer-debian">here</a></p>
+
+<h1 id="follow-up">Follow up</h1>
+
+<ul>
+<li>Comment if any questions</li>
+<li>Follow me on twitter <a href="https://twitter.com/wachira_dev">@wachira_dev</a></li>
+<li>Repo <a href="https://github.com/werickblog/electron_react_app">here</a></li>
+</ul>
+
+
+
+                    </div>
+                </div>
+
+                
+                    <div class="col-sm-12 col-md-3">
+                        <nav id="TableOfContents" class="sticky-top">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#get-started">Get started</a></li>
+<li><a href="#packaging-the-app">Packaging the app</a></li>
+<li><a href="#background-context">Background context</a></li>
+<li><a href="#follow-up">Follow up</a></li>
+</ul>
+</nav>
+                    </div>
+                
+            </div>
+
+            <div class="row">
+                <div
+                    
+                    class="col-sm-12 col-md-9"
+                    
+                >
+                    
+                        <div class="navigation">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    
+                                        <div class="mx-0 mx-md-4 mt-4 text-left">
+                                            <a href="/blog/how-to-add-api-rate-limits-to-your-express-api/">
+                                                <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175">
+        <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225 c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z" />
+    </svg>
+</span>
+
+                                                <span class="text">How to Add Api Rate Limits to Your Express Api</span>
+                                            </a>
+                                        </div>
+                                    
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-5">
+                <div class="mx-0 mx-md-4 mb-2 text-center text-md-left">
+                    
+                        <div>
+                            <a class="mx-1 mr-md-2 ml-md-0  text-tags" href="/tags/">
+                                
+                                Tags
+                            </a>
+                        </div>
+                    
+
+                    
+                        
+                            <a href="https://werick.codes">© 2095 by Erick Wachira</a>
+                        
+                    
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <div class="mx-0 mx-md-4 text-center text-md-right">
+                    
+
+                    
+
+                    
+    <a href="https://github.com/tesh254"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="GitHub">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/>
+        </svg>
+    </a>
+
+
+                    
+
+                    
+    <a href="https://twitter.com/wachira_dev"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Twitter">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+
+
+                    
+
+                    
+
+                    
+    <a href="https://www.linkedin.com/in/erick-wachira-09a635154"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Linkedin">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+
+
+                    
+    <a href="mailto:ewachira254@gmail.com"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Email">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16">
+            <path d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"/>
+        </svg>
+    </a>
+
+
+                    <a href=''
+    class="mx-1 ml-md-2 mr-md-0 icon"
+    aria-label="RSS">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/>
+    </svg>
+</a>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha256-ZvOgfh+ptkpoa2Y4HkRY28ir89u/+VRyDE7sB7hEEcI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
+        integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Raleway:400,600,700', 'Merriweather:300,300i,700,700i']
+            }
+        });
+    </script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
+        integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/bash.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/css.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/diff.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/django.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/react.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/json.min.js" defer></script>
+    
+    <script>
+        window.addEventListener('load', function () {
+            hljs.initHighlighting();
+        }, true);
+    </script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressively/1.2.5/progressively.min.js"
+        integrity="sha256-LvFVlLdfGI3WeEH+8Ni4kxLm02g2GlOfeGCGLXfRk/U=" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('load', function () {
+            progressively.init({ delay: 30, throttle: 50 });
+        }, true);
+    </script>
+    
+
+    
+
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136029758-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-136029758-1');
+    </script>
+</body>
+
+</html>

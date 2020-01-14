@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>How to Create and Run Cron Jobs in Node - Werick Codes</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="google-site-verification" content="E3BDyZa2q0nLY9qlxwaBkds4B6RjPysW-8_oBHf2I1I" />
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Get started with crons in Node">
+    <meta property="og:site_name" content="Werick Codes" />
+    <meta property="og:locale" content="nn_NO" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/blog/how-to-create-and-run-cron-jobs-in-node/" />
+    <meta property="og:title" content="How to Create and Run Cron Jobs in Node" />
+    <meta property="og:image" content="/https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" />
+    <meta property="og:description" content="Get started with crons in Node" />
+
+    
+    <meta property="twitter:site" content="@wachira_dev">
+    
+
+    <meta property="twitter:title" content="How to Create and Run Cron Jobs in Node" />
+    <meta property="twitter:image"
+        content="/https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:description" content="Get started with crons in Node" />
+
+    
+
+    <link rel="canonical" href="/blog/how-to-create-and-run-cron-jobs-in-node/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/main.css" />
+
+    
+    <link rel="stylesheet" href="/css/highlight.css" />
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/progressively/1.2.5/progressively.min.css"
+        integrity="sha256-xbqLYBMsjpuCihs+3Fgp/MFMtPdo2SWKoOjEWOqR4X0=" crossorigin="anonymous" />
+    
+
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg">
+
+
+    <link href='' rel="alternate"
+        type="application/rss+xml" title="Werick Codes" />
+
+    <noscript>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i" rel="stylesheet">
+    </noscript>
+</head>
+
+<body>
+    
+    
+
+    
+
+    
+
+<div class="my-4 my-md-5 header">
+    <div class="container">
+        <div class="row">
+            <div class="col-auto d-none d-md-block">
+                
+                    <a href="/">
+                        <img class="logo" src="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" alt="logo">
+                    </a>
+                
+            </div>
+            <div class="col-auto align-self-center mr-auto">
+                <a href="/">
+                    <h1 class="font-weight-bold name">
+                        Werick Codes
+                    </h1>
+                </a>
+
+                <ul class="nav nav-primary">
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase nav-link text-about" href="/about/">
+                                
+                                About
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase nav-link text-blog" href="/">
+                                
+                                Blog
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+
+                <ul class="nav nav-secondary">
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase font-weight-bold nav-link text-patreon" href="https://www.patreon.com/werickcodes">
+                                
+                                Become a patron
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div
+                    
+                    class="col-sm-12 col-md-9"
+                    
+                >
+                    <h1 class="mx-0 mx-md-4">
+                        How to Create and Run Cron Jobs in Node
+                    </h1>
+
+                    <div class="mb-4 mb-md-5 meta">
+                        <span class="date" title='Wed Jul 31 2019 00:00:00 UTC'>
+                            July 31, 2019
+                        </span>
+
+                        
+                            
+                                <span class="author middot" title="Erick Wachira">
+                                    Erick Wachira
+                                </span>
+                            
+                        
+
+                        <span class="reading-time middot">
+                            7 minutes
+                        </span>
+
+                        <div class="d-none d-md-inline tags">
+                            <ul class="list-unstyled d-inline">
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/node">node</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/crons">crons</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/jobs">jobs</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/schedule">schedule</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="d-none d-md-inline tags">
+                            <ul class="list-unstyled d-inline">
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="markdown">
+                        
+    
+    
+
+<p>You ever want to automate certain tasks on your app, saving you the hustle of doing them manually such as deletion of log files, automated emails or maybe doing a backup of your database data into a MongoDB/SQL dump file, well say no more <code>cron jobs</code> are here to help.</p>
+
+<h2 id="what-is-a-cronjob">What is a cronjob?</h2>
+
+<p>A cron job is a task that automatically runs on a set schedule, example at 0000h you might have a cron job clear site cache on your CDN(Content Delivery Network).</p>
+
+<p>By the end of this tutorial, you should be able to create a simple Node cron job.</p>
+
+<h1 id="prerequisites">Prerequisites</h1>
+
+<p>To get started with this tutorial you must have:
+* NodeJS installed on your development computer
+* Yarn or NPM installed
+* Knowledge in writing es5 Javascript</p>
+
+<h1 id="getting-started">Getting Started</h1>
+
+<h2 id="setup">Setup</h2>
+
+<p>To have our cron job running we need to set up our Node project.</p>
+
+<pre><code class="language-bash">// Create our folder and change our directory to where it is created
+$ mkdir cron_jobs_with_nodejs &amp;&amp; cd cron_jobs_with_nodejs
+// Initialize our package.json file
+$ yarn init -y or npm init -y
+</code></pre>
+
+<p>We are going to create a simple cron job that deletes a file after a minute. Let&rsquo;s create a file to house our code</p>
+
+<pre><code class="language-bash">$ touch index.js
+</code></pre>
+
+<p>We need to install certain packages that will ensure we have a cron job</p>
+
+<pre><code class="language-bash">$ npm install express node-cron fs
+</code></pre>
+
+<ul>
+<li><code>express</code>: For our cron job to run after a set time we need to initialize a keep-alive connection, which <code>express</code> library will offer when we initialize a <code>HTTP</code> server. You can still use Node inbuilt <code>HTTP</code> library.
+&gt; <em>Note</em>: We need to have a running program so that our cron job runs, thus the need for a HTTP connection.</li>
+<li><code>node-cron</code>: This is the library that will enable us to run our cron job successfully.</li>
+<li><code>fs</code>: Helps us access the <code>file-system</code> quite well. It comes built-in Node, so there is no need to install it.</li>
+</ul>
+
+<h2 id="code">Code</h2>
+
+<p>The boring but important step is over, now to the good stuff, code. Open <code>index.js</code> with your local editor.</p>
+
+<p>First, we will have to set up our whole express server</p>
+
+<pre><code class="language-js">// Import needed libraries
+const express = require(&quot;express&quot;);
+const Cron = require(&quot;node-cron&quot;);
+const fs = require(&quot;fs&quot;);
+
+// Initialize express
+const app = express();
+
+// Set  our default port
+app.set(&quot;port&quot;, process.env.PORT || 3456);
+
+// Initialize our server
+app.listen(app.get(&quot;port&quot;), err =&gt; {
+  // If something goes wrong when initializing the server
+  if (err) console.log(`Server failure due to ${err.message}`);
+  console.log(`Server running on port ${app.get(&quot;port&quot;)}`);
+});
+</code></pre>
+
+<p>Run our server.</p>
+
+<pre><code class="language-bash">$ node src/index.js
+</code></pre>
+
+<p>If successful you will see a similar message printed on your console/terminal.</p>
+
+<pre><code class="language-bash">Server running on port 3456
+</code></pre>
+
+<p>Secondly, we will write a simple cron job that console logs a statement after every minute.</p>
+
+<pre><code class="language-js">// Import needed libraries
+const express = require(&quot;express&quot;);
+const Cron = require(&quot;node-cron&quot;);
+const fs = require(&quot;fs&quot;);
+
+// Initialize express
+const app = express();
+
+// Set  our default port
+app.set(&quot;port&quot;, process.env.PORT || 3456);
+
+// Schedule a cron job task
+Cron.schedule(&quot;* * * * * &quot;, () =&gt; {
+  console.log(&quot;&gt; After every minute the cron job runs&quot;);
+});
+
+// Initialize our server
+app.listen(app.get(&quot;port&quot;), err =&gt; {
+  // If something goes wrong when initializing the server
+  if (err) console.log(`Server failure due to ${err.message}`);
+  console.log(`Server running on port ${app.get(&quot;port&quot;)}`);
+});
+
+</code></pre>
+
+<p>You must be wondering about the weird value as the first argument for the <code>Cron.schedule</code> method. The value is how we set the intervals that the cron job should run.</p>
+
+<h2 id="cron-syntax">Cron Syntax</h2>
+
+<pre><code class="language-bash">* * * * * *
+| | | | | |
+| | | | | day of week
+| | | | month
+| | | day of month
+| | hour
+| minute
+second ( optional )
+</code></pre>
+
+<h3 id="allowed-values">Allowed values</h3>
+
+<table>
+<thead>
+<tr>
+<th>Field Type</th>
+<th>Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Second</td>
+<td>0-59</td>
+</tr>
+
+<tr>
+<td>minute</td>
+<td>0-59</td>
+</tr>
+
+<tr>
+<td>hour</td>
+<td>0-23</td>
+</tr>
+
+<tr>
+<td>day of month</td>
+<td>1-31</td>
+</tr>
+
+<tr>
+<td>month</td>
+<td>1-12 or names i.e. January</td>
+</tr>
+
+<tr>
+<td>day of week</td>
+<td>0-7 or names i.e. Monday</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="using-multiple-values">Using multiple values</h4>
+
+<p>You can use multiple values using separate commas</p>
+
+<pre><code class="language-js">// Import needed libraries
+const express = require(&quot;express&quot;);
+const Cron = require(&quot;node-cron&quot;);
+const fs = require(&quot;fs&quot;);
+
+// Initialize express
+const app = express();
+
+// Set  our default port
+app.set(&quot;port&quot;, process.env.PORT || 3456);
+
+// Schedule a cron job task
+Cron.schedule(&quot;1,2,4,5 * * * *&quot;, () =&gt; {
+    console.log(&quot;&gt; After every minute 1, 2, 4 and 5 the cron job runs&quot;)
+})
+
+// Initialize our server
+app.listen(app.get(&quot;port&quot;), err =&gt; {
+  // If something goes wrong when initializing the server
+  if (err) console.log(`Server failure due to ${err.message}`);
+  console.log(`Server running on port ${app.get(&quot;port&quot;)}`);
+});
+</code></pre>
+
+<h4 id="using-ranges">Using ranges</h4>
+
+<pre><code class="language-js">// Import needed libraries
+const express = require(&quot;express&quot;);
+const Cron = require(&quot;node-cron&quot;);
+const fs = require(&quot;fs&quot;);
+
+// Initialize express
+const app = express();
+
+// Set  our default port
+app.set(&quot;port&quot;, process.env.PORT || 3456);
+
+// Schedule a cron job task
+Cron.schedule(&quot;1-5 * * * *&quot;, () =&gt; {
+    console.log(&quot;&gt; After every minute to 1 from 5 the cron job runs&quot;)
+})
+
+// Initialize our server
+app.listen(app.get(&quot;port&quot;), err =&gt; {
+  // If something goes wrong when initializing the server
+  if (err) console.log(`Server failure due to ${err.message}`);
+  console.log(`Server running on port ${app.get(&quot;port&quot;)}`);
+});
+</code></pre>
+
+<p>You can use month names as multiple values in full or short format, <code>January, February, September</code> or <code>Jan, Feb, Sep</code>.</p>
+
+<p>Let&rsquo;s create a cron job schedule that deletes a file after the first minute</p>
+
+<pre><code class="language-bash">$ touch tobedeletedfile.txt
+</code></pre>
+
+<pre><code class="language-js">// Import needed libraries
+const express = require(&quot;express&quot;);
+const Cron = require(&quot;node-cron&quot;);
+const fs = require(&quot;fs&quot;);
+
+// Initialize express
+const app = express();
+
+// Set  our default port
+app.set(&quot;port&quot;, process.env.PORT || 3456);
+
+/**
+ * Cron job that deletes a file after every minute
+ */
+
+const deleteFileCron = Cron.schedule(&quot;* * * * *&quot;, () =&gt; {
+  console.log(&quot;Job has started&quot;);
+  fs.unlink(&quot;./tobedeletedfile.txt&quot;, err =&gt; {
+    if (err) {
+      console.log(`Failed to delete file due to ${err.message}`);
+    } else {
+      console.log(&quot;File has been deleted successfully&quot;);
+    }
+  });
+});
+
+// Its a scheduled task method that starts a scheduled task
+deleteFileCron.start()
+
+// Initialize our server
+app.listen(app.get(&quot;port&quot;), err =&gt; {
+  // If something goes wrong when initializing the server
+  if (err) console.log(`Server failure due to ${err.message}`);
+  console.log(`Server running on port ${app.get(&quot;port&quot;)}`);
+});
+
+</code></pre>
+
+<p>If you run the code you should something similar in your console/terminal</p>
+
+<pre><code class="language-bash">Server running on port 3456
+Job has started
+File has been deleted successfully
+Job has started
+Failed to delete file due to ENOENT: no such file or directory, unlink './tobedeletedfile.txt'
+</code></pre>
+
+<h1 id="simple-node-cron-job-template">Simple Node Cron Job template</h1>
+
+<pre><code class="language-js">[...]
+const Cron = require(&quot;node-cron&quot;);
+
+[...]
+
+Cron.schedule(&quot;* * * * *&quot;, () =&gt; {
+    // You can right the task to run here
+});
+
+[...]
+</code></pre>
+
+<h1 id="advantages-of-cron-jobs-over-infinite-loops">Advantages of Cron jobs over infinite loops</h1>
+
+<p>Some developers use infinite loops instead of cron jobs, this should not be the case because loops tend to occupy a lot of memory in your system compared to cron jobs.</p>
+
+<p><strong>Advantages of cron jobs</strong>
+* You have control over it when it runs.
+* It&rsquo;s easier to write the code and to manage its operation. It eliminates the looping and timing logic in the task, and you run crontab to change the timing or shut it off.
+* It&rsquo;s not occupying memory in your system when it&rsquo;s not running.
+* If it fails and exits for some reason, it will start up again when the proper time comes.</p>
+
+<p><strong>Advantages of loops</strong>
+* It doesn&rsquo;t have the overhead of being restarted every time it&rsquo;s needed</p>
+
+<h1 id="where-to-use-cron-jobs">Where to use Cron jobs</h1>
+
+<p>You can use cron job in so many scenarios such as:
+* Email automation
+* Database backups
+* Deletion of files such as logs</p>
+
+<h1 id="summary">Summary</h1>
+
+<ul>
+<li>We set up a simple cron job with Node that lets us delete a file after every minute.</li>
+<li>Brief description of <code>cron's</code> syntax</li>
+<li>Advantages of <code>cron jobs</code></li>
+<li>Where to use cron jobs</li>
+</ul>
+
+<h1 id="resources-and-recommendations">Resources and Recommendations</h1>
+
+<p>Below is a list of links, you can read up on to have a deep understanding of cron jobs in Node and general info about <code>crons</code>:
+* Cron job examples by CodeBeast <a href="https://scotch.io/tutorials/nodejs-cron-jobs-by-examples">here</a>
+* <code>node-cron</code> documentation on npm <a href="https://www.npmjs.com/package/node-cron">here</a>
+* Cron jobs with Node by Useful Angle <a href="https://usefulangle.com/post/115/nodejs-cron-job">here</a>
+* All about <code>crons</code>, <code>crontabs</code> and <code>cron jobs</code> <a href="https://en.wikipedia.org/wiki/Cron">here</a></p>
+
+<h1 id="extras">Extras</h1>
+
+<ul>
+<li>Repo <a href="https://github.com/werickblog/cron_jobs_with_nodejs">link</a></li>
+</ul>
+
+<p>Cover image made by <a href="https://liyasthomas.github.io/banner/">https://liyasthomas.github.io/banner/</a></p>
+
+
+
+                    </div>
+                </div>
+
+                
+                    <div class="col-sm-12 col-md-3">
+                        <nav id="TableOfContents" class="sticky-top">
+<ul>
+<li>
+<ul>
+<li><a href="#what-is-a-cronjob">What is a cronjob?</a></li>
+</ul></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#cron-syntax">Cron Syntax</a>
+<ul>
+<li><a href="#allowed-values">Allowed values</a>
+<ul>
+<li><a href="#using-multiple-values">Using multiple values</a></li>
+<li><a href="#using-ranges">Using ranges</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#simple-node-cron-job-template">Simple Node Cron Job template</a></li>
+<li><a href="#advantages-of-cron-jobs-over-infinite-loops">Advantages of Cron jobs over infinite loops</a></li>
+<li><a href="#where-to-use-cron-jobs">Where to use Cron jobs</a></li>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#resources-and-recommendations">Resources and Recommendations</a></li>
+<li><a href="#extras">Extras</a></li>
+</ul>
+</nav>
+                    </div>
+                
+            </div>
+
+            <div class="row">
+                <div
+                    
+                    class="col-sm-12 col-md-9"
+                    
+                >
+                    
+                        <div class="navigation">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    
+                                        <div class="mx-0 mx-md-4 mt-4 text-left">
+                                            <a href="/blog/getting-started-with-nextjs-part-1/">
+                                                <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175">
+        <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225 c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z" />
+    </svg>
+</span>
+
+                                                <span class="text">Getting Started With Nextjs Part 1</span>
+                                            </a>
+                                        </div>
+                                    
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    
+                                        <div class="mx-0 mx-md-4 mt-4 text-right">
+                                            <a href="/blog/environment-variables-from-env-file-in-nextjs/">
+                                                <span class="text">Environment Variables From Env File in Nextjs</span>
+                                                <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175">
+        <path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5 c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z" />
+    </svg>
+</span>
+
+                                            </a>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-5">
+                <div class="mx-0 mx-md-4 mb-2 text-center text-md-left">
+                    
+                        <div>
+                            <a class="mx-1 mr-md-2 ml-md-0  text-tags" href="/tags/">
+                                
+                                Tags
+                            </a>
+                        </div>
+                    
+
+                    
+                        
+                            <a href="https://werick.codes">© 2095 by Erick Wachira</a>
+                        
+                    
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <div class="mx-0 mx-md-4 text-center text-md-right">
+                    
+
+                    
+
+                    
+    <a href="https://github.com/tesh254"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="GitHub">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/>
+        </svg>
+    </a>
+
+
+                    
+
+                    
+    <a href="https://twitter.com/wachira_dev"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Twitter">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+
+
+                    
+
+                    
+
+                    
+    <a href="https://www.linkedin.com/in/erick-wachira-09a635154"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Linkedin">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+
+
+                    
+    <a href="mailto:ewachira254@gmail.com"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Email">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16">
+            <path d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"/>
+        </svg>
+    </a>
+
+
+                    <a href=''
+    class="mx-1 ml-md-2 mr-md-0 icon"
+    aria-label="RSS">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/>
+    </svg>
+</a>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha256-ZvOgfh+ptkpoa2Y4HkRY28ir89u/+VRyDE7sB7hEEcI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
+        integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Raleway:400,600,700', 'Merriweather:300,300i,700,700i']
+            }
+        });
+    </script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
+        integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/bash.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/css.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/diff.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/django.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/react.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/json.min.js" defer></script>
+    
+    <script>
+        window.addEventListener('load', function () {
+            hljs.initHighlighting();
+        }, true);
+    </script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressively/1.2.5/progressively.min.js"
+        integrity="sha256-LvFVlLdfGI3WeEH+8Ni4kxLm02g2GlOfeGCGLXfRk/U=" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('load', function () {
+            progressively.init({ delay: 30, throttle: 50 });
+        }, true);
+    </script>
+    
+
+    
+
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136029758-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-136029758-1');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Werick Codes</title>
+    <link>/</link>
+    <description>Recent content on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 14 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Werick Codes</title>
+      <link>/about/</link>
+      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Werick Codes is a blog built by Erick Wachira, a software developer, here. He uses this blog to share what he learns. Hope onto this Discord serve here for software development chit-chat.
+Reach out to Erick Wachira via Twitter or via mail.
+Github: https://github.com/tesh254</description>
+    </item>
+    
+    <item>
+      <title>How to Build Electron Apps With React</title>
+      <link>/blog/how-to-build-electron-apps-with-react/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-build-electron-apps-with-react/</guid>
+      <description>Introduction I have always had a deep interest in writing Desktop applications. What was holding me off throughout the years was, I wasn&amp;rsquo;t interested in learning C++ or Java to make them. I wanted to build Desktop apps with Javascript, so I landed on Electron, a Javascript Desktop application framework, developed and maintained by Github.
+Electron is such a big deal that it will allow you to create Desktop apps for all the major OS with a single codebase.</description>
+    </item>
+    
+    <item>
+      <title>How to Add Api Rate Limits to Your Express Api</title>
+      <link>/blog/how-to-add-api-rate-limits-to-your-express-api/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-add-api-rate-limits-to-your-express-api/</guid>
+      <description>I had an idea of building a public API, sort of similar to the Marvel API, where you get to fetch all Marvel characters.
+When I was brainstorming on how I would build the API, I thought about three key things: * It should be public and everyone should access (take note) * An admin account to allow me to update the API&amp;rsquo;s content.
+The problem with making it public as it would be quite risky especially when someone runs a bot that results in DDoS attack happens and well the API will be free and I will be paying for the server costs.</description>
+    </item>
+    
+    <item>
+      <title>How to Write Javascript in Es6 With Nodejs</title>
+      <link>/blog/how-to-write-javascript-in-es6-with-nodejs/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-write-javascript-in-es6-with-nodejs/</guid>
+      <description>You building an application with React and Node. You write your React code in ES6 but when you visit your Node backend code you happen to write in ES5. I found this quite annoying due to the change and also the require method. If you feel you are comfortable writing ES5 Node, you can skip this blog but if you might like making your frontend and backend switch quite seamless as we wait to figure out deno, you are in luck, because I will guide you in all the steps you will have to undertake and I have an existing NodeJS ES6 template setup already on Github.</description>
+    </item>
+    
+    <item>
+      <title>How to Add a Dark Mode to Your React Web App</title>
+      <link>/blog/how-to-add-a-dark-mode-to-your-react-web-app/</link>
+      <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-add-a-dark-mode-to-your-react-web-app/</guid>
+      <description>We are currently living in a dark mode in everything era. Most apps nowadays come with a switch either at the navbar or just somewhere around its settings, that you just click and the screen goes dark. Some apps even come with dark mode as default, example Mixer , even Netflix has a dark mode by default.
+Having a dark mode will really help in reducing the tiring of eyes caused by light modes and by the end of this article, you should be able to add dark mode to your Reactjs app in a few minutes.</description>
+    </item>
+    
+    <item>
+      <title>Environment Variables From Env File in Nextjs</title>
+      <link>/blog/environment-variables-from-env-file-in-nextjs/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/environment-variables-from-env-file-in-nextjs/</guid>
+      <description>If you started building your application with next and you want it to access environment variables in your .env file here is away.
+Why you need a .env file There are a number of reasons why you should have a .env file when working on an application, they are: * Security: A .env file can be used to store critical and sensitive credentials such as access_tokens, secret_keys or api_keys thus ensuring they are not exploited by a hacker prying on your repo.</description>
+    </item>
+    
+    <item>
+      <title>How to Create and Run Cron Jobs in Node</title>
+      <link>/blog/how-to-create-and-run-cron-jobs-in-node/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-create-and-run-cron-jobs-in-node/</guid>
+      <description>You ever want to automate certain tasks on your app, saving you the hustle of doing them manually such as deletion of log files, automated emails or maybe doing a backup of your database data into a MongoDB/SQL dump file, well say no more cron jobs are here to help.
+What is a cronjob? A cron job is a task that automatically runs on a set schedule, example at 0000h you might have a cron job clear site cache on your CDN(Content Delivery Network).</description>
+    </item>
+    
+    <item>
+      <title>Getting Started With Nextjs Part 1</title>
+      <link>/blog/getting-started-with-nextjs-part-1/</link>
+      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/getting-started-with-nextjs-part-1/</guid>
+      <description>Hey Coder, I blogged about why you should learn Next in this blog. For this part of the series, I will guide through the features that next brings to the table.
+ Note: You should have NodeJS, npm, and npx installed. You should be proficient in Javascript and React.
+ Setting up our project. You can create your own repo or clone my repo.
+$ git clone https://github.com/werickblog/react_next_app.git  Change directory to where your repo is housed locally</description>
+    </item>
+    
+    <item>
+      <title>Why You Should Learn Nextjs</title>
+      <link>/blog/why-you-should-learn-nextjs/</link>
+      <pubDate>Tue, 02 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/why-you-should-learn-nextjs/</guid>
+      <description>Next.JS is a javascript framework that allows developers to create server-rendered react web apps also comes with other perks that make frontend development swift.
+How I encountered Next.JS? I am currently reworking on my own personal blog with React and Next.JS on the frontend and Express powering the backend.
+So why am I redoing my blog from scratch? Before I could launch an MVP of the blog, I had to work on the SEO and also make it easier for web crawlers, which in turn helps with a great search engine score and indexing.</description>
+    </item>
+    
+    <item>
+      <title>Why You Should Document Your Code</title>
+      <link>/blog/why-you-should-document-your-code/</link>
+      <pubDate>Sun, 23 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/why-you-should-document-your-code/</guid>
+      <description>Brief History A year ago I built an e-commerce API with Flask and consumed it with React on the frontend. It was the first time I built a web app like that where the frontend and backend were very separate because before I would use templating engines like Jinja for Flask and Handlebars for Express. Those were the times when I just started programming, I was so full of energy and very ignorant sometimes.</description>
+    </item>
+    
+    <item>
+      <title>How to Host Your Node App in a Docker Container on Heroku</title>
+      <link>/blog/how-to-host-your-node-app-in-a-docker-container-on-heroku/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-host-your-node-app-in-a-docker-container-on-heroku/</guid>
+      <description>Introduction This is the third part of the series for Docker meets NodeJS.
+We got to add a mongo database as a service and maybe you added a couple of endpoints to test it out, but the whole app is in runs locally and you might want to let the whole world have the opportunity to test out your Node app well not to worry, Werick is here.
+In this part, we are going to host our application on Heroku.</description>
+    </item>
+    
+    <item>
+      <title>How to Create a Node App Within a Docker Container With Mongo</title>
+      <link>/blog/how-to-create-a-node-app-within-a-docker-container-with-mongo/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-create-a-node-app-within-a-docker-container-with-mongo/</guid>
+      <description>Introduction This is the second part of the series for Docker meets NodeJS where we are going to introduce a database service, MongoDB, which we will connect to it with our Node app through a network.
+ Note: Since we are introducing a new database service, by doing so this also makes our Node app also a service
+Note: Ensure you go through the first part of this series since it contains a huge part of how we created our Node app within a Docker container.</description>
+    </item>
+    
+    <item>
+      <title>How to Create a Node App Within a Docker Container</title>
+      <link>/blog/how-to-create-a-node-app-within-a-docker-container/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0300</pubDate>
+      
+      <guid>/blog/how-to-create-a-node-app-within-a-docker-container/</guid>
+      <description>Setup Requirements Before you go through this fun tutorial ensure: * You at least have an understanding of javascript and terminal commands. * You should know what Docker is and in theory how it works. * You have should node and npm installed on your computer. You can do this by typing this in your terminal.
+$ node --version &amp;amp;&amp;amp; node --version   Also, since we talking containers well you need docker installed.</description>
+    </item>
+    
+  </channel>
+</rss>

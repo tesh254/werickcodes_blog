@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>babel on Werick Codes</title>
+    <link>/tags/babel/</link>
+    <description>Recent content in babel on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/babel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Build Electron Apps With React</title>
+      <link>/blog/how-to-build-electron-apps-with-react/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-build-electron-apps-with-react/</guid>
+      <description>Introduction I have always had a deep interest in writing Desktop applications. What was holding me off throughout the years was, I wasn&amp;rsquo;t interested in learning C++ or Java to make them. I wanted to build Desktop apps with Javascript, so I landed on Electron, a Javascript Desktop application framework, developed and maintained by Github.
+Electron is such a big deal that it will allow you to create Desktop apps for all the major OS with a single codebase.</description>
+    </item>
+    
+    <item>
+      <title>How to Write Javascript in Es6 With Nodejs</title>
+      <link>/blog/how-to-write-javascript-in-es6-with-nodejs/</link>
+      <pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-write-javascript-in-es6-with-nodejs/</guid>
+      <description>You building an application with React and Node. You write your React code in ES6 but when you visit your Node backend code you happen to write in ES5. I found this quite annoying due to the change and also the require method. If you feel you are comfortable writing ES5 Node, you can skip this blog but if you might like making your frontend and backend switch quite seamless as we wait to figure out deno, you are in luck, because I will guide you in all the steps you will have to undertake and I have an existing NodeJS ES6 template setup already on Github.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Getting Started With Nextjs Part 1 - Werick Codes</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="google-site-verification" content="E3BDyZa2q0nLY9qlxwaBkds4B6RjPysW-8_oBHf2I1I" />
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Getting started with Nextjs">
+    <meta property="og:site_name" content="Werick Codes" />
+    <meta property="og:locale" content="nn_NO" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/blog/getting-started-with-nextjs-part-1/" />
+    <meta property="og:title" content="Getting Started With Nextjs Part 1" />
+    <meta property="og:image" content="/https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" />
+    <meta property="og:description" content="Getting started with Nextjs" />
+
+    
+    <meta property="twitter:site" content="@wachira_dev">
+    
+
+    <meta property="twitter:title" content="Getting Started With Nextjs Part 1" />
+    <meta property="twitter:image"
+        content="/https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:description" content="Getting started with Nextjs" />
+
+    
+
+    <link rel="canonical" href="/blog/getting-started-with-nextjs-part-1/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/main.css" />
+
+    
+    <link rel="stylesheet" href="/css/highlight.css" />
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/progressively/1.2.5/progressively.min.css"
+        integrity="sha256-xbqLYBMsjpuCihs+3Fgp/MFMtPdo2SWKoOjEWOqR4X0=" crossorigin="anonymous" />
+    
+
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg">
+
+
+    <link href='' rel="alternate"
+        type="application/rss+xml" title="Werick Codes" />
+
+    <noscript>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i" rel="stylesheet">
+    </noscript>
+</head>
+
+<body>
+    
+    
+
+    
+
+    
+
+<div class="my-4 my-md-5 header">
+    <div class="container">
+        <div class="row">
+            <div class="col-auto d-none d-md-block">
+                
+                    <a href="/">
+                        <img class="logo" src="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" alt="logo">
+                    </a>
+                
+            </div>
+            <div class="col-auto align-self-center mr-auto">
+                <a href="/">
+                    <h1 class="font-weight-bold name">
+                        Werick Codes
+                    </h1>
+                </a>
+
+                <ul class="nav nav-primary">
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase nav-link text-about" href="/about/">
+                                
+                                About
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase nav-link text-blog" href="/">
+                                
+                                Blog
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+
+                <ul class="nav nav-secondary">
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase font-weight-bold nav-link text-patreon" href="https://www.patreon.com/werickcodes">
+                                
+                                Become a patron
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div
+                    
+                    class="col-sm-12 col-md-9"
+                    
+                >
+                    <h1 class="mx-0 mx-md-4">
+                        Getting Started With Nextjs Part 1
+                    </h1>
+
+                    <div class="mb-4 mb-md-5 meta">
+                        <span class="date" title='Wed Jul 24 2019 00:00:00 UTC'>
+                            July 24, 2019
+                        </span>
+
+                        
+                            
+                                <span class="author middot" title="Erick Wachira">
+                                    Erick Wachira
+                                </span>
+                            
+                        
+
+                        <span class="reading-time middot">
+                            6 minutes
+                        </span>
+
+                        <div class="d-none d-md-inline tags">
+                            <ul class="list-unstyled d-inline">
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/next">next</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/javascript">javascript</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/react">react</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/css-in-js">css-in-js</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/ssr">ssr</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="d-none d-md-inline tags">
+                            <ul class="list-unstyled d-inline">
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="markdown">
+                        
+    
+    
+
+<p>Hey Coder, I blogged about why you should learn Next in this <a href="https://wwachira.hashnode.dev/why-you-should-learn-nextjs-cjxm3hlqu001cj4s16jd3pb5s">blog</a>. For this part of the series, I will guide through the features that <code>next</code> brings to the table.</p>
+
+<blockquote>
+<p><strong>Note</strong>: You should have NodeJS, npm, and npx installed. You should be proficient in Javascript and React.</p>
+</blockquote>
+
+<h1 id="setting-up-our-project">Setting up our project.</h1>
+
+<p>You can create your own repo or clone my repo.</p>
+
+<pre><code class="language-bash">$ git clone https://github.com/werickblog/react_next_app.git
+</code></pre>
+
+<p>Change directory to where your repo is housed locally</p>
+
+<pre><code class="language-bash">$ cd react_next_app
+</code></pre>
+
+<p>We will now set up the whole next app with one command</p>
+
+<pre><code class="language-bash">$ npx create-next-app .
+</code></pre>
+
+<p>Fire up your code editor, you should see a directory similar to the one below.</p>
+
+<pre><code class="language-bash">
+components/ # Holds components that are either reusable or for refactoring
+   |- head.js # Component containing head tags such as meta, which contain the metadata of the website
+   |- nav.js # Reusable component for the navbar
+pages/ # Contains our main components
+   |- index.js # Contains component that is rendered when visiting the '/' route
+static/ # Contains our static files and media such as CSS, images, and JS
+   |- favicon.ico # Our default favicon
+  |- .gitignore # Contains a list files and folders that git should ignore
+  |- LICENSE # MIT license
+  |- next.config.js # Holds configs and next plugins 
+  |- package.json # Depedency tracker
+  |- README.md # Project doc
+
+</code></pre>
+
+<p>To run our app in development mode.</p>
+
+<pre><code class="language-bash">$ npm run dev # For npm 
+
+# or 
+
+$ yarn dev # For yarn
+</code></pre>
+
+<p>Launch your browser, visit localhost on port 3000</p>
+
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1562682199292/YbdSPuxBP.png" alt="Screenshot 2019-07-09 at 5.23.07 PM.png" /></p>
+
+<p>You should see something similar to the image above in your browser.</p>
+
+<p>Since we are building all our app from scratch, let&rsquo;s delete everything in <code>pages/index.js</code>.</p>
+
+<p>Leave out the imported libraries.</p>
+
+<pre><code class="language-js">
+import React from 'react' // We are writing react so we probably need this
+import Link from 'next/link' // the routing library for next
+import Head from '../components/head' // component that updates metadata for each page rendered
+import Nav from '../components/nav' // reusable navbar component
+
+const Home = () =&gt; (
+  &lt;div&gt;
+      Next meets React
+  &lt;/div&gt;
+)
+
+export default Home
+
+</code></pre>
+
+<p>Let&rsquo;s explore all the features <code>next</code> has to offer.</p>
+
+<h2 id="routing-system">Routing System</h2>
+
+<p>Next has a different routing system from <code>react-router</code>,  it is based on the <code>file-system</code>. What do I mean when I say <code>file-system</code>?  Whenever you create a file inside the <code>pages/</code> directory, launch your browser and visit a route with the file&rsquo;s name, it will render what the file returns.</p>
+
+<p>Create a file in the pages directory called <code>about.js</code></p>
+
+<pre><code class="language-bash">$ cd pages &amp;&amp; touch about.js
+</code></pre>
+
+<p>We have to render something so as to get something when visiting the <code>/about</code> route.</p>
+
+<pre><code class="language-js">import React from &quot;react&quot;;
+import Link from &quot;next/link&quot;;
+
+const About = () =&gt; (
+    &lt;div&gt;
+        Next meets React is a blog series that touches on getting
+        started on using Next with React.
+    &lt;/div&gt;
+)
+export default About;
+</code></pre>
+
+<p>Let&rsquo;s update our <code>components/nav</code> file with links to take us to the about and landing page(index)</p>
+
+<pre><code class="language-js">
+import React from &quot;react&quot;;
+import Link from &quot;next/link&quot;; // Next module that helps with routing
+
+const Nav = () =&gt; (
+  &lt;nav&gt;
+    &lt;Link href=&quot;/&quot;&gt;
+      &lt;a&gt;Home&lt;/a&gt;
+    &lt;/Link&gt;
+    &lt;Link href=&quot;/about&quot;&gt;
+      &lt;a&gt;About&lt;/a&gt;
+    &lt;/Link&gt;
+  &lt;/nav&gt;
+);
+
+export default Nav;
+
+</code></pre>
+
+<p>We should update the <code>pages/index.js</code> and <code>pages/about.js</code> files by importing the <code>nav</code> component</p>
+
+<pre><code class="language-js">import React from &quot;react&quot;;
+import Nav from &quot;../components/nav&quot;;
+
+const About = () =&gt; (
+  &lt;div&gt;
+    &lt;Nav /&gt;
+    &lt;div&gt;
+      Next meets React is a blog series that touches on getting started on using
+      Next with React.
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+
+export default About;
+</code></pre>
+
+<p>Run the development <code>next</code> server.</p>
+
+<pre><code class="language-bash">yarn dev // For yarn 
+npm run dev // For npm
+</code></pre>
+
+<p>You should have something similar when you launch your browser</p>
+
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1563118584129/G-GxoN8wq.png" alt="Screenshot 2019-07-14 at 6.35.44 PM.png" /></p>
+
+<p>If you click on the about link, it should redirect to the about page.</p>
+
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1563118656074/h_7o-p5bU.png" alt="Screenshot 2019-07-14 at 6.37.11 PM.png" /></p>
+
+<p>That basically what it means about <code>file-system based routing</code>. There was no need to create a file to hold all our routes nor did we configure anything, all we just did was just create a file in the <code>pages/</code> directory with our own name and <em>poof</em>, we have routing.
+<img src="https://media.giphy.com/media/Rejrkgm8bVmq8sbAqS/giphy.gif" alt="poof" /></p>
+
+<h2 id="server-side-rendering">Server-Side Rendering</h2>
+
+<p>If you ask most developers, writing your own code to make your SPA server-rendered is a nightmare. <code>next</code> comes with Server Side Rendering out of the box.
+You can read this article by <a href="https://medium.com/walmartlabs/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8">Walmart Labs</a> that mentions all the advantages of SSR applications over CSR(Client-Side Rendered) ones.</p>
+
+<h2 id="css-in-js">CSS-in-JS</h2>
+
+<p>Writing <code>css</code> in your react component has its advantages such as:
+* Componetizing everything, not just Javascript and you will not have to worry about your css affecting another component,(i.e. Eliminating globals)
+* Maintainable at scale - when you are in a team and working on a product, having <code>css-in-js</code> is a big advantage such that you can isolate your css without affecting one of your teammates css. You can use similar css class names without a problem.
+* Laziness - Nowadays I write <code>css-in-js</code> because it reduces the hustle of changing editor tabs or closing vim windows in order to change a particular part of a css file.</p>
+
+<p>Let&rsquo;s try out the <code>css-in-js</code> <code>next</code> feature. Currently <code>next</code> supports:</p>
+
+<ul>
+<li><p>External css, if you are not a <code>css-in-js</code> fan</p>
+
+<pre><code class="language-js">import &quot;.../path/to/your/css;
+</code></pre>
+
+<p>Read more about this <a href="https://nextjs.org/docs#importing-css--sass--less--stylus-files">here</a></p></li>
+
+<li><p>Inline styling
+Let&rsquo;s try out inline styling in our landing page(<code>pages/index.js</code>).</p>
+
+<pre><code class="language-js">import React from &quot;react&quot;; // We are writing react so we probably need this
+import Link from &quot;next/link&quot;; // the routing library for next
+import Head from &quot;../components/head&quot;; // component that updates metadata for each page rendered
+import Nav from &quot;../components/nav&quot;; // reusable navbar component
+
+const Home = () =&gt; (
+   &lt;div&gt;
+      &lt;Nav /&gt;
+      {/* Here we are styling to div, to change the color of our text and aligning the text to the right side */}
+     &lt;div style={{ color: &quot;red&quot;, textAlign: &quot;right&quot; }}&gt;Next meets React&lt;/div&gt;
+  &lt;/div&gt;
+);
+
+export default Home;
+</code></pre></li>
+</ul>
+
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1563959739153/cv-c0_VGn.png" alt="Screenshot 2019-07-24 at 12.15.00 PM.png" /></p>
+
+<ul>
+<li><p>CSS-in-JS
+Let&rsquo;s continue styling our landing page(<code>pages/index.js</code>) by <code>css-in-js</code></p>
+
+<pre><code class="language-js">import React from &quot;react&quot;; // We are writing react so we probably need this
+import Link from &quot;next/link&quot;; // the routing library for next
+import Head from &quot;../components/head&quot;; // component that updates metadata for each page rendered
+import Nav from &quot;../components/nav&quot;; // reusable navbar component
+
+const Home = () =&gt; (
+    &lt;div className=&quot;home-content&quot;&gt;
+        &lt;Nav /&gt;
+        {/* Here we are styling to div, to change the color of our text and aligning the text to the right side */}
+        &lt;div
+  className=&quot;home-content__header&quot;
+  style={{ color: &quot;red&quot;, textAlign: &quot;right&quot; }}
+&gt;
+  Next meets React
+       &lt;/div&gt;
+       {/* We have increased the font-size of a div of class name home-content__header */}
+       &lt;style jsx&gt;
+         {`
+              .home-content__header {
+                    font-size: 32pt;
+              }
+         `}
+         &lt;/style&gt;
+    &lt;/div&gt;
+ );
+
+ export default Home;
+
+</code></pre></li>
+</ul>
+
+<p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1563960617567/LmbndF2An.png" alt="Screenshot 2019-07-24 at 12.29.59 PM.png" /></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>In this article we were able to:
+* Set up our <code>next</code> app.
+* Look into key features of NextJS such as:
+    * Routing
+    * SSR
+    * CSS-in-JS</p>
+
+<h2 id="next">Next</h2>
+
+<ul>
+<li>On the next part of the series we upgrade our app to consume an <a href="https://jsonplaceholder.typicode.com/users">API</a>.</li>
+</ul>
+
+<h2 id="extras">Extras</h2>
+
+<ul>
+<li>Demo <a href="https://reactnextapp.ewachira254.now.sh/">link</a></li>
+<li>Repo <a href="https://github.com/werickblog/react_next_app">link</a></li>
+<li>NextJS Docs <a href="https://nextjs.org/docs">link</a></li>
+</ul>
+
+
+
+                    </div>
+                </div>
+
+                
+                    <div class="col-sm-12 col-md-3">
+                        <nav id="TableOfContents" class="sticky-top">
+<ul>
+<li><a href="#setting-up-our-project">Setting up our project.</a>
+<ul>
+<li><a href="#routing-system">Routing System</a></li>
+<li><a href="#server-side-rendering">Server-Side Rendering</a></li>
+<li><a href="#css-in-js">CSS-in-JS</a></li>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#next">Next</a></li>
+<li><a href="#extras">Extras</a></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                
+            </div>
+
+            <div class="row">
+                <div
+                    
+                    class="col-sm-12 col-md-9"
+                    
+                >
+                    
+                        <div class="navigation">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    
+                                        <div class="mx-0 mx-md-4 mt-4 text-left">
+                                            <a href="/blog/why-you-should-learn-nextjs/">
+                                                <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175">
+        <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225 c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z" />
+    </svg>
+</span>
+
+                                                <span class="text">Why You Should Learn Nextjs</span>
+                                            </a>
+                                        </div>
+                                    
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    
+                                        <div class="mx-0 mx-md-4 mt-4 text-right">
+                                            <a href="/blog/how-to-create-and-run-cron-jobs-in-node/">
+                                                <span class="text">How to Create and Run Cron Jobs in Node</span>
+                                                <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175">
+        <path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5 c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z" />
+    </svg>
+</span>
+
+                                            </a>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-5">
+                <div class="mx-0 mx-md-4 mb-2 text-center text-md-left">
+                    
+                        <div>
+                            <a class="mx-1 mr-md-2 ml-md-0  text-tags" href="/tags/">
+                                
+                                Tags
+                            </a>
+                        </div>
+                    
+
+                    
+                        
+                            <a href="https://werick.codes">© 2095 by Erick Wachira</a>
+                        
+                    
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <div class="mx-0 mx-md-4 text-center text-md-right">
+                    
+
+                    
+
+                    
+    <a href="https://github.com/tesh254"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="GitHub">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/>
+        </svg>
+    </a>
+
+
+                    
+
+                    
+    <a href="https://twitter.com/wachira_dev"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Twitter">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+
+
+                    
+
+                    
+
+                    
+    <a href="https://www.linkedin.com/in/erick-wachira-09a635154"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Linkedin">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+
+
+                    
+    <a href="mailto:ewachira254@gmail.com"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Email">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16">
+            <path d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"/>
+        </svg>
+    </a>
+
+
+                    <a href=''
+    class="mx-1 ml-md-2 mr-md-0 icon"
+    aria-label="RSS">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/>
+    </svg>
+</a>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha256-ZvOgfh+ptkpoa2Y4HkRY28ir89u/+VRyDE7sB7hEEcI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
+        integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Raleway:400,600,700', 'Merriweather:300,300i,700,700i']
+            }
+        });
+    </script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
+        integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/bash.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/css.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/diff.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/django.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/react.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/json.min.js" defer></script>
+    
+    <script>
+        window.addEventListener('load', function () {
+            hljs.initHighlighting();
+        }, true);
+    </script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressively/1.2.5/progressively.min.js"
+        integrity="sha256-LvFVlLdfGI3WeEH+8Ni4kxLm02g2GlOfeGCGLXfRk/U=" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('load', function () {
+            progressively.init({ delay: 30, throttle: 50 });
+        }, true);
+    </script>
+    
+
+    
+
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136029758-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-136029758-1');
+    </script>
+</body>
+
+</html>

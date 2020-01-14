@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>api on Werick Codes</title>
+    <link>/tags/api/</link>
+    <description>Recent content in api on Werick Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Add Api Rate Limits to Your Express Api</title>
+      <link>/blog/how-to-add-api-rate-limits-to-your-express-api/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/how-to-add-api-rate-limits-to-your-express-api/</guid>
+      <description>I had an idea of building a public API, sort of similar to the Marvel API, where you get to fetch all Marvel characters.
+When I was brainstorming on how I would build the API, I thought about three key things: * It should be public and everyone should access (take note) * An admin account to allow me to update the API&amp;rsquo;s content.
+The problem with making it public as it would be quite risky especially when someone runs a bot that results in DDoS attack happens and well the API will be free and I will be paying for the server costs.</description>
+    </item>
+    
+  </channel>
+</rss>
