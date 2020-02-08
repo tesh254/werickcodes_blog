@@ -1,0 +1,2332 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Create API with Gin in Golang Part 1 - Werick Codes</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="google-site-verification" content="E3BDyZa2q0nLY9qlxwaBkds4B6RjPysW-8_oBHf2I1I" />
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Create an API with Golang">
+    <meta property="og:site_name" content="Werick Codes" />
+    <meta property="og:locale" content="nn_NO" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/blog/create-golang-api-with-gin-and-mongo/" />
+    <meta property="og:title" content="Create API with Gin in Golang Part 1" />
+    <meta property="og:image" content="https://hashnode.imgix.net/res/hashnode/image/upload/v1581123425351/HzN5LQ_V6.png" />
+    <meta property="og:description" content="Create an API with Golang" />
+
+    
+    <meta property="twitter:site" content="@wachira_dev">
+    
+
+    <meta property="twitter:title" content="Create API with Gin in Golang Part 1" />
+    <meta property="twitter:image"
+        content="https://hashnode.imgix.net/res/hashnode/image/upload/v1581123425351/HzN5LQ_V6.png" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:description" content="Create an API with Golang" />
+
+    
+
+    <link rel="canonical" href="/blog/create-golang-api-with-gin-and-mongo/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/main.css" />
+
+    
+    <link rel="stylesheet" href="/css/highlight.css" />
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/progressively/1.2.5/progressively.min.css"
+        integrity="sha256-xbqLYBMsjpuCihs+3Fgp/MFMtPdo2SWKoOjEWOqR4X0=" crossorigin="anonymous" />
+    
+
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg">
+
+
+    <link href='' rel="alternate"
+        type="application/rss+xml" title="Werick Codes" />
+
+    <script data-ad-client="ca-pub-8047463894236414" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <noscript>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i" rel="stylesheet">
+    </noscript>
+</head>
+
+<body>
+    
+    
+
+    
+
+    
+
+<div class="my-4 my-md-5 header">
+    <div class="container">
+        <div class="row">
+            <div class="col-auto d-none d-md-block">
+                
+                    <a href="/">
+                        <img class="logo" src="https://res.cloudinary.com/duoxba7n1/image/upload/v1550337618/mascot_16.jpg" alt="logo">
+                    </a>
+                
+            </div>
+            <div class="col-auto align-self-center mr-auto">
+                <a href="/">
+                    <h1 class="font-weight-bold name">
+                        Werick Codes
+                    </h1>
+                </a>
+
+                <ul class="nav nav-primary">
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase nav-link text-about" href="/about/">
+                                
+                                About
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase nav-link text-blog" href="/">
+                                
+                                Blog
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+
+                <ul class="nav nav-secondary">
+                    
+                        <li class="nav-item">
+                            <a class="text-uppercase font-weight-bold nav-link text-patreon" href="https://www.patreon.com/werickcodes">
+                                
+                                Become a patron
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div
+                    
+                    class="col-sm-12 col-md-9"
+                    
+                >
+                    <h1 class="mx-0 mx-md-4">
+                        Create API with Gin in Golang Part 1
+                    </h1>
+
+                    <div class="mb-4 mb-md-5 meta">
+                        <span class="date" title='Sat Feb 8 2020 00:00:00 UTC'>
+                            February 08, 2020
+                        </span>
+
+                        
+                            
+                                <span class="author middot" title="Erick Wachira">
+                                    Erick Wachira
+                                </span>
+                            
+                        
+
+                        <span class="reading-time middot">
+                            32 minutes
+                        </span>
+
+                        <div class="d-none d-md-inline tags">
+                            <ul class="list-unstyled d-inline">
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/golang">golang</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/gin">gin</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/mongo">mongo</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/env">env</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/sendgrid">sendgrid</a>
+                                    </li>
+                                
+                                    <li class="d-inline middot">
+                                        <a href="/tags/mgo.v2">mgo.v2</a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="d-none d-md-inline tags">
+                            <ul class="list-unstyled d-inline">
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="markdown">
+                        
+    
+    
+
+<p>I just started learning to Golang recently, and I must say the Golang is not that difficult. To fully grasp the syntax as a web developer I opted to create an API.</p>
+
+<p>In this blog, we are going to create an Authentication API with the help of the <code>gin</code> web framework and use a MongoDB database with the help of <code>mgo.v2</code></p>
+
+<p>This blog will be a two-part series covering all authentication endpoints:
+* The first part focuses on basic Signup and Login of a user.
+* The second part will focus on using Account verification via email with the help of SendGrid, Token blacklisting, and Password reset request.</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>To be able to grasp the contents and syntax of this blog you should have used golang before and setup the directory for development.</p>
+
+<h1 id="getting-started">Getting started</h1>
+
+<h2 id="goals">Goals</h2>
+
+<p>By the end of this article we should be able to:
+* Use the API to sign up
+* Use the API to log in</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Create the folder to hold the Golang project inside the set <code>$GOPATH</code> directory</p>
+
+<pre><code class="language-bash">$ mkdir golang_api_with_gin &amp;&amp; cd $_
+</code></pre>
+
+<p>Our project directory setup will look something similar to this:</p>
+
+<pre><code class="language-bash">|-- db # hold files interacting with db connection
+|-- controllers # holds files that handle controllers
+|-- models # holds functions that interact with the database
+|-- helpers # holds helper functions such as token generation
+|-- forms # holds files with request body struct
+|-- app.go # Will hold the app routes and server
+</code></pre>
+
+<p>Let&rsquo;s run <code>go mod init</code> on the terminal to track the libraries we are using. This will create a <code>go.mod</code> file.</p>
+
+<p>We need to install the <code>gin</code> framework library, <code>godotenv</code> for tracking variables in our .env file and <code>mgo.v2</code> to interact with mongo</p>
+
+<pre><code class="language-bash">$ go get github.com/gin-gonic/gin # the web framework
+
+$ go get github.com/joho/godotenv # environment variables
+
+$ go get gopkg.in/mgo.v2 # mongo driver
+</code></pre>
+
+<h3 id="write-some-code">Write some code</h3>
+
+<p>Let&rsquo;s create a controller to return a JSON response with a message attribute of value &ldquo;Hello world&rdquo;</p>
+
+<p>Go into the controller&rsquo;s folders and create hello.go file</p>
+
+<pre><code class="language-bash">$ cd controllers &amp;&amp; touch hello.go
+</code></pre>
+
+<p>Let&rsquo;s write our hello world controller code</p>
+
+<pre><code class="language-go">package controllers
+
+import (
+	// Import the Gin library
+	&quot;github.com/gin-gonic/gin&quot;
+)
+
+// HelloWorldController will hold the methods to the
+type HelloWorldController struct{}
+
+// Default controller handles returning the hello world JSON response
+func (h *HelloWorldController) Default(c *gin.Context) {
+	c.JSON(200, gin.H{&quot;message&quot;: &quot;Hello world, climate change is real&quot;})
+}
+
+</code></pre>
+
+<p>Let&rsquo;s add some code to our <code>app.go</code> file</p>
+
+<pre><code class="language-go">package main
+
+import (
+	// Log items to the terminal
+	&quot;log&quot;
+
+	// Import gin for route definition
+	&quot;github.com/gin-gonic/gin&quot;
+	// Import godotenv for .env variables
+	&quot;github.com/joho/godotenv&quot;
+	// Import our app controllers
+	&quot;github.com/tesh254/golang_todo_api/controllers&quot;
+)
+
+// init gets called before the main function
+func init() {
+	// Log error if .env file does not exist
+	if err := godotenv.Load(); err != nil {
+		log.Printf(&quot;No .env file found&quot;)
+	}
+}
+
+func main() {
+	// Init gin router
+	router := gin.Default()
+
+	// Its great to version your API's
+	v1 := router.Group(&quot;/api/v1&quot;)
+	{
+		// Define the hello controller
+		hello := new(controllers.HelloWorldController)
+		// Define a GET request to call the Default
+		// method in controllers/hello.go
+		v1.GET(&quot;/hello&quot;, hello.Default)
+	}
+
+	// Handle error response when a route is not defined
+	router.NoRoute(func(c *gin.Context) {
+		// In gin this is how you return a JSON response
+		c.JSON(404, gin.H{&quot;message&quot;: &quot;Not found&quot;})
+	})
+
+	// Init our server
+	router.Run(&quot;:5000&quot;)
+}
+
+</code></pre>
+
+<p>If you run your app</p>
+
+<pre><code class="language-bash">$ go run app.go
+</code></pre>
+
+<p>You should see something similar to this on your terminal</p>
+
+<pre><code class="language-bash">2020/02/07 20:17:24 No .env file found
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in &quot;debug&quot; mode. Switch to &quot;release&quot; mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /api/v1/hello             --&gt; github.com/tesh254/golang_todo_api/controllers.(*HelloWorldController).Default-fm (3 handlers)
+[GIN-debug] Listening and serving HTTP on :5000
+
+</code></pre>
+
+<p>Send a <code>GET</code> request to our defined <code>hello</code> endpoint.</p>
+
+<pre><code class="language-bash">$ curl http://localhost:5000/api/v1/hello
+</code></pre>
+
+<p>The response should be this</p>
+
+<pre><code class="language-json">{&quot;message&quot;: &quot;Hello world, climate change is real&quot;}
+</code></pre>
+
+<p>That&rsquo;s one of the so many ways to create an endpoint, its a bit long, you might just write your whole API in one file, but splitting your code into files makes your code:
+* readable
+* maintainable</p>
+
+<h2 id="database-connection">Database connection</h2>
+
+<p>Next, we are going to handle database connection in the <code>db</code> folder inside the <code>db.go</code> file</p>
+
+<pre><code class="language-go">// Define the package interacting with the database
+package db
+
+import (
+	&quot;os&quot;
+	&quot;time&quot;
+
+	&quot;gopkg.in/mgo.v2&quot;
+)
+
+// DBConnection defines the connection structure
+type DBConnection struct {
+	session *mgo.Session
+}
+
+// NewConnection handles connecting to a mongo database
+func NewConnection(host string, dbName string) (conn *DBConnection) {
+	info := &amp;mgo.DialInfo{
+		// Address if its a local db then the value host=localhost
+		Addrs: []string{host},
+		// Timeout when a failure to connect to db
+		Timeout: 60 * time.Second,
+		// Database name
+		Database: dbName,
+		// Database credentials if your db is protected
+		Username: os.Getenv(&quot;DB_USER&quot;),
+		Password: os.Getenv(&quot;DB_PWD&quot;),
+	}
+
+	session, err := mgo.DialWithInfo(info)
+
+	if err != nil {
+		panic(err)
+	}
+
+	session.SetMode(mgo.Monotonic, true)
+	conn = &amp;DBConnection{session}
+	return conn
+}
+
+// Use handles connect to a certain collection
+func (conn *DBConnection) Use(dbName, tableName string) (collection *mgo.Collection) {
+	// This returns method that interacts with a specific collection and table
+	return conn.session.DB(dbName).C(tableName)
+}
+
+// Close handles closing a database connection
+func (conn *DBConnection) Close() {
+	// This closes the connection
+	conn.session.Close()
+	return
+}
+</code></pre>
+
+<h3 id="create-our-models">Create our Models</h3>
+
+<p>First of all, we will create a file in the <code>models</code> folder containing methods to perform CRUD(Create Read Update Delete) interactions with the database.</p>
+
+<p>We will create <code>config.go</code> file to hold a couple of db global variables</p>
+
+<pre><code class="language-bash">$ cd models &amp;&amp; touch config.go
+</code></pre>
+
+<p>Add this into the file</p>
+
+<pre><code class="language-go">package models
+
+import (
+	&quot;os&quot;
+
+	&quot;github.com/tesh254/golang_todo_api/db&quot;
+)
+
+// Mongo server ip -&gt; localhost -&gt; 127.0.0.1 -&gt; 0.0.0.0
+var server = os.Getenv(&quot;DATABASE&quot;)
+
+// Database name
+var databaseName = os.Getenv(&quot;DATABASE_NAME&quot;)
+
+// Create a connection
+var dbConnect = db.NewConnection(server, databaseName)
+</code></pre>
+
+<p>Since we are creating an Authentication API we will create a <code>models/user.go</code> file.</p>
+
+<p>Let&rsquo;s create the file</p>
+
+<pre><code class="language-bash">$ cd models &amp;&amp; touch user.go
+</code></pre>
+
+<p>Now we add some lines of code into it.</p>
+
+<pre><code class="language-go">package models
+
+import (
+	&quot;gopkg.in/mgo.v2/bson&quot;
+)
+
+// User defines user object structure
+type User struct {
+	ID         bson.ObjectId `json:&quot;_id,omitempty&quot; bson:&quot;_id,omitempty&quot;`
+	Name       string        `json:&quot;name&quot; bson:&quot;name&quot;`
+	Email      string        `json:&quot;email&quot; bson:&quot;email&quot;`
+	Password   string        `json:&quot;password&quot; bson:&quot;password&quot;`
+	IsVerified bool          `json:&quot;is_verified&quot; bson:&quot;is_verified&quot;`
+}
+
+// UserModel defines the model structure
+type UserModel struct{}
+
+// Signup handles registering a user
+func (u *UserModel) Signup(data forms.SignupUserCommand) error {
+	// Connect to the user collection
+	collection := dbConnect.Use(databaseName, &quot;user&quot;)
+	// Assign result to error object while saving user
+	err := collection.Insert(bson.M{
+		&quot;name&quot;:        data.Name,
+		&quot;email&quot;:       data.Email,
+		&quot;password&quot;:    data.Password,
+		// This will come later when adding verification
+		&quot;is_verified&quot;: false,
+	})
+
+	return err
+}
+</code></pre>
+
+<p>You might have noticed the <code>forms.SignupUserCommand</code> that defines the type of data retrieved from the controller. We we have to define the <code>struct</code> with the types.</p>
+
+<h2 id="user-sign-up">User Sign up</h2>
+
+<p>Let&rsquo;s go ahead and create a file to hold authentication body structs.</p>
+
+<pre><code class="language-bash">$ cd forms &amp;&amp; touch user.go
+</code></pre>
+
+<p>Next we add the <code>SignupUserCommand</code> struct</p>
+
+<pre><code class="language-go">package forms
+
+// SignupUserCommand defines user form struct
+type SignupUserCommand struct {
+    // binding:&quot;required&quot; ensures that the field is provided
+	Name string `json:&quot;name&quot; binding:&quot;required&quot;`
+	Email string `json:&quot;email&quot; binding:&quot;required&quot;`
+	Password string `json:&quot;password&quot; binding:&quot;required&quot;`
+}
+</code></pre>
+
+<p>We will have to create the user controller to interact with the database via the API requests.</p>
+
+<p>We will do so by creating a new file to hold User authentication controllers <code>controllers/user.go</code>.</p>
+
+<pre><code class="language-bash">$ cd controllers &amp;&amp; touch user.go
+</code></pre>
+
+<p>Let&rsquo;s add some code inside the file</p>
+
+<pre><code class="language-go">package controllers
+
+import (
+	&quot;github.com/gin-gonic/gin&quot;
+	&quot;github.com/tesh254/golang_todo_api/forms&quot;
+	&quot;github.com/tesh254/golang_todo_api/models&quot;
+)
+
+// Import the userModel from the models
+var userModel = new(models.UserModel)
+
+// UserController defines the user controller methods
+type UserController struct{}
+
+// Signup controller handles registering a user
+func (u *UserController) Signup(c *gin.Context) {
+	var data forms.SignupUserCommand
+
+	// Bind the data from the request body to the SignupUserCommand Struct
+	// Also check if all fields are provided
+	if c.BindJSON(&amp;data) != nil {
+		// specified response
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide relevant fields&quot;})
+		// abort the request
+		c.Abort()
+		// return nothing
+		return
+	}
+
+	/*
+		You can add your validation logic
+		here such as email
+
+		if regexMethodChecker(data.Email) {
+			c.JSON(400, gin.H{&quot;message&quot;: &quot;Email is invalid&quot;})
+			c.Abort()
+			return
+		}
+	*/
+
+	err := userModel.Signup(data)
+
+	// Check if there was an error when saving user
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem creating an account&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(201, gin.H{&quot;message&quot;: &quot;New user account registered&quot;})
+}
+</code></pre>
+
+<p>Now that we have a signup controller let&rsquo;s tie it to an endpoint. Go back to <code>app.go</code> and add a signup controller.</p>
+
+<pre><code class="language-go">...
+
+// Define the user controller
+user := new(controllers.UserController)
+// Create the signup endpoint
+v1.POST(&quot;/signup&quot;, user.Signup)
+
+</code></pre>
+
+<p>Let&rsquo;s create a <code>.env</code> file to hold our environment variables</p>
+
+<pre><code class="language-bash">$ touch .env
+</code></pre>
+
+<p>Add this to the file</p>
+
+<pre><code class="language-text">export DATABASE=localhost
+export DATABASE_NAME=golangtodoapi
+</code></pre>
+
+<p>If <code>godotenv</code> library does not work with the .env file create a <code>Makefile</code> to export your variables and run your app. This will make it easier to run your app instead of type two commands each time while you could with one.</p>
+
+<pre><code class="language-makefile">run:
+	@echo &quot;:::: App is startin up ::::&quot;
+	@echo &quot;CONFIG::  😁 Exporting environemnt variables&quot;
+	# This might vary depending on your unix os
+    # some might use source by default
+	/bin/sh .env
+	@echo &quot;SUCCESS:  ✔ Environment variables exported&quot;
+	@echo &quot;INIT::::  ⚡ Running server&quot;
+	go run app.go
+</code></pre>
+
+<p>Before you run the server ensure you have a MongoDB instance running. Follow this <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/">link</a> to install MongoDB community version on your computer based on your operating system.</p>
+
+<p>Run your server</p>
+
+<pre><code class="language-bash">$ go run app.go
+</code></pre>
+
+<p>Let&rsquo;s try to add a new user</p>
+
+<pre><code class="language-bash">$ curl -d '{&quot;name&quot;: &quot;Erick Wachira&quot;, &quot;email&quot;: &quot;ewachira254@gmail.com&quot;, &quot;password&quot;: &quot;Wachira254&quot;}' -H &quot;Content-Type: application/json&quot; -X POST http://localhost:5000/api/v1/signup
+</code></pre>
+
+<p>Your response should be something similar</p>
+
+<pre><code class="language-json">{&quot;message&quot;:&quot;New user account registered&quot;}
+</code></pre>
+
+<p>If you go and check the user&rsquo;s collection contents using a GUI/Mongo cli. The document we just saved has the password saved in plain text. Well we both know that is not secure. We can fix that by using the <code>bcrypt</code> library.</p>
+
+<p>We need to first install it before we start coding.</p>
+
+<pre><code class="language-bash">$ go get golang.org/x/crypto/bcrypt
+</code></pre>
+
+<p>After installing the library we need to create a helpers package to house helping functions for our API, this will include our password hasher and compare.</p>
+
+<pre><code class="language-bash">$ cd helpers &amp;&amp; touch bcrypt.go
+</code></pre>
+
+<p>Let us add a few lines to the file.</p>
+
+<pre><code class="language-go">package helpers
+
+// Allows us to hash and compare passwords
+import &quot;golang.org/x/crypto/bcrypt&quot;
+
+// GeneratePasswordHash handles generating password hash
+// bcrypt hashes password of type byte
+func GeneratePasswordHash(password []byte) string {
+	// default cost is 10
+	hashedPassword, err := bcrypt.GenerateFromPassword(password, bcrypt.DefaultCost)
+
+	// If there was an error panic
+	if err != nil {
+		panic(err)
+	}
+
+	// return stringified password
+	return string(hashedPassword)
+}
+
+// PasswordCompare handles password hash compare
+func PasswordCompare(password []byte, hashedPassword []byte) error {
+	err := bcrypt.CompareHashAndPassword(hashedPassword, password)
+
+	return err
+}
+
+</code></pre>
+
+<p>Let&rsquo;s update the user model function to save a hashed password.</p>
+
+<pre><code class="language-go">...
+err := collection.Insert(bson.M{
+    &quot;name&quot;:     data.Name,
+    &quot;email&quot;:    data.Email,
+    &quot;password&quot;: helpers.GeneratePasswordHash([]byte(data.Password)),
+    // This will come later when adding verification
+    &quot;is_verified&quot;: false,
+})
+...
+</code></pre>
+
+<p>Let&rsquo;s try that again, kill and then run your server, then send a signup request again.</p>
+
+<p>Now with our Makefile defined your will running your app with this command</p>
+
+<pre><code class="language-bash">$ make run
+</code></pre>
+
+<p>Account will be created with a hashed password, you can confirm by checking the document saved.</p>
+
+<p>Now we have another problem, an account is being created with the same this will cause conflicts if the app will ever be deployed to production. We will have to fix that.</p>
+
+<p>We can do so by introducing a method that finds a user with an email. We will use the result to validate if the user exists or not. Let&rsquo;s jump into that.</p>
+
+<p>Go to the <code>models/user.go</code> file to add the method.</p>
+
+<pre><code class="language-go">...
+// GetUserByEmail handles fetching user by email
+func (u *UserModel) GetUserByEmail(email string) (user User, err error) {
+	// Connect to the user collection
+	collection := dbConnect.Use(databaseName, &quot;user&quot;)
+	// Assign result to error object while saving user
+	err = collection.Find(bson.M{&quot;email&quot;: email}).One(&amp;user)
+	return user, err
+}
+...
+</code></pre>
+
+<p>Let&rsquo;s modify the Signup controller to add a new condition</p>
+
+<pre><code class="language-go">...
+result, _ := userModel.GetUserByEmail(data.Email)
+
+// If there happens to be a result respond with a 
+// descriptive mesage
+if result.Email != &quot;&quot; {
+    c.JSON(403, gin.H{&quot;message&quot;: &quot;Email is already in use&quot;})
+    c.Abort()
+    return
+}
+...
+</code></pre>
+
+<p>You user&rsquo;s controller file should look like this</p>
+
+<pre><code class="language-go">package controllers
+
+import (
+	&quot;github.com/gin-gonic/gin&quot;
+	&quot;github.com/tesh254/golang_todo_api/forms&quot;
+	&quot;github.com/tesh254/golang_todo_api/models&quot;
+)
+
+// Import the userModel from the models
+var userModel = new(models.UserModel)
+
+// UserController defines the user controller methods
+type UserController struct{}
+
+// Signup controller handles registering a user
+func (u *UserController) Signup(c *gin.Context) {
+	var data forms.SignupUserCommand
+
+	// Bind the data from the request body to the SignupUserCommand Struct
+	// Also check if all fields are provided
+	if c.BindJSON(&amp;data) != nil {
+		// specified response
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide relevant fields&quot;})
+		// abort the request
+		c.Abort()
+		// return nothing
+		return
+	}
+
+	/*
+		You can add your validation logic
+		here such as email
+
+		if regexMethodChecker(data.Email) {
+			c.JSON(400, gin.H{&quot;message&quot;: &quot;Email is invalid&quot;})
+			c.Abort()
+			return
+		}
+	*/
+	result, _ := userModel.GetUserByEmail(data.Email)
+
+	// If there happens to be a result respond with a
+	// descriptive mesage
+	if result.Email != &quot;&quot; {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;Email is already in use&quot;})
+		c.Abort()
+		return
+	}
+
+	err := userModel.Signup(data)
+
+	// Check if there was an error when saving user
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem creating an account&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(201, gin.H{&quot;message&quot;: &quot;New user account registered&quot;})
+}
+</code></pre>
+
+<p>Without deleting any document from the user&rsquo;s collection, try the request again.</p>
+
+<p>You should get this response</p>
+
+<pre><code class="language-json">{&quot;message&quot;:&quot;Email is already in use&quot;}
+</code></pre>
+
+<p><br></p>
+
+<h2 id="user-login">User Login</h2>
+
+<p>We have gotten this far and have a solid user sign up endpoint we can now create a login endpoint. There are different ways to authenticate a user this include:
+* Sessions
+* JWT way</p>
+
+<p>We are going to use the JWT(JSON Web Token) way. It has its advantages over sessions, these are:
+* No Session to Manage (stateless): The JWT is a self-contained token that has authentication information, expire time information, and other user-defined claims digitally signed.</p>
+
+<ul>
+<li><p>Portable: A single token can be used with multiple backends.</p></li>
+
+<li><p>No Cookies Required, So It&rsquo;s Very Mobile Friendly</p></li>
+
+<li><p>Good Performance: It reduces the network round trip time.</p></li>
+
+<li><p>Decoupled/Decentralized: The token can be generated anywhere. Authentication can happen on the resource server or easily separated into its own server.</p></li>
+</ul>
+
+<p>To achieve JWT authentication we need to install a JWT library to generate, and verify our tokens.</p>
+
+<pre><code class="language-bash">$ go get github.com/dgrijalva/jwt-go
+</code></pre>
+
+<p><code>jwt-go</code> library is a great and simple library that will help us achieve this.</p>
+
+<p>Let&rsquo;s create a file inside the <code>services</code> folder with the <code>jwt.go</code> file to hold our jwt methods.</p>
+
+<pre><code class="language-go">package services
+
+import (
+	&quot;os&quot;
+	&quot;time&quot;
+
+	&quot;github.com/dgrijalva/jwt-go&quot;
+)
+
+var jwtKey = []byte(os.Getenv(&quot;SECRET_KEY&quot;))
+
+// Claims defines jwt claims
+type Claims struct {
+	UserID string `json:&quot;email&quot;`
+	jwt.StandardClaims
+}
+
+// GenerateToken handles generation of a jwt code
+// @returns string -&gt; token and error -&gt; err
+func GenerateToken(userID string) (string, error) {
+	// Define token expiration time
+	expirationTime := time.Now().Add(1440 * time.Minute)
+	// Define the payload and exp time
+	claims := &amp;Claims{
+		UserID: userID,
+		StandardClaims: jwt.StandardClaims{
+			ExpiresAt: expirationTime.Unix(),
+		},
+	}
+
+	// Generate token
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+
+	// Sign token with secret key encoding
+	tokenString, err := token.SignedString(jwtKey)
+
+	return tokenString, err
+}
+
+// DecodeToken handles decoding a jwt token
+func DecodeToken(tkStr string) (string, error) {
+	claims := &amp;Claims{}
+
+	tkn, err := jwt.ParseWithClaims(tkStr, claims, func(token *jwt.Token) (interface{}, error) {
+		return jwtKey, nil
+	})
+
+	if err != nil {
+		if err == jwt.ErrSignatureInvalid {
+			return &quot;&quot;, err
+		}
+		return &quot;&quot;, err
+	}
+
+	if !tkn.Valid {
+		return &quot;&quot;, err
+	}
+
+	return claims.UserID, nil
+}
+</code></pre>
+
+<p>We won&rsquo;t have to create a <code>Login</code> user model method we can utilize the <code>GetUserByEmail</code>, following the DRY(Don&rsquo;t Repeat Yourself) rule. We need to add a <code>LoginUserCommand</code> to define the request body types. Go to <code>forms/user.go</code> file and add these lines of code</p>
+
+<pre><code class="language-go">...
+// LoginUserCommand defines user login form struct
+type LoginUserCommand struct {
+	Email    string `json:&quot;email&quot; binding:&quot;required&quot;`
+	Password string `json:&quot;password&quot; binding:&quot;required&quot;`
+}
+...
+</code></pre>
+
+<p>Your <code>forms/user.go</code> file should look like the code below</p>
+
+<pre><code class="language-go">package forms
+
+// SignupUserCommand defines user form struct
+type SignupUserCommand struct {
+	Name     string `json:&quot;name&quot; binding:&quot;required&quot;`
+	Email    string `json:&quot;email&quot; binding:&quot;required&quot;`
+	Password string `json:&quot;password&quot; binding:&quot;required&quot;`
+}
+
+// LoginUserCommand defines user login form struct
+type LoginUserCommand struct {
+	Email    string `json:&quot;email&quot; binding:&quot;required&quot;`
+	Password string `json:&quot;password&quot; binding:&quot;required&quot;`
+}
+</code></pre>
+
+<p>Next we create the <code>Login</code> method controller.</p>
+
+<pre><code class="language-go">...
+// Login allows a user to login a user and get
+// access token
+func (u *UserController) Login(c *gin.Context) {
+	var data forms.LoginUserCommand
+
+	// Bind the request body data to var data and check if all details are provided
+	if c.BindJSON(&amp;data) != nil {
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide required details&quot;})
+		c.Abort()
+		return
+	}
+
+	result, err := userModel.GetUserByEmail(data.Email)
+
+	if result.Email == &quot;&quot; {
+		c.JSON(404, gin.H{&quot;message&quot;: &quot;User account was not found&quot;})
+		c.Abort()
+		return
+	}
+
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem logging into your account&quot;})
+		c.Abort()
+		return
+	}
+
+	// Get the hashed password from the saved document
+	hashedPassword := []byte(result.Password)
+	// Get the password provided in the request.body
+	password := []byte(data.Password)
+
+	err = helpers.PasswordCompare(password, hashedPassword)
+
+	if err != nil {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;Invalid user credentials&quot;})
+		c.Abort()
+		return
+	}
+
+	jwtToken, err2 := services.GenerateToken(data.Email)
+
+	// If we fail to generate token for access
+	if err2 != nil {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;There was a problem logging you in, try again later&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(200, gin.H{&quot;message&quot;: &quot;Log in success&quot;, &quot;token&quot;: jwtToken})
+}
+...
+</code></pre>
+
+<p>Your <code>controllers/user.go</code> should look something similar to this</p>
+
+<pre><code class="language-go">package controllers
+
+import (
+	&quot;github.com/gin-gonic/gin&quot;
+	&quot;github.com/tesh254/golang_todo_api/forms&quot;
+	&quot;github.com/tesh254/golang_todo_api/helpers&quot;
+	&quot;github.com/tesh254/golang_todo_api/models&quot;
+	&quot;github.com/tesh254/golang_todo_api/services&quot;
+)
+
+// Import the userModel from the models
+var userModel = new(models.UserModel)
+
+// UserController defines the user controller methods
+type UserController struct{}
+
+// Signup controller handles registering a user
+func (u *UserController) Signup(c *gin.Context) {
+	var data forms.SignupUserCommand
+
+	// Bind the data from the request body to the SignupUserCommand Struct
+	// Also check if all fields are provided
+	if c.BindJSON(&amp;data) != nil {
+		// specified response
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide relevant fields&quot;})
+		// abort the request
+		c.Abort()
+		// return nothing
+		return
+	}
+
+	/*
+		You can add your validation logic
+		here such as email
+
+		if regexMethodChecker(data.Email) {
+			c.JSON(400, gin.H{&quot;message&quot;: &quot;Email is invalid&quot;})
+			c.Abort()
+			return
+		}
+	*/
+	result, _ := userModel.GetUserByEmail(data.Email)
+
+	// If there happens to be a result respond with a
+	// descriptive mesage
+	if result.Email != &quot;&quot; {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;Email is already in use&quot;})
+		c.Abort()
+		return
+	}
+
+	err := userModel.Signup(data)
+
+	// Check if there was an error when saving user
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem creating an account&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(201, gin.H{&quot;message&quot;: &quot;New user account registered&quot;})
+}
+
+// Login allows a user to login a user and get
+// access token
+func (u *UserController) Login(c *gin.Context) {
+	var data forms.LoginUserCommand
+
+	// Bind the request body data to var data and check if all details are provided
+	if c.BindJSON(&amp;data) != nil {
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide required details&quot;})
+		c.Abort()
+		return
+	}
+
+	result, err := userModel.GetUserByEmail(data.Email)
+
+	if result.Email == &quot;&quot; {
+		c.JSON(404, gin.H{&quot;message&quot;: &quot;User account was not found&quot;})
+		c.Abort()
+		return
+	}
+
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem logging into your account&quot;})
+		c.Abort()
+		return
+	}
+
+	// Get the hashed password from the saved document
+	hashedPassword := []byte(result.Password)
+	// Get the password provided in the request.body
+	password := []byte(data.Password)
+
+	err = helpers.PasswordCompare(password, hashedPassword)
+
+	if err != nil {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;Invalid user credentials&quot;})
+		c.Abort()
+		return
+	}
+
+	jwtToken, err2 := services.GenerateToken(data.Email)
+
+	// If we fail to generate token for access
+	if err2 != nil {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;There was a problem logging you in, try again later&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(200, gin.H{&quot;message&quot;: &quot;Log in success&quot;, &quot;token&quot;: jwtToken})
+}
+</code></pre>
+
+<p>Next, we will have to create a login endpoint to call the <code>Login</code> method controller.</p>
+
+<pre><code class="language-go">...
+// Create the login endpoint
+v1.POST(&quot;/login&quot;, user.Login)
+...
+</code></pre>
+
+<p>We will have to add a new variable to the <code>.env</code> file, the <code>SECRET_KEY</code>that will be used to protect our JWT tokens.</p>
+
+<pre><code class="language-bash">...
+export const SECRET_KEY=#53cR3Tk3y
+...
+
+</code></pre>
+
+<p>Let&rsquo;s run our app and test out our endpoint</p>
+
+<pre><code class="language-bash">$ make run
+</code></pre>
+
+<pre><code class="language-sh">curl -d '{&quot;email&quot;: &quot;ewachira254@gmail.com&quot;, &quot;password&quot;: &quot;Wachira254&quot;}' -H &quot;Content-Type: application/json&quot; -X POST http://localhost:5000/api/v1/login
+</code></pre>
+
+<p>Your response should be something similar</p>
+
+<pre><code class="language-json">{
+    &quot;message&quot;:&quot;Log in success&quot;,&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV3YWNoaXJhMjU0QGdtYWlsLmNvbSIsImV4cCI6MTU4MTIwNzE2Nn0.XXaDB0R9UJ7aKLQxyDDjIdj1WMNN_bP5Ez9um6_T-SU&quot;
+}
+</code></pre>
+
+<h2 id="extras">Extras</h2>
+
+<ul>
+<li><p>Repo <a href="https://github.com/werickblog/golang_todo_api">link</a></p></li>
+
+<li><p>Join Discord Server for any questions <a href="https://discord.gg/nVQJRma">link</a></p></li>
+
+<li><p>Follow me on Twitter <a href="https://twitter.com/wachira_dev">link</a></p></li>
+</ul>
+
+<h2 id="next">Next</h2>
+
+<p>In the next part of this series, we will be able to send out password reset and verification emails. We will also deploy the API to Heroku on the final part of the series. I just started learning to Golang recently, and I must say the Golang is not that difficult. To fully grasp the syntax as a web developer I opted to create an API.</p>
+
+<p>In this blog, we are going to create an Authentication API with the help of the <code>gin</code> web framework and use a MongoDB database with the help of <code>mgo.v2</code></p>
+
+<p>This blog will be a two-part series covering all authentication endpoints:
+* The first part focuses on basic Signup and Login of a user.
+* The second part will focus on using Account verification via email with the help of SendGrid, Token blacklisting, and Password reset request.</p>
+
+<h1 id="introduction-1">Introduction</h1>
+
+<h2 id="prerequisites-1">Prerequisites</h2>
+
+<p>To be able to grasp the contents and syntax of this blog you should have used golang before and setup the directory for development.</p>
+
+<h1 id="getting-started-1">Getting started</h1>
+
+<h2 id="goals-1">Goals</h2>
+
+<p>By the end of this article we should be able to:
+* Use the API to sign up
+* Use the API to log in</p>
+
+<h2 id="setup-1">Setup</h2>
+
+<p>Create the folder to hold the Golang project inside the set <code>$GOPATH</code> directory</p>
+
+<pre><code class="language-bash">$ mkdir golang_api_with_gin &amp;&amp; cd $_
+</code></pre>
+
+<p>Our project directory setup will look something similar to this:</p>
+
+<pre><code class="language-bash">|-- db # hold files interacting with db connection
+|-- controllers # holds files that handle controllers
+|-- models # holds functions that interact with the database
+|-- helpers # holds helper functions such as token generation
+|-- forms # holds files with request body struct
+|-- services
+|-- app.go # Will hold the app routes and server
+</code></pre>
+
+<p>Let&rsquo;s run <code>go mod init</code> on the terminal to track the libraries we are using. This will create a <code>go.mod</code> file.</p>
+
+<p>We need to install the <code>gin</code> framework library, <code>godotenv</code> for tracking variables in our .env file and <code>mgo.v2</code> to interact with mongo</p>
+
+<pre><code class="language-bash">$ go get github.com/gin-gonic/gin # the web framework
+
+$ go get github.com/joho/godotenv # environment variables
+
+$ go get gopkg.in/mgo.v2 # mongo driver
+</code></pre>
+
+<h3 id="write-some-code-1">Write some code</h3>
+
+<p>Let&rsquo;s create a controller to return a JSON response with a message attribute of value &ldquo;Hello world&rdquo;</p>
+
+<p>Go into the controllers&rsquo; folders and create hello.go file</p>
+
+<pre><code class="language-bash">$ cd controllers &amp;&amp; touch hello.go
+</code></pre>
+
+<p>Let&rsquo;s write our hello world controller code</p>
+
+<pre><code class="language-go">package controllers
+
+import (
+	// Import the Gin library
+	&quot;github.com/gin-gonic/gin&quot;
+)
+
+// HelloWorldController will hold the methods to the
+type HelloWorldController struct{}
+
+// Default controller handles returning the hello world JSON response
+func (h *HelloWorldController) Default(c *gin.Context) {
+	c.JSON(200, gin.H{&quot;message&quot;: &quot;Hello world, climate change is real&quot;})
+}
+
+</code></pre>
+
+<p>Let&rsquo;s add some code to our <code>app.go</code> file</p>
+
+<pre><code class="language-go">package main
+
+import (
+	// Log items to the terminal
+	&quot;log&quot;
+
+	// Import gin for route definition
+	&quot;github.com/gin-gonic/gin&quot;
+	// Import godotenv for .env variables
+	&quot;github.com/joho/godotenv&quot;
+	// Import our app controllers
+	&quot;github.com/tesh254/golang_todo_api/controllers&quot;
+)
+
+// init gets called before the main function
+func init() {
+	// Log error if .env file does not exist
+	if err := godotenv.Load(); err != nil {
+		log.Printf(&quot;No .env file found&quot;)
+	}
+}
+
+func main() {
+	// Init gin router
+	router := gin.Default()
+
+	// Its great to version your API's
+	v1 := router.Group(&quot;/api/v1&quot;)
+	{
+		// Define the hello controller
+		hello := new(controllers.HelloWorldController)
+		// Define a GET request to call the Default
+		// method in controllers/hello.go
+		v1.GET(&quot;/hello&quot;, hello.Default)
+	}
+
+	// Handle error response when a route is not defined
+	router.NoRoute(func(c *gin.Context) {
+		// In gin this is how you return a JSON response
+		c.JSON(404, gin.H{&quot;message&quot;: &quot;Not found&quot;})
+	})
+
+	// Init our server
+	router.Run(&quot;:5000&quot;)
+}
+
+</code></pre>
+
+<p>If you run your app</p>
+
+<pre><code class="language-bash">$ go run app.go
+</code></pre>
+
+<p>You should see something similar to this on your terminal</p>
+
+<pre><code class="language-bash">2020/02/07 20:17:24 No .env file found
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in &quot;debug&quot; mode. Switch to &quot;release&quot; mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /api/v1/hello             --&gt; github.com/tesh254/golang_todo_api/controllers.(*HelloWorldController).Default-fm (3 handlers)
+[GIN-debug] Listening and serving HTTP on :5000
+
+</code></pre>
+
+<p>Send a <code>GET</code> request to our defined <code>hello</code> endpoint.</p>
+
+<pre><code class="language-bash">$ curl http://localhost:5000/api/v1/hello
+</code></pre>
+
+<p>The response should be this</p>
+
+<pre><code class="language-json">{&quot;message&quot;: &quot;Hello world, climate change is real&quot;}
+</code></pre>
+
+<p>That&rsquo;s one of the so many ways to create an endpoint, its a bit long, you might just write your whole API in one file, but splitting your code into files makes your code:
+* readable
+* maintainable</p>
+
+<h2 id="database-connection-1">Database connection</h2>
+
+<p>Next, we are going to handle database connection in the <code>db</code> folder inside the <code>db.go</code> file</p>
+
+<pre><code class="language-go">// Define the package interacting with the database
+package db
+
+import (
+	&quot;os&quot;
+	&quot;time&quot;
+
+	&quot;gopkg.in/mgo.v2&quot;
+)
+
+// DBConnection defines the connection structure
+type DBConnection struct {
+	session *mgo.Session
+}
+
+// NewConnection handles connecting to a mongo database
+func NewConnection(host string, dbName string) (conn *DBConnection) {
+	info := &amp;mgo.DialInfo{
+		// Address if its a local db then the value host=localhost
+		Addrs: []string{host},
+		// Timeout when a failure to connect to db
+		Timeout: 60 * time.Second,
+		// Database name
+		Database: dbName,
+		// Database credentials if your db is protected
+		Username: os.Getenv(&quot;DB_USER&quot;),
+		Password: os.Getenv(&quot;DB_PWD&quot;),
+	}
+
+	session, err := mgo.DialWithInfo(info)
+
+	if err != nil {
+		panic(err)
+	}
+
+	session.SetMode(mgo.Monotonic, true)
+	conn = &amp;DBConnection{session}
+	return conn
+}
+
+// Use handles connect to a certain collection
+func (conn *DBConnection) Use(dbName, tableName string) (collection *mgo.Collection) {
+	// This returns method that interacts with a specific collection and table
+	return conn.session.DB(dbName).C(tableName)
+}
+
+// Close handles closing a database connection
+func (conn *DBConnection) Close() {
+	// This closes the connection
+	conn.session.Close()
+	return
+}
+</code></pre>
+
+<h3 id="create-our-models-1">Create our Models</h3>
+
+<p>First of all, we will create a file in the <code>models</code> folder containing methods to perform CRUD(Create Read Update Delete) interactions with the database.</p>
+
+<p>We will create <code>config.go</code> file to hold a couple of DB global variables</p>
+
+<pre><code class="language-bash">$ cd models &amp;&amp; touch config.go
+</code></pre>
+
+<p>Add this into the file</p>
+
+<pre><code class="language-go">package models
+
+import (
+	&quot;os&quot;
+
+	&quot;github.com/tesh254/golang_todo_api/db&quot;
+)
+
+// Mongo server ip -&gt; localhost -&gt; 127.0.0.1 -&gt; 0.0.0.0
+var server = os.Getenv(&quot;DATABASE&quot;)
+
+// Database name
+var databaseName = os.Getenv(&quot;DATABASE_NAME&quot;)
+
+// Create a connection
+var dbConnect = db.NewConnection(server, databaseName)
+</code></pre>
+
+<p>Since we are creating an Authentication API we will create a <code>models/user.go</code> file.</p>
+
+<p>Let&rsquo;s create the file</p>
+
+<pre><code class="language-bash">$ cd models &amp;&amp; touch user.go
+</code></pre>
+
+<p>Now we add some lines of code into it.</p>
+
+<pre><code class="language-go">package models
+
+import (
+	&quot;gopkg.in/mgo.v2/bson&quot;
+)
+
+// User defines user object structure
+type User struct {
+	ID         bson.ObjectId `json:&quot;_id,omitempty&quot; bson:&quot;_id,omitempty&quot;`
+	Name       string        `json:&quot;name&quot; bson:&quot;name&quot;`
+	Email      string        `json:&quot;email&quot; bson:&quot;email&quot;`
+	Password   string        `json:&quot;password&quot; bson:&quot;password&quot;`
+	IsVerified bool          `json:&quot;is_verified&quot; bson:&quot;is_verified&quot;`
+}
+
+// UserModel defines the model structure
+type UserModel struct{}
+
+// Signup handles registering a user
+func (u *UserModel) Signup(data forms.SignupUserCommand) error {
+	// Connect to the user collection
+	collection := dbConnect.Use(databaseName, &quot;user&quot;)
+	// Assign result to error object while saving user
+	err := collection.Insert(bson.M{
+		&quot;name&quot;:        data.Name,
+		&quot;email&quot;:       data.Email,
+		&quot;password&quot;:    data.Password,
+		// This will come later when adding verification
+		&quot;is_verified&quot;: false,
+	})
+
+	return err
+}
+</code></pre>
+
+<p>You might have noticed the <code>forms.SignupUserCommand</code> that defines the type of data retrieved from the controller. We have to define the <code>struct</code> with the types.</p>
+
+<h2 id="user-sign-up-1">User Sign up</h2>
+
+<p>Let&rsquo;s go ahead and create a file to hold authentication body structs.</p>
+
+<pre><code class="language-bash">$ cd forms &amp;&amp; touch user.go
+</code></pre>
+
+<p>Next we add the <code>SignupUserCommand</code> struct</p>
+
+<pre><code class="language-go">package forms
+
+// SignupUserCommand defines user form struct
+type SignupUserCommand struct {
+    // binding:&quot;required&quot; ensures that the field is provided
+	Name string `json:&quot;name&quot; binding:&quot;required&quot;`
+	Email string `json:&quot;email&quot; binding:&quot;required&quot;`
+	Password string `json:&quot;password&quot; binding:&quot;required&quot;`
+}
+</code></pre>
+
+<p>We will have to create the user controller to interact with the database via the API requests.</p>
+
+<p>We will do so by creating a new file to hold User authentication controllers <code>controllers/user.go</code>.</p>
+
+<pre><code class="language-bash">$ cd controllers &amp;&amp; touch user.go
+</code></pre>
+
+<p>Let&rsquo;s add some code inside the file</p>
+
+<pre><code class="language-go">package controllers
+
+import (
+	&quot;github.com/gin-gonic/gin&quot;
+	&quot;github.com/tesh254/golang_todo_api/forms&quot;
+	&quot;github.com/tesh254/golang_todo_api/models&quot;
+)
+
+// Import the userModel from the models
+var userModel = new(models.UserModel)
+
+// UserController defines the user controller methods
+type UserController struct{}
+
+// Signup controller handles registering a user
+func (u *UserController) Signup(c *gin.Context) {
+	var data forms.SignupUserCommand
+
+	// Bind the data from the request body to the SignupUserCommand Struct
+	// Also check if all fields are provided
+	if c.BindJSON(&amp;data) != nil {
+		// specified response
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide relevant fields&quot;})
+		// abort the request
+		c.Abort()
+		// return nothing
+		return
+	}
+
+	/*
+		You can add your validation logic
+		here such as email
+
+		if regexMethodChecker(data.Email) {
+			c.JSON(400, gin.H{&quot;message&quot;: &quot;Email is invalid&quot;})
+			c.Abort()
+			return
+		}
+	*/
+
+	err := userModel.Signup(data)
+
+	// Check if there was an error when saving user
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem creating an account&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(201, gin.H{&quot;message&quot;: &quot;New user account registered&quot;})
+}
+</code></pre>
+
+<p>Now that we have a signup controller let&rsquo;s tie it to an endpoint. Go back to <code>app.go</code> and add a signup controller.</p>
+
+<pre><code class="language-go">...
+
+// Define the user controller
+user := new(controllers.UserController)
+// Create the signup endpoint
+v1.POST(&quot;/signup&quot;, user.Signup)
+
+</code></pre>
+
+<p>Let&rsquo;s create a <code>.env</code> file to hold our environment variables</p>
+
+<pre><code class="language-bash">$ touch .env
+</code></pre>
+
+<p>Add this to the file</p>
+
+<pre><code class="language-text">export DATABASE=localhost
+export DATABASE_NAME=golangtodoapi
+</code></pre>
+
+<p>If <code>godotenv</code> library does not work with the .env file create a <code>Makefile</code> to export your variables and run your app. This will make it easier to run your app instead of type two commands each time while you could with one.</p>
+
+<pre><code class="language-makefile">run:
+	@echo &quot;:::: App is startin up ::::&quot;
+	@echo &quot;CONFIG::  😁 Exporting environemnt variables&quot;
+	# This might vary depending on your unix os
+    # some might use source by default
+	/bin/sh .env
+	@echo &quot;SUCCESS:  ✔ Environment variables exported&quot;
+	@echo &quot;INIT::::  ⚡ Running server&quot;
+	go run app.go
+</code></pre>
+
+<p>Before you run the server ensure you have a MongoDB instance running. Follow this <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/">link</a> to install the MongoDB community version on your computer based on your operating system.</p>
+
+<p>Run your server</p>
+
+<pre><code class="language-bash">$ go run app.go
+</code></pre>
+
+<p>Let&rsquo;s try to add a new user</p>
+
+<pre><code class="language-bash">$ curl -d '{&quot;name&quot;: &quot;Erick Wachira&quot;, &quot;email&quot;: &quot;ewachira254@gmail.com&quot;, &quot;password&quot;: &quot;Wachira254&quot;}' -H &quot;Content-Type: application/json&quot; -X POST http://localhost:5000/api/v1/signup
+</code></pre>
+
+<p>Your response should be something similar</p>
+
+<pre><code class="language-json">{&quot;message&quot;:&quot;New user account registered&quot;}
+</code></pre>
+
+<p>If you go and check the user&rsquo;s collection contents using a GUI/Mongo cli. The document we just saved has the password saved in plain text. Well, we both know that it is not secure. We can fix that by using the <code>bcrypt</code> library.</p>
+
+<p>We need to first install it before we start coding.</p>
+
+<pre><code class="language-bash">$ go get golang.org/x/crypto/bcrypt
+</code></pre>
+
+<p>After installing the library we need to create a helpers package to house helping functions for our API, this will include our password hasher and compare.</p>
+
+<pre><code class="language-bash">$ cd helpers &amp;&amp; touch bcrypt.go
+</code></pre>
+
+<p>Let us add a few lines to the file.</p>
+
+<pre><code class="language-go">package helpers
+
+// Allows us to hash and compare passwords
+import &quot;golang.org/x/crypto/bcrypt&quot;
+
+// GeneratePasswordHash handles generating password hash
+// bcrypt hashes password of type byte
+func GeneratePasswordHash(password []byte) string {
+	// default cost is 10
+	hashedPassword, err := bcrypt.GenerateFromPassword(password, bcrypt.DefaultCost)
+
+	// If there was an error panic
+	if err != nil {
+		panic(err)
+	}
+
+	// return stringified password
+	return string(hashedPassword)
+}
+
+// PasswordCompare handles password hash compare
+func PasswordCompare(password []byte, hashedPassword []byte) error {
+	err := bcrypt.CompareHashAndPassword(hashedPassword, password)
+
+	return err
+}
+
+</code></pre>
+
+<p>Let&rsquo;s update the user model function to save a hashed password.</p>
+
+<pre><code class="language-go">...
+err := collection.Insert(bson.M{
+    &quot;name&quot;:     data.Name,
+    &quot;email&quot;:    data.Email,
+    &quot;password&quot;: helpers.GeneratePasswordHash([]byte(data.Password)),
+    // This will come later when adding verification
+    &quot;is_verified&quot;: false,
+})
+...
+</code></pre>
+
+<p>Let&rsquo;s try that again, kill and then run your server, then send a signup request again.</p>
+
+<p>Now with our Makefile defined your will running your app with this command</p>
+
+<pre><code class="language-bash">$ make run
+</code></pre>
+
+<p>The account will be created with a hashed password, you can confirm by checking the document saved.</p>
+
+<p>Now we have another problem, an account is being created with the same this will cause conflicts if the app will ever be deployed to production. We will have to fix that.</p>
+
+<p>We can do so by introducing a method that finds a user with an email. We will use the result to validate if the user exists or not. Let&rsquo;s jump into that.</p>
+
+<p>Go to the <code>models/user.go</code> file to add the method.</p>
+
+<pre><code class="language-go">...
+// GetUserByEmail handles fetching user by email
+func (u *UserModel) GetUserByEmail(email string) (user User, err error) {
+	// Connect to the user collection
+	collection := dbConnect.Use(databaseName, &quot;user&quot;)
+	// Assign result to error object while saving user
+	err = collection.Find(bson.M{&quot;email&quot;: email}).One(&amp;user)
+	return user, err
+}
+...
+</code></pre>
+
+<p>Let&rsquo;s modify the Signup controller to add a new condition</p>
+
+<pre><code class="language-go">...
+result, _ := userModel.GetUserByEmail(data.Email)
+
+// If there happens to be a result respond with a 
+// descriptive mesage
+if result.Email != &quot;&quot; {
+    c.JSON(403, gin.H{&quot;message&quot;: &quot;Email is already in use&quot;})
+    c.Abort()
+    return
+}
+...
+</code></pre>
+
+<p>You user&rsquo;s controller file should look like this</p>
+
+<pre><code class="language-go">package controllers
+
+import (
+	&quot;github.com/gin-gonic/gin&quot;
+	&quot;github.com/tesh254/golang_todo_api/forms&quot;
+	&quot;github.com/tesh254/golang_todo_api/models&quot;
+)
+
+// Import the userModel from the models
+var userModel = new(models.UserModel)
+
+// UserController defines the user controller methods
+type UserController struct{}
+
+// Signup controller handles registering a user
+func (u *UserController) Signup(c *gin.Context) {
+	var data forms.SignupUserCommand
+
+	// Bind the data from the request body to the SignupUserCommand Struct
+	// Also check if all fields are provided
+	if c.BindJSON(&amp;data) != nil {
+		// specified response
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide relevant fields&quot;})
+		// abort the request
+		c.Abort()
+		// return nothing
+		return
+	}
+
+	/*
+		You can add your validation logic
+		here such as email
+
+		if regexMethodChecker(data.Email) {
+			c.JSON(400, gin.H{&quot;message&quot;: &quot;Email is invalid&quot;})
+			c.Abort()
+			return
+		}
+	*/
+	result, _ := userModel.GetUserByEmail(data.Email)
+
+	// If there happens to be a result respond with a
+	// descriptive mesage
+	if result.Email != &quot;&quot; {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;Email is already in use&quot;})
+		c.Abort()
+		return
+	}
+
+	err := userModel.Signup(data)
+
+	// Check if there was an error when saving user
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem creating an account&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(201, gin.H{&quot;message&quot;: &quot;New user account registered&quot;})
+}
+</code></pre>
+
+<p>Without deleting any document from the user&rsquo;s collection, try the request again.</p>
+
+<p>You should get this response</p>
+
+<pre><code class="language-json">{&quot;message&quot;:&quot;Email is already in use&quot;}
+</code></pre>
+
+<p><br></p>
+
+<h2 id="user-login-1">User Login</h2>
+
+<p>We have gotten this far and have a solid user sign up endpoint we can now create a login endpoint. There are different ways to authenticate a user this include:
+* Sessions
+* JWT way</p>
+
+<p>We are going to use the JWT(JSON Web Token) way. It has its advantages over sessions, these are:
+* No Session to Manage (stateless): The JWT is a self-contained token that has authentication information, expire time information, and other user-defined claims digitally signed.</p>
+
+<ul>
+<li><p>Portable: A single token can be used with multiple backends.</p></li>
+
+<li><p>No Cookies Required, So It&rsquo;s Very Mobile Friendly</p></li>
+
+<li><p>Good Performance: It reduces the network round trip time.</p></li>
+
+<li><p>Decoupled/Decentralized: The token can be generated anywhere. Authentication can happen on the resource server or easily separated into its own server.</p></li>
+</ul>
+
+<p>To achieve JWT authentication we need to install a JWT library to generate and verify our tokens.</p>
+
+<pre><code class="language-bash">$ go get github.com/dgrijalva/jwt-go
+</code></pre>
+
+<p><code>jwt-go</code> library is a great and simple library that will help us achieve this.</p>
+
+<p>Let&rsquo;s create a file inside the <code>services</code> folder with the <code>jwt.go</code> file to hold our jwt methods.</p>
+
+<pre><code class="language-go">package services
+
+import (
+	&quot;os&quot;
+	&quot;time&quot;
+
+	&quot;github.com/dgrijalva/jwt-go&quot;
+)
+
+var jwtKey = []byte(os.Getenv(&quot;SECRET_KEY&quot;))
+
+// Claims defines jwt claims
+type Claims struct {
+	UserID string `json:&quot;email&quot;`
+	jwt.StandardClaims
+}
+
+// GenerateToken handles generation of a jwt code
+// @returns string -&gt; token and error -&gt; err
+func GenerateToken(userID string) (string, error) {
+	// Define token expiration time
+	expirationTime := time.Now().Add(1440 * time.Minute)
+	// Define the payload and exp time
+	claims := &amp;Claims{
+		UserID: userID,
+		StandardClaims: jwt.StandardClaims{
+			ExpiresAt: expirationTime.Unix(),
+		},
+	}
+
+	// Generate token
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+
+	// Sign token with secret key encoding
+	tokenString, err := token.SignedString(jwtKey)
+
+	return tokenString, err
+}
+
+// DecodeToken handles decoding a jwt token
+func DecodeToken(tkStr string) (string, error) {
+	claims := &amp;Claims{}
+
+	tkn, err := jwt.ParseWithClaims(tkStr, claims, func(token *jwt.Token) (interface{}, error) {
+		return jwtKey, nil
+	})
+
+	if err != nil {
+		if err == jwt.ErrSignatureInvalid {
+			return &quot;&quot;, err
+		}
+		return &quot;&quot;, err
+	}
+
+	if !tkn.Valid {
+		return &quot;&quot;, err
+	}
+
+	return claims.UserID, nil
+}
+</code></pre>
+
+<p>We won&rsquo;t have to create a <code>Login</code> user model method we can utilize the <code>GetUserByEmail</code>, following the DRY(Don&rsquo;t Repeat Yourself) rule. We need to add a <code>LoginUserCommand</code> to define the request body types. Go to <code>forms/user.go</code> file and add these lines of code</p>
+
+<pre><code class="language-go">...
+// LoginUserCommand defines user login form struct
+type LoginUserCommand struct {
+	Email    string `json:&quot;email&quot; binding:&quot;required&quot;`
+	Password string `json:&quot;password&quot; binding:&quot;required&quot;`
+}
+...
+</code></pre>
+
+<p>Your <code>forms/user.go</code> file should look like the code below</p>
+
+<pre><code class="language-go">package forms
+
+// SignupUserCommand defines user form struct
+type SignupUserCommand struct {
+	Name     string `json:&quot;name&quot; binding:&quot;required&quot;`
+	Email    string `json:&quot;email&quot; binding:&quot;required&quot;`
+	Password string `json:&quot;password&quot; binding:&quot;required&quot;`
+}
+
+// LoginUserCommand defines user login form struct
+type LoginUserCommand struct {
+	Email    string `json:&quot;email&quot; binding:&quot;required&quot;`
+	Password string `json:&quot;password&quot; binding:&quot;required&quot;`
+}
+</code></pre>
+
+<p>Next, we create a <code>Login</code> method controller.</p>
+
+<pre><code class="language-go">...
+// Login allows a user to login a user and get
+// access token
+func (u *UserController) Login(c *gin.Context) {
+	var data forms.LoginUserCommand
+
+	// Bind the request body data to var data and check if all details are provided
+	if c.BindJSON(&amp;data) != nil {
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide required details&quot;})
+		c.Abort()
+		return
+	}
+
+	result, err := userModel.GetUserByEmail(data.Email)
+
+	if result.Email == &quot;&quot; {
+		c.JSON(404, gin.H{&quot;message&quot;: &quot;User account was not found&quot;})
+		c.Abort()
+		return
+	}
+
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem logging into your account&quot;})
+		c.Abort()
+		return
+	}
+
+	// Get the hashed password from the saved document
+	hashedPassword := []byte(result.Password)
+	// Get the password provided in the request.body
+	password := []byte(data.Password)
+
+	err = helpers.PasswordCompare(password, hashedPassword)
+
+	if err != nil {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;Invalid user credentials&quot;})
+		c.Abort()
+		return
+	}
+
+	jwtToken, err2 := services.GenerateToken(data.Email)
+
+	// If we fail to generate token for access
+	if err2 != nil {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;There was a problem logging you in, try again later&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(200, gin.H{&quot;message&quot;: &quot;Log in success&quot;, &quot;token&quot;: jwtToken})
+}
+...
+</code></pre>
+
+<p>Your <code>controllers/user.go</code> should look something similar to this</p>
+
+<pre><code class="language-go">package controllers
+
+import (
+	&quot;github.com/gin-gonic/gin&quot;
+	&quot;github.com/tesh254/golang_todo_api/forms&quot;
+	&quot;github.com/tesh254/golang_todo_api/helpers&quot;
+	&quot;github.com/tesh254/golang_todo_api/models&quot;
+	&quot;github.com/tesh254/golang_todo_api/services&quot;
+)
+
+// Import the userModel from the models
+var userModel = new(models.UserModel)
+
+// UserController defines the user controller methods
+type UserController struct{}
+
+// Signup controller handles registering a user
+func (u *UserController) Signup(c *gin.Context) {
+	var data forms.SignupUserCommand
+
+	// Bind the data from the request body to the SignupUserCommand Struct
+	// Also check if all fields are provided
+	if c.BindJSON(&amp;data) != nil {
+		// specified response
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide relevant fields&quot;})
+		// abort the request
+		c.Abort()
+		// return nothing
+		return
+	}
+
+	/*
+		You can add your validation logic
+		here such as email
+
+		if regexMethodChecker(data.Email) {
+			c.JSON(400, gin.H{&quot;message&quot;: &quot;Email is invalid&quot;})
+			c.Abort()
+			return
+		}
+	*/
+	result, _ := userModel.GetUserByEmail(data.Email)
+
+	// If there happens to be a result respond with a
+	// descriptive mesage
+	if result.Email != &quot;&quot; {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;Email is already in use&quot;})
+		c.Abort()
+		return
+	}
+
+	err := userModel.Signup(data)
+
+	// Check if there was an error when saving user
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem creating an account&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(201, gin.H{&quot;message&quot;: &quot;New user account registered&quot;})
+}
+
+// Login allows a user to login a user and get
+// access token
+func (u *UserController) Login(c *gin.Context) {
+	var data forms.LoginUserCommand
+
+	// Bind the request body data to var data and check if all details are provided
+	if c.BindJSON(&amp;data) != nil {
+		c.JSON(406, gin.H{&quot;message&quot;: &quot;Provide required details&quot;})
+		c.Abort()
+		return
+	}
+
+	result, err := userModel.GetUserByEmail(data.Email)
+
+	if result.Email == &quot;&quot; {
+		c.JSON(404, gin.H{&quot;message&quot;: &quot;User account was not found&quot;})
+		c.Abort()
+		return
+	}
+
+	if err != nil {
+		c.JSON(400, gin.H{&quot;message&quot;: &quot;Problem logging into your account&quot;})
+		c.Abort()
+		return
+	}
+
+	// Get the hashed password from the saved document
+	hashedPassword := []byte(result.Password)
+	// Get the password provided in the request.body
+	password := []byte(data.Password)
+
+	err = helpers.PasswordCompare(password, hashedPassword)
+
+	if err != nil {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;Invalid user credentials&quot;})
+		c.Abort()
+		return
+	}
+
+	jwtToken, err2 := services.GenerateToken(data.Email)
+
+	// If we fail to generate token for access
+	if err2 != nil {
+		c.JSON(403, gin.H{&quot;message&quot;: &quot;There was a problem logging you in, try again later&quot;})
+		c.Abort()
+		return
+	}
+
+	c.JSON(200, gin.H{&quot;message&quot;: &quot;Log in success&quot;, &quot;token&quot;: jwtToken})
+}
+</code></pre>
+
+<p>Next, we will have to create a login endpoint to call the <code>Login</code> method controller.</p>
+
+<pre><code class="language-go">...
+// Create the login endpoint
+v1.POST(&quot;/login&quot;, user.Login)
+...
+</code></pre>
+
+<p>We will have to add a new variable to the <code>.env</code> file, the <code>SECRET_KEY</code>that will be used to protect our JWT tokens.</p>
+
+<pre><code class="language-bash">...
+export const SECRET_KEY=#53cR3Tk3y
+...
+
+</code></pre>
+
+<p>Let&rsquo;s run our app and test out our endpoint</p>
+
+<pre><code class="language-bash">$ make run
+</code></pre>
+
+<pre><code class="language-sh">curl -d '{&quot;email&quot;: &quot;ewachira254@gmail.com&quot;, &quot;password&quot;: &quot;Wachira254&quot;}' -H &quot;Content-Type: application/json&quot; -X POST http://localhost:5000/api/v1/login
+</code></pre>
+
+<p>Your response should be something similar</p>
+
+<pre><code class="language-json">{
+    &quot;message&quot;:&quot;Log in success&quot;,&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV3YWNoaXJhMjU0QGdtYWlsLmNvbSIsImV4cCI6MTU4MTIwNzE2Nn0.XXaDB0R9UJ7aKLQxyDDjIdj1WMNN_bP5Ez9um6_T-SU&quot;
+}
+</code></pre>
+
+<h2 id="extras-1">Extras</h2>
+
+<ul>
+<li><p>Repo <a href="https://github.com/werickblog/golang_todo_api">link</a></p></li>
+
+<li><p>Join Discord Server for any questions <a href="https://discord.gg/nVQJRma">link</a></p></li>
+
+<li><p>Follow me on Twitter <a href="https://twitter.com/wachira_dev">link</a></p></li>
+</ul>
+
+<h2 id="next-1">Next</h2>
+
+<p>In the next part of this series, we will be able to send out password reset and verification emails. We will also deploy the API to Heroku on the final part of the series.</p>
+
+
+
+                    </div>
+                </div>
+
+                
+                    <div class="col-sm-12 col-md-3">
+                        <nav id="TableOfContents" class="sticky-top">
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+</ul></li>
+<li><a href="#getting-started">Getting started</a>
+<ul>
+<li><a href="#goals">Goals</a></li>
+<li><a href="#setup">Setup</a>
+<ul>
+<li><a href="#write-some-code">Write some code</a></li>
+</ul></li>
+<li><a href="#database-connection">Database connection</a>
+<ul>
+<li><a href="#create-our-models">Create our Models</a></li>
+</ul></li>
+<li><a href="#user-sign-up">User Sign up</a></li>
+<li><a href="#user-login">User Login</a></li>
+<li><a href="#extras">Extras</a></li>
+<li><a href="#next">Next</a></li>
+</ul></li>
+<li><a href="#introduction-1">Introduction</a>
+<ul>
+<li><a href="#prerequisites-1">Prerequisites</a></li>
+</ul></li>
+<li><a href="#getting-started-1">Getting started</a>
+<ul>
+<li><a href="#goals-1">Goals</a></li>
+<li><a href="#setup-1">Setup</a>
+<ul>
+<li><a href="#write-some-code-1">Write some code</a></li>
+</ul></li>
+<li><a href="#database-connection-1">Database connection</a>
+<ul>
+<li><a href="#create-our-models-1">Create our Models</a></li>
+</ul></li>
+<li><a href="#user-sign-up-1">User Sign up</a></li>
+<li><a href="#user-login-1">User Login</a></li>
+<li><a href="#extras-1">Extras</a></li>
+<li><a href="#next-1">Next</a></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                
+            </div>
+
+            <div class="row">
+                <div
+                    
+                    class="col-sm-12 col-md-9"
+                    
+                >
+                    
+                        <div class="navigation">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    
+                                        <div class="mx-0 mx-md-4 mt-4 text-left">
+                                            <a href="/blog/how-to-build-electron-apps-with-react/">
+                                                <span class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175">
+        <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225 c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z" />
+    </svg>
+</span>
+
+                                                <span class="text">How to Build Electron Apps With React</span>
+                                            </a>
+                                        </div>
+                                    
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-5">
+                <div class="mx-0 mx-md-4 mb-2 text-center text-md-left">
+                    
+                        <div>
+                            <a class="mx-1 mr-md-2 ml-md-0  text-tags" href="/tags/">
+                                
+                                Tags
+                            </a>
+                        </div>
+                    
+
+                    
+                        
+                            <a href="https://werick.codes">© 2095 by Erick Wachira</a>
+                        
+                    
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <div class="mx-0 mx-md-4 text-center text-md-right">
+                    
+
+                    
+
+                    
+    <a href="https://github.com/tesh254"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="GitHub">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/>
+        </svg>
+    </a>
+
+
+                    
+
+                    
+    <a href="https://twitter.com/wachira_dev"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Twitter">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+
+
+                    
+
+                    
+
+                    
+    <a href="https://www.linkedin.com/in/erick-wachira-09a635154"
+        target="_blank"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Linkedin">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+            <path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51v1.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+
+
+                    
+    <a href="mailto:ewachira254@gmail.com"
+        class="mx-1 ml-md-2 mr-md-0 icon"
+        aria-label="Email">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16">
+            <path d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"/>
+        </svg>
+    </a>
+
+
+                    <a href=''
+    class="mx-1 ml-md-2 mr-md-0 icon"
+    aria-label="RSS">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/>
+    </svg>
+</a>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha256-ZvOgfh+ptkpoa2Y4HkRY28ir89u/+VRyDE7sB7hEEcI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
+        integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Raleway:400,600,700', 'Merriweather:300,300i,700,700i']
+            }
+        });
+    </script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"
+        integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/bash.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/css.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/diff.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/django.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/go.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/react.min.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/json.min.js" defer></script>
+    
+    <script>
+        window.addEventListener('load', function () {
+            hljs.initHighlighting();
+        }, true);
+    </script>
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressively/1.2.5/progressively.min.js"
+        integrity="sha256-LvFVlLdfGI3WeEH+8Ni4kxLm02g2GlOfeGCGLXfRk/U=" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('load', function () {
+            progressively.init({ delay: 30, throttle: 50 });
+        }, true);
+    </script>
+    
+
+    
+
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136029758-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-136029758-1');
+    </script>
+</body>
+
+</html>

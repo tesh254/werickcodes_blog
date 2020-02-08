@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 1960-2095, Erick Wachira; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>env</title>
+      <link>/tags/env/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/env/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gin</title>
+      <link>/tags/gin/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>/tags/golang/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mgo.v2</title>
+      <link>/tags/mgo.v2/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mgo.v2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongo</title>
+      <link>/tags/mongo/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mongo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sendgrid</title>
+      <link>/tags/sendgrid/</link>
+      <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sendgrid/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>babel</title>
@@ -112,15 +166,6 @@
     </item>
     
     <item>
-      <title>env</title>
-      <link>/tags/env/</link>
-      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/env/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>jobs</title>
       <link>/tags/jobs/</link>
       <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
@@ -198,15 +243,6 @@
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/paas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mongo</title>
-      <link>/tags/mongo/</link>
-      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/mongo/</guid>
       <description></description>
     </item>
     
